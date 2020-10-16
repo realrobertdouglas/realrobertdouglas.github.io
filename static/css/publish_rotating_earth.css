@@ -9,15 +9,17 @@
 }
 
 .globe {
-  border: 2px solid #ff6700;
+  border: 2px solid #228B22;
   border-radius: 50%;
   height: 140px;
-  left: 50%;
+  left: 20%;
   overflow: hidden;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 0%;
   transform: translate(-50%, -50%);
   width: 140px;
+  margin-top: 0px;
+  margin-bottom: -80px;
 }
 
 .anim {
