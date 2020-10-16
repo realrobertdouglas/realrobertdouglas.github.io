@@ -1,10 +1,10 @@
-title: TITLE
-description: DESCRIPTION
-author: AUTHOR
+title: Life is short, art is long.
+description: Build before it is too late. 
+author: Douglas Labs
 github: https://github.com/realrobertdouglas
-about: ABOUT
-disqus_shortname: DISQUES_SHORTNAME
-google_analytics: UA-XXXXXXXX-Y
+about: A collection of resources curated by Robert Douglas, for the review of his peers, use by his followers, and empowerment of his teams.
+disqus_shortname: realrobertdouglas-github-io
+google_analytics: UA-170356546-1
 
 enableTags: true
 tagarray: []
@@ -18,9 +18,9 @@ social:
     - icon: fa-facebook
       link: "#"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/robertdouglas__"
     - icon: fa-linkedin
-      link: "#"
+      link: "https://www.linkedin.com/in/robertstewartdouglas/"
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
