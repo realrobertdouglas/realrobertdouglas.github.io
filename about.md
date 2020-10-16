@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
+I like to build things. I've made quite a few things; some are used, most are not. When something is important enough, you do it even if the odds are not in your favor.
 
-email: agus[at]python.web.id
+email: robert[at]douglas-laboratories.com
