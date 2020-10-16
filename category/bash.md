@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
-categories: bash
-title: Bash
-permalink: /category/bash
+categories: Executive Function
+title: Executive Function
+permalink: /category/executive-function
 ---
