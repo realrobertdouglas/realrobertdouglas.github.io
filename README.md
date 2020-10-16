@@ -1,1 +1,2 @@
-Thanks [https://agusmakmun.github.io](agusmakmun)
+Thanks [agusmakmun](https://agusmakmun.github.io)
+Thanks [coip](https://coip.me)
