@@ -4,4 +4,4 @@ title: Projects
 permalink: /projects/
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+The following are projects and companies I've worked on prior, if you believe I've exposed personal or sensitive information irronously please contact robert[at]douglas-laboratories.com immedatly:
