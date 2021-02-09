@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "burninator"
+title:  "i-am-vs-code"
 date:   2020-10-15 00:18:23 +0700
 categories: [homestarrunner]
-comments: true
+comments: false
 ---
 
 ## This is a title
