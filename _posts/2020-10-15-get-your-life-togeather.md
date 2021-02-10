@@ -127,8 +127,11 @@ This is an overview of the tools I use, and in some-cases I require others use t
 This is an overview of the low level routines I use for any task: 
 
 - Start: The first five seconds of starting are the hardest, once you're moving forward the work becomes monumentally easier
+
 - Prioritize: If it takes two minutes or less, do it right now
+
 - Organize: Do things in the priority they help you, not easiest to hardest.
+
 - Focus: Only push things off when you have non-emotional reasoning to, things that are deferred are more taxing, and less beneficial when done later.
 
 This is how it almost always goes except when there is a conversational or social narrative break.
@@ -152,8 +155,11 @@ It's important you increase your likelihood of doing all the things you said you
 
 ### Energy
 - Sleep well, use tools when necessary [natural drugs](https://www.amazon.com/gp/product/B081ZFZJ5Z/) [masks to keep you asleep](https://www.amazon.com/Sleeping-Blindfold-Building-Adjustable-Layers/dp/B07JH2C4D5/) [ear plugs to block out noise](https://www.amazon.com/Upgraded-Earplugs-Comfortable-Sleeping-Studying/dp/B08K76W3K8/r) [mouth tape if you sleep with your mouth open](https://www.amazon.com/gp/product/B086BY1SWR/)
+
 - Wake up early (Master your day, don't be mastered by it) [use an alarm](https://www.amazon.com/Electronic-Settings-Humidity-Temperature-Electric/dp/B07RKTVQDR/) [sleep next to someone?](https://www.amazon.com/Fitbit-Fitness-Activity-Tracking-Included/dp/B084CQ41M2/) [hate yourself?] (https://www.amazon.com/Shock-Clock-Silent-Motion-Tracking/dp/B07P83FTR5/)
+
 - Drink coffee before 12pm
+
 - Work harder and suffer so you can recover harder
 
 # (4) Benefits
