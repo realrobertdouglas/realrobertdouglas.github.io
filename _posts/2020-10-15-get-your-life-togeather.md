@@ -96,21 +96,30 @@ This is an overview of the tools I use, and in some-cases I require others use t
 
 ### Discipline Tools
 1) [The Ivy Lee Method](https://jamesclear.com/ivy-lee)
+
 2) [Pomodoro](https://pomofocus.io/)
+
 3) [The two minute rule](https://hoanhan.co/2-minute-rule)
+
 4) Keeping my email inbox at zero.
 
 ### Organizational Tools
 1) [Getting Things Done by David Allen](https://hamberg.no/gtd/)
+
 2) [Clean Fox](https://www.cleanfox.io/)
+
 3) [Slidebox](http://slidebox.co/)
+
 4) [Resilio Sync](https://www.resilio.com/individuals/)
+
 5) Thinking about how "future me" will want to use something when I write it down.
 
 
 ### Communication Tools:
 1) [The NATO Alphabet]( https://i.pinimg.com/736x/a6/ef/40/a6ef40ba8242be6475c601832944659f.jpg)
+
 2) [5 Lines or Less Email](https://www.entrepreneur.com/article/226581)
+
 3) Adding "Please respond by ________" to my signature footer.
 
 # (2) Tasks
