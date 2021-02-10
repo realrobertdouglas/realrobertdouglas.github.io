@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "This is a title with spaces in it"
+title:  "The pirates code."
 date:   2020-10-15 00:18:23 +0700
-categories: [homestarrunner,test]
+categories: [tools]
 comments: false
 ---
+
 
 # when I can see this I can move forwad
 

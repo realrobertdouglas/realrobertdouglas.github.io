@@ -5,12 +5,3 @@ date:   2020-10-15 00:18:23 +0700
 categories: [tools]
 comments: false
 ---
-
-
-## This is a title
-### This is a smaller title
-
-
-
-This is normal text
-[this is a link](google.com)

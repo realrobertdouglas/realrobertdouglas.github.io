@@ -7,10 +7,5 @@ comments: false
 ---
 
 
-## This is a title
-### This is a smaller title
 
-
-
-This is normal text
-[this is a link](google.com)
+# Why it's rational for people to lie
