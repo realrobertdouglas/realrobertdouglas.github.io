@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Get your life together."
-date:   2020-10-15 00:18:23 +0700
+date:   2020-01-15 00:00:00 +0700
 categories: [tools]
 comments: false
 ---
