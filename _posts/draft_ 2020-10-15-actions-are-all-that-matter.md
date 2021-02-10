@@ -6,9 +6,10 @@ categories: [tools]
 comments: false
 ---
 
-DRAFT 2020_10_26
 
-```"Every organism decides their next action by comparing the expected energy expended to their possibility of potential return gained" - Some scientist, probably*```
+•••
+
+"Every organism decides their next action by comparing the expected energy expended to their possibility of potential return gained" - Some scientist, probably*
 
 That little voice you hear as you read inside your head is **your conciseness**; it can only do one thing at a time, and is very forgetful. It is what you, and it, likely call you "you", but no one else does... thankfully. Thinking costs you nothing, and you expose noting doing it... So think often, please.
 
