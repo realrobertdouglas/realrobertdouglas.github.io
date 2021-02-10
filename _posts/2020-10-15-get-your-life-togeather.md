@@ -6,8 +6,6 @@ categories: [tools]
 comments: false
 ---
 
-# Get your life together.
-
 If Robert Douglas sent you here, start at **'(1) [Tools](link-to-part-of-page.link)'** , if not, recommended reading begins immediately:
 
 # (iv) No one cares what you think, the only thing that matters is what you do.
