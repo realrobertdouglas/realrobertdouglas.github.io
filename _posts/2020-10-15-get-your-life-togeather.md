@@ -48,7 +48,7 @@ If you lack the *energy* your body is likely trying to tell you something, it ma
 
 **No energy but have time?** Drink a glass of water, eat a snack, walk for 8 minutes or more, and reconsider. Does your significant-other have the same problem, bring them a glass of water and make them drink it, bring them a snack and make sure they eat it, then take them on a walk. Based on your relationship this may end up solving 80% or more of problems. If this doesn't work you may benefit from a low carbohydrate and lower sugar diet, a sub 15 minute nap with your feet elevated, or a little bit of [caffeine](https://www.amazon.com/dp/B01M1MMR3F/). 
 
-**Not enough time?**  A [pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a work-break-structure that allows consistent breaks for recovery and deferring distractions to promote a sustainable [Flow state]( https://en.wikipedia.org/wiki/Flow_(psychology) where nothing else gets in your way. If you can't dedicate one 25 minute block to completing a pomodoro in the effort of getting what you wanted done, then you have bigger problems than this list can help. 
+**Not enough time?**  A [pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a work-break-structure that allows consistent breaks for recovery and deferring distractions to promote a sustainable [Flow state](https://en.wikipedia.org/wiki/Flow_(psychology) where nothing else gets in your way. If you can't dedicate one 25 minute block to completing a pomodoro in the effort of getting what you wanted done, then you have bigger problems than this list can help. 
 
 **There's too much going on, I know what I need to do, why should I make a list**
 
