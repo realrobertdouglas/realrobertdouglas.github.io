@@ -198,4 +198,4 @@ Most people don't think as much as they should, their disregard and hostility to
 
 
 
-There use to be more, but one time I mixed up rule 27 and 32 in field and got my team in trouble. 
+There use to be more, but one time I mixed up rule 23 and 32 in field and got my team in trouble.
