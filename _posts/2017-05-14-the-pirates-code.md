@@ -43,18 +43,18 @@ Anyone can get sidetracked by your environment, but doing what you came here to 
 “Stop getting distracted” - “You’re spending energy in the wrong areas, at the end of this it’s going to suck but a mission is only complete at 100%, not 98.”
 
 
-# 5.	“Excellence matters”
+# 5. “Excellence matters”
 
 When you do something, if you have to do it again or, if it's failure lets someone else unacquainted to hurt themselves, did your actions cause more harm then good?
 
 “Stop nigger rigging that” - “This may cause you issues in the future” - “Don’t let this hurt you” - “Put on better clothes, stand up straight” - “Stop shortcutting that fundamental failure point" - "remember: ‘what is max theoretical efficiency?’”
 
 
-# 6. “Liars are Losers”
+# 6. “IQ means noting.”
 
-Lies corrupt everything.
+Some of the highest scores I've seen gifted come from some of the least gifted as many have terrible processes of reasoning and poor decision matrixes. What is good about being a smart kid if you are still only a child? Your effective efficancy in an enviroment comes from process compleation, workflow maximization, and is measured by team success. 
 
-“reward honesty” - ”jokes don’t translate well repeated” - “if you have the power, demand honesty” - “sarcasm is the lowest forum of humor”
+"Write that down, and hold onto it until it's processed" - "Stop being an idiot."
 
 
 # 7.	“Never pass up a good thing”
@@ -175,11 +175,11 @@ Your ego will tell you what to do, don’t let it run away from you. It's the bo
 "Button your fly" - "You can't bring those people where we’re going."
 
 
-# 24. "Your actions determine you, not your intelligence"
+# 24. "You are what you eat"
 
-People who learn how to learn can outperform those with very high IQs. Much of it comes down to “metacognition,” pay close attention to how you are thinking.
+Diet is the only thing about your genetics you have reasonable control over.
 
-"Stop being an idiot."
+"I'm watching you throw away your 20s and your 60s"
 
 
 # 25. “Assets (not liabilities)”
