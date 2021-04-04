@@ -47,7 +47,7 @@ Anyone can get sidetracked by your environment, but doing what you came here to 
 
 When you do something, if you have to do it again or, if it's failure lets someone else unacquainted to hurt themselves, did your actions cause more harm then good?
 
-“Stop nigger rigging that” - “This may cause you issues in the future” - “Don’t let this hurt you” - “Put on better clothes, stand up straight” - “Stop shortcutting that fundamental failure point" - "remember: ‘what is max theoretical efficiency?’”
+“Stop nigger-rigging that” - “This may cause you issues in the future” - “Don’t let this hurt you” - “Put on better clothes, stand up straight” - “Stop shortcutting that fundamental failure point" - "remember: ‘what is max theoretical efficiency?’”
 
 
 # 6. “IQ means noting.”

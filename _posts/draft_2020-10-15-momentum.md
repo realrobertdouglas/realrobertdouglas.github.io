@@ -9,6 +9,10 @@ comments: false
 
 Consistent work matters a lot if you want to be successful.
 
+      
+
+"If you do something for 8 hours a day like its your job...you cannot fail"
+
 low level 
 
 
