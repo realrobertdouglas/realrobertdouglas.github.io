@@ -56,13 +56,13 @@ That list may work as a motivator, as every time you cross an item off a list yo
 
 That list may work as a filter, where the tasks of the day that normally keep popping up in your head can just be written down instead of constantly interrupting you.
 
-That list may tell you what you can actually get done in a day, because when everything written out you see the whole picture.
+That list may tell you what you can actually get done in a day; when everything is written out, you see the whole picture.
 
 That list may make you smarter, because space normally consumed by your short term memory just got freed up.
 
-When you review an old list, you can see what you thought was important, and what wasn?t. This review programs your subconscious to emotionally value the actions that had a long-term impact on your life over the things that failed.
+When you review an old list, you can see what you thought was important and what was not. This review programs your subconscious to emotionally value the actions that had a long-term impact on your life over the things that failed.
 
-Without your conscious mind having to do work beyond reading an old list, you?re tuning your body just like any auto shop tunes a car.
+Without your conscious mind having to do work beyond reading an old list, you are tuning your body just like any auto shop tunes a car.
 
 # (i) I'm doing the things in front of me, but my life isn't getting better.
 
@@ -70,7 +70,7 @@ You'll get what you want when you have [focus](https://www.entrepreneur.com/arti
 
 The following tools are meant to enable you to take stock of your life, prioritize what is really important to you, hobbies and work included, and move those things forward.
 
-- You don't know to know your goals, they will come with time, and you can apply these tools on them as you need
+- You don't know your goals, they will come with time, and you can apply these tools on them as you need
 - You don't need to do these things for more than 25 minutes (one pomodoro) a day. However, you'll find that as you regularly do them it will be as if you are capable of doing a week's work in a single day.
 - The clearest benefit of these tools is not that you'll be able to achieve your goals, but that you'll be able to complete what you said you would.
 
