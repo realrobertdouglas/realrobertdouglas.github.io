@@ -190,4 +190,4 @@ When the mind is freed from distraction and worry, it can move easily in any dir
 
 If you want to achieve anything in this life, it starts by doing that first step. 
 
-Motivation isn't always available, sometimes suffering and thinking are required to achieve goals but like with any training... the more you do something, the easier it gets. You'll feel your best, get the most done, and live the longest, and happiest, when you have balanced your life and by doing so you will set yourself up for success.
+Motivation isn't always available, sometimes suffering and thinking are required to achieve goals but like with any training... the more you do something, the easier it gets. You'll feel your best, get the most done, and live the longest, and happiest, when you have balanced your life and by doing so you will set yourself up for success. Who knows, I may even hire you.
