@@ -31,8 +31,6 @@ urls:
       url: /about/
     - text: My Projectsss
       url: /projects/
-    - text: XML Feeddd
-      url: /feed.xml
 
 url: "https://realrobertdouglas.github.io"
 baseurl: ""
