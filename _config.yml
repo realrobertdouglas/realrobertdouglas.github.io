@@ -27,9 +27,9 @@ share:
   fb_appid:
 
 urls:
-    - text: About Meee
+    - text: About Me
       url: /about/
-    - text: My Projectsss
+    - text: Reports by Project
       url: /projects/
 
 url: "https://realrobertdouglas.github.io"
