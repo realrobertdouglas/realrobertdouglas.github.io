@@ -16,7 +16,7 @@ collections:
 
 social:
     - icon: fa-twitter
-      link: "https://twitter.com/robertdouglas__"
+      link: "https://x.com/realdobert"
     - icon: fa-linkedin
       link: "https://www.linkedin.com/in/robertstewartdouglas/"
     - icon: fa-github
@@ -24,7 +24,7 @@ social:
 
 share:
   twitter_username:
-  fb_appid: 
+  fb_appid:
 
 urls:
     - text: About Meee
