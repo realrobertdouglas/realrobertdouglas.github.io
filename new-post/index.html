@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dobertito Post Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { 
+      padding: 20px; 
+      background: #fff; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .container { 
+      max-width: 800px; 
+      margin: 0 auto; 
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .title-input-container {
+      position: relative;
+    }
+    .autocomplete-dropdown {
+      position: absolute;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ddd;
+      border-top: none;
+      z-index: 10;
+      display: none;
+    }
+    .autocomplete-item {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .autocomplete-item:hover {
+      background-color: #f0f0f0;
+    }
+    .existing-titles {
+      margin-top: 10px;
+    }
+    .titles-toggle {
+      background: none;
+      border: none;
+      color: #0d6efd;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .toggle-icon {
+      margin-left: 5px;
+      transition: transform 0.3s;
+    }
+    .collapsed .toggle-icon {
+      transform: rotate(-90deg);
+    }
+    .title-list {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .collapsed .title-list {
+      max-height: 0;
+    }
+    .existing-title {
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .existing-title:hover {
+      background-color: #e0e0e0;
+    }
+    .categories-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .category-tag {
+      background-color: #e0e0e0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .category-tag:hover {
+      background-color: #d0d0d0;
+    }
+    .category-tag.selected {
+      background-color: #0d6efd;
+      color: white;
+    }
+    .preview-section {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+    pre#preview {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .read-time-info {
+      margin-top: 10px;
+      font-style: italic;
+      color: #666;
+    }
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #0d6efd;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0b5ed7;
+    }
+    #downloadBtn {
+      background-color: #198754;
+    }
+    #downloadBtn:hover {
+      background-color: #157347;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dobertito Post Generator</h1>
+    <form id="postForm">
+      <div class="form-group">
+        <label for="title">Post Title</label>
+        <div class="title-input-container">
+          <input type="text" id="title" class="form-control" required placeholder="Enter post title">
+          <div id="titleAutocomplete" class="autocomplete-dropdown"></div>
+        </div>
+        <div class="existing-titles collapsed">
+          <button type="button" class="titles-toggle">
+            <span class="titles-label">Existing titles</span>
+            <span class="toggle-icon">▼</span>
+          </button>
+          <div class="title-list">
+            <span class="existing-title">Dumping.</span>
+            <span class="existing-title">Get your life together.</span>
+            <span class="existing-title">The pirates code.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="categories">Categories</label>
+        <div class="categories-container">
+          <div class="category-tags" id="existingCategories">
+            <span class="category-tag" data-category="tools">tools</span>
+          </div>
+          <input type="text" id="categories" class="form-control" placeholder="Add new categories (comma-separated)">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Post Content (Markdown)</label>
+        <textarea id="content" class="form-control" rows="10" required placeholder="Write your post content in Markdown..."></textarea>
+      </div>
+
+      <div class="preview-section">
+        <h2>Preview</h2>
+        <pre id="preview"></pre>
+        <div class="read-time-info">
+          <span id="readTimeDisplay"></span>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="button" id="downloadBtn" class="btn btn-success">Download Markdown</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const titleInput = document.getElementById('title');
+      const categoriesInput = document.getElementById('categories');
+      const contentInput = document.getElementById('content');
+      const previewElement = document.getElementById('preview');
+      const readTimeDisplay = document.getElementById('readTimeDisplay');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const titleAutocomplete = document.getElementById('titleAutocomplete');
+      const existingCategories = document.getElementById('existingCategories');
+      const titlesToggle = document.querySelector('.titles-toggle');
+      const existingTitles = document.querySelector('.existing-titles');
+      
+      // Toggle existing titles
+      titlesToggle.addEventListener('click', function() {
+        existingTitles.classList.toggle('collapsed');
+        const titleList = existingTitles.querySelector('.title-list');
+        if (existingTitles.classList.contains('collapsed')) {
+          titleList.style.maxHeight = '0';
+        } else {
+          titleList.style.maxHeight = titleList.scrollHeight + 'px';
+        }
+      });
+      
+      // Select existing title
+      document.querySelectorAll('.existing-title').forEach(title => {
+        title.addEventListener('click', function() {
+          titleInput.value = this.textContent;
+          updatePreview();
+        });
+      });
+      
+      // Select category
+      document.querySelectorAll('.category-tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+          this.classList.toggle('selected');
+          updatePreview();
+        });
+      });
+      
+      // Title autocomplete
+      titleInput.addEventListener('input', function() {
+        const value = this.value.toLowerCase();
+        if (value.length < 2) {
+          titleAutocomplete.style.display = 'none';
+          return;
+        }
+        
+        const titles = Array.from(document.querySelectorAll('.existing-title')).map(el => el.textContent);
+        const matches = titles.filter(title => title.toLowerCase().includes(value));
+        
+        if (matches.length > 0) {
+          titleAutocomplete.innerHTML = '';
+          matches.forEach(match => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            item.textContent = match;
+            item.addEventListener('click', function() {
+              titleInput.value = match;
+              titleAutocomplete.style.display = 'none';
+              updatePreview();
+            });
+            titleAutocomplete.appendChild(item);
+          });
+          titleAutocomplete.style.display = 'block';
+        } else {
+          titleAutocomplete.style.display = 'none';
+        }
+      });
+      
+      // Hide autocomplete when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!titleInput.contains(e.target) && !titleAutocomplete.contains(e.target)) {
+          titleAutocomplete.style.display = 'none';
+        }
+      });
+      
+      // Update preview on input
+      [titleInput, categoriesInput, contentInput].forEach(input => {
+        input.addEventListener('input', updatePreview);
+      });
+      
+      function updatePreview() {
+        const title = titleInput.value;
+        const categories = getSelectedCategories();
+        const content = contentInput.value;
+        
+        const date = new Date().toISOString().split('T')[0];
+        const fileName = `${date}-${title.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-')}.md`;
+        
+        let markdown = '---\n';
+        markdown += `layout: post\n`;
+        markdown += `title: ${title}\n`;
+        
+        if (categories.length > 0) {
+          markdown += `categories: [${categories.join(', ')}]\n`;
+        }
+        
+        markdown += '---\n\n';
+        markdown += content;
+        
+        previewElement.textContent = markdown;
+        
+        // Calculate read time
+        const words = content.trim().split(/\s+/).length;
+        const readTime = Math.ceil(words / 200); // Assuming 200 words per minute
+        readTimeDisplay.textContent = `Estimated read time: ${readTime} minute${readTime !== 1 ? 's' : ''}`;
+      }
+      
+      function getSelectedCategories() {
+        const selectedTags = Array.from(document.querySelectorAll('.category-tag.selected')).map(tag => tag.dataset.category);
+        const inputCategories = categoriesInput.value.split(',').map(cat => cat.trim()).filter(cat => cat);
+        return [...new Set([...selectedTags, ...inputCategories])];
+      }
+      
+      // Download markdown file
+      downloadBtn.addEventListener('click', function() {
+        const title = titleInput.value;
+        if (!title) {
+          alert('Please enter a title');
+          return;
+        }
+        
+        const content = previewElement.textContent;
+        const date = new Date().toISOString().split('T')[0];
+        const fileName = `${date}-${title.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-')}.md`;
+        
+        const blob = new Blob([content], { type: 'text/markdown' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+      
+      // Initialize preview
+      updatePreview();
+    });
+  </script>
+</body>
+</html>

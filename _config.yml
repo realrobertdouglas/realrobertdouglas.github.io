@@ -2,8 +2,8 @@ title: Robert Douglas
 description: Build before it is too late. 
 author: Douglas Labs
 github: https://github.com/realrobertdouglas
-about: Resources for Builders, Thinkers, and Doers
-disqus_shortname: realrobertdouglas-github-io
+about: "Resources for Builders, <a href='/new-post/' style='color:inherit;text-decoration:none'>Thinkers</a>, and Doers"
+disqus_shortname: ""
 google_analytics: UA-170356546-1
 
 enableTags: true
@@ -18,7 +18,7 @@ social: []
 
 share:
   twitter_username:
-  fb_appid:
+  fb_appid: ""
 
 urls:
     - text: Disclaimer
