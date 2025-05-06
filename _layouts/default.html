@@ -118,42 +118,32 @@ layout: compress
         </div>
         <div class="fixed-condition">
           <!-- <div class="project-img bordered" style="background-image: url('/static/img/rob.jpeg');"></div> -->
-          <h1 class="author-name"><a href="/">{{ site.author }}</a></h1>
-          {% if site.about %}
-
-            <div class="profile-about">
-              {{ site.about }}
-            </div>
-          {% endif %}
-          <div class="social">
-            <ul>
-              {% for link in site.social %}
-                <li><a href="{{ link.link }}" target="_blank"><i class="fa {{ link.icon }}"></i></a></li>
+          <div style="text-align: center;">
+            <h1 class="author-name"><a href="/">{{ site.author }}</a></h1>
+            <ul class="sidebar-nav" style="margin-top: 5px; padding-left: 0;">
+              {% for i in site.urls %}
+                <li style="list-style: none; display: inline-block; margin-right: 10px;"><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
               {% endfor %}
             </ul>
+            {% if site.about %}
+              <div class="profile-about">
+                {{ site.about }}
+              </div>
+            {% endif %}
           </div>
+          <!-- Social icons removed as requested -->
           <div class="search" id="js-search">
             <input type="text" placeholder="seach site by keyword here" class="search__input form-control" id="js-search__input">
             <ul class="search__results" id="js-search__results"></ul>
           </div>
-          <hr />
-          <ul class="sidebar-nav">
-            <strong>Navigation</strong>
-            <li><a href="/">Home</a></li>
-            {% for i in site.urls %}
-              <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
-            {% endfor %}
-          </ul>
+          <!-- Navigation section removed as requested -->
         </div>
         <!-- end /.fixed-condition -->
       </div>
       <div class="col-sm-8 col-offset-1 main-layout">
         {{ content }}
         <footer>
-          &copy; {{ site.author }}
-          {% if site.github %}
-            - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by coffee.
-          {% endif %}
+          <!-- Footer content removed as requested -->
         </footer>
       </div>
       <!-- end /.col-sm-8 -->
