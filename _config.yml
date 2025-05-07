@@ -1,4 +1,4 @@
-title: Robert Douglas
+title: The Blog of Robert Douglas
 description: Build before it is too late. 
 author: Douglas Labs
 github: https://github.com/realrobertdouglas
@@ -9,10 +9,7 @@ google_analytics: UA-170356546-1
 enableTags: true
 tagarray: []
 
-collections:
-  project:
-    output: true
-    permalink: /project/:path/
+collections: {}
 
 social: []
 
@@ -21,10 +18,9 @@ share:
   fb_appid: ""
 
 urls:
-    - text: Disclaimer
+    - text: Life is short, art is long.
       url: /about/
-    - text: Reports by Project
-      url: /projects/
+
 
 url: "https://realrobertdouglas.github.io"
 baseurl: ""

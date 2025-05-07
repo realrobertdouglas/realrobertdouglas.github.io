@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Life is short, art is long.
 permalink: /about/
 ---
 
