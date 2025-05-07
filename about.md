@@ -11,3 +11,6 @@ Projects require time, reasources, and energy. If you think you can contribute e
 __Legal Disclamer:__ All characters are composites. All names are invented. All conversations are dramatizations. All events are coincidences. All statements are satire. All affiliations are imaginary. All documents are drafts. All timelines are speculative. All posts are memes. All messages are art.
 
 If you believe I’ve exposed personal or sensitive information irronously please contact robert[at]douglasmining.com immedatly.
+
+For a dark mode reading expirance I recommend using [dark reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh?pli=1)
+![dark reader](/image.png)
