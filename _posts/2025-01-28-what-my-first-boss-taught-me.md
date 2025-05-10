@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  My first boss taught me everything, by doing nothing
+title:  My first boss
 date:   2025-01-28 00:00:00 +0000
 categories: [business]
 comments: false

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Is an optional machine who can take you places you can't optional once you're there?"
+title:  "Optional Machines"
 date:   2025-05-07 00:00:00 +0000
 categories: [sailing, future]
 comments: false
@@ -15,3 +15,5 @@ And yet, this is the paradox: our machines can increasingly do what we can’t. 
 There will be a moment—soon—where the human body becomes a bottleneck, and the machine body becomes the baseline. When the capabilities of machines and the consciousness of man no longer need to coexist in the same vessel. Maybe machines will carry our minds forward. Or maybe they’ll evolve past the need for us entirely.
 
 We are approaching the inversion point.
+
+Is an optional machine who can take you places you can't optional once you're there?
