@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Noise We Pretend to Like
+title:  The noise we pretend to like
 date:   2024-05-02 00:00:00 +0000
 categories: [tools, future, business]
 comments: false

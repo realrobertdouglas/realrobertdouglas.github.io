@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Rooms of the Mind
+title:  Rooms of the mind
 date:   2024-05-05 00:00:00 +0000
 categories: [tools, future, business]
 comments: false

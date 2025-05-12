@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Last Subcultures
+title:  The last subcultures
 date:   2024-05-04 00:00:00 +0000
 categories: [tools, future, business]
 comments: false

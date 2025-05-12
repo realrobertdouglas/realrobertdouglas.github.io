@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Into the gulf stream, a calculated misadventure
+title:  Into the gulf stream
 date:   2024-04-12 00:00:00 +0000
 categories: [sailing]
 comments: false
@@ -8,7 +8,7 @@ comments: false
 
 ### Or, How I Forgot That “Safe” Doesn’t Always Feel That Way
 
-To maximize our time at the Bimini Islands, I planned a night sail across the Gulf Stream from Fort Lauderdale—a 13-hour crossing that I knew well. I wasn’t trying to impress anyone. I was simply making the most efficient use of our trip. I had checked the forecasts. A two-meter swell was rolling, but that was within my comfort zone. It usually meant good sailing and good sleep, especially for passengers.
+To maximize our time at the Bimini Islands, I planned a night sail across the Gulf Stream from Fort Lauderdale—a 13-hour crossing that I knew well. A swift trip even if translantic in nature. I wasn’t trying to impress anyone. I was simply making the most efficient use of our trip. I had checked the forecasts. A two-meter swell was rolling, but that was within my comfort zone. It usually meant good sailing and good sleep, especially for passengers.
 
 What I didn’t account for—what I should have thought through more carefully—was how it would feel to someone with no experience on a large vessel in the open sea.
 

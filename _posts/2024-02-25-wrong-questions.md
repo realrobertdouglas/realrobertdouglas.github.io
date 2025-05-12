@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Wrong Questions
+title:  Wrong questions
 date:   24-02-25 00:00:00 +0000
 categories: [business]
 comments: false

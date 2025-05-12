@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Catahoula Cut
+title:  Catahoula cut
 date:   24-02-17 00:00:00 +0000
 categories: [business]
 comments: false

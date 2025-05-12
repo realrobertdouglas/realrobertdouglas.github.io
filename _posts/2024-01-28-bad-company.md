@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Bad Company
+title:  Bad company
 date:   24-01-22 00:00:00 +0000
 categories: [sailing]
 comments: false
