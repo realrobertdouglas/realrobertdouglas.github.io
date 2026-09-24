@@ -35,3 +35,5 @@ compress_html:
   endings: all
   ignore:
     envs: ['development']
+# UTC matches the GitHub Pages build, so post dates and URLs are the same locally and live
+timezone: UTC

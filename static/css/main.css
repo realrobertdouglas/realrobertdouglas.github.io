@@ -151,6 +151,64 @@ div.col-sm-3 div.profile-about {
   max-width: 100%
 }
 
+/* Dark mode: switched on from 8pm to 8am by the script in default.html */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+html[data-theme="dark"] body {
+  background: #16181a;
+  color: #b8b8b8;
+}
+html[data-theme="dark"] .main-layout {
+  background: #1e2124;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3 {
+  color: #e0e0e0;
+}
+html[data-theme="dark"] a,
+html[data-theme="dark"] a:link,
+html[data-theme="dark"] a:active {
+  color: #5cc474;
+}
+html[data-theme="dark"] a:hover {
+  color: #8fd9a0;
+}
+html[data-theme="dark"] span.time,
+html[data-theme="dark"] span.categories,
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .search__result-date {
+  color: #7d7d7d;
+}
+html[data-theme="dark"] div.col-sm-3,
+html[data-theme="dark"] div.col-sm-3 div.profile-about {
+  color: #9a9a9a;
+}
+html[data-theme="dark"] div.col-sm-3 strong {
+  color: #d0d0d0;
+}
+html[data-theme="dark"] hr,
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .share-page,
+html[data-theme="dark"] .search__results > li {
+  border-color: #2e3236;
+}
+html[data-theme="dark"] div.content pre {
+  background: #111315;
+}
+html[data-theme="dark"] .form-control {
+  background: #16181a;
+  border-color: #3a3f44;
+  color: #e0e0e0;
+}
+html[data-theme="dark"] .globe {
+  border-color: #3fa757;
+}
+html[data-theme="dark"] .globe [stroke] {
+  stroke: #3fa757;
+}
+
 /* Responsive Conditional */
 @media (min-width: 1024px) {
   .fixed-condition {
