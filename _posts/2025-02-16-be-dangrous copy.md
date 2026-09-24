@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Be dangrous
+title:  Be dangerous
 date:   2025-02-16
 categories: [business]
 comments: false
