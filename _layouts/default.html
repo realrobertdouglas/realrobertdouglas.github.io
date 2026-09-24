@@ -7,13 +7,29 @@ layout: compress
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <script>
-      /* Dark from 8pm to 8am, by the reader's own clock. Runs before paint, then rechecks each minute. */
+      /* Theme: "auto" (the default) is dark from 8pm to 8am by the reader's own clock; "light" or "dark",
+         chosen on the About page, is remembered in this browser. Runs before paint, then rechecks each minute. */
       (function () {
+        var KEY = 'theme';
+        function preference() {
+          try { return localStorage.getItem(KEY) || 'auto'; } catch (e) { return 'auto'; }
+        }
         function applyTheme() {
+          var pref = preference();
           var hour = new Date().getHours();
-          var dark = hour >= 20 || hour < 8;
+          var dark = pref === 'dark' || (pref === 'auto' && (hour >= 20 || hour < 8));
           document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
         }
+        window.siteTheme = {
+          get: preference,
+          set: function (pref) {
+            try {
+              if (pref === 'auto') localStorage.removeItem(KEY);
+              else localStorage.setItem(KEY, pref);
+            } catch (e) {}
+            applyTheme();
+          }
+        };
         applyTheme();
         setInterval(applyTheme, 60000);
       })();
