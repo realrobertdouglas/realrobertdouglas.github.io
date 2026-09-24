@@ -1,10 +1,11 @@
 @keyframes rotation {
-  from {
-    transform: translateX(0);
-  }
-
+  /* the map slides right, so the Earth turns eastward */
   from {
     transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -12,17 +13,17 @@
   border: 2px solid #228B22;
   border-radius: 50%;
   height: 140px;
-  left: 50%;
   overflow: hidden;
   position: relative;
-  top: 0%;
-  transform: translate(-50%, -50%);
   width: 140px;
-  margin-top: 0px;
-  margin-bottom: -80px;
+  margin: 0 auto 16px; /* centred over the title, in the same block */
   /* all glory to the wiggles */
 }
 
 .anim {
-  animation: rotation 10s linear 0s infinite;
+  animation: rotation 40s linear 0s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim { animation: none; }
 }
