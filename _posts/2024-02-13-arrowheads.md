@@ -4,11 +4,8 @@ title:  Arrowheads
 date:   24-02-13 00:00:00 +0000
 categories: [business]
 comments: false
+subtitle: "Arrowheads on My Land: Clues from a Prehistoric Past"
 ---
-
-### Arrowheads
-
-Arrowheads on My Land: Clues from a Prehistoric Past
 
 Lately, I’ve been finding arrowheads scattered across my land—some whole, others chipped or buried just beneath the surface. At first, I saw them as curious relics. But the more I found, the more I realized: this wasn’t random. This land was once part of a prehistoric habitation or hunting site.
 

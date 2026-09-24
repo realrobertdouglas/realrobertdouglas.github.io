@@ -4,9 +4,8 @@ title:  Rooms of the mind
 date:   2024-05-05 00:00:00 +0000
 categories: [tools, future, business]
 comments: false
+subtitle: "Why Navy SEALs Aren’t the Only Ones Living Double Lives"
 ---
-
-### Why Navy SEALs Aren’t the Only Ones Living Double Lives
 
 Walk into any room, and you become a slightly different version of yourself. At work, you’re collected. With friends, looser. At home, maybe quiet, maybe loud—but definitely different. We all wear masks, not because we’re fake, but because we’re adaptive.
 

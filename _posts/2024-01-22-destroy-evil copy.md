@@ -4,9 +4,8 @@ title:  Destroy evil
 date:   24-01-22 00:00:00 +0000
 categories: [sailing]
 comments: false
+subtitle: "Do Not Make Peace With Evil — Destroy It"
 ---
-
-Do Not Make Peace With Evil — Destroy It
 
 And Why That Made Me Unwelcome in Some Communities
 

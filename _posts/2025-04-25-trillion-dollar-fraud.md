@@ -6,8 +6,6 @@ categories: [business]
 comments: false
 ---
 
-### Trillion-Dollar Fraud
-
 Anyone can type numbers into a spreadsheet. That doesn’t make it real. But someone did—big ones. Numbers that could rewrite national debt sheets. Numbers that shouldn’t have existed. And one time, those numbers landed on my desk.
 
 I won’t share names or specifics to protect those involved (and myself), but here’s the truth: a group was paying other groups to integrate their bank settlement systems. My team had a reputation for deploying financial instruments, so they came knocking.

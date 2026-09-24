@@ -4,9 +4,9 @@ title:  The last subcultures
 date:   2024-05-04 00:00:00 +0000
 categories: [tools, future, business]
 comments: false
+subtitle: "What Survives When Everything Else Gets Marketed"
 ---
 
-### What Survives When Everything Else Gets Marketed
 There are still subcultures.
 You just don’t see them anymore—not because they’re gone, but because they’re hidden on purpose.
 

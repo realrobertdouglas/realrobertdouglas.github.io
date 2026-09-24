@@ -4,9 +4,8 @@ title:  I would write because I didn't understand
 date:   2025-02-11
 categories: []
 comments: false
+subtitle: "I Used to Write Things Down I Didn’t Understand"
 ---
-
-I Used to Write Things Down I Didn’t Understand
 
 When I was younger, I had a habit.
 

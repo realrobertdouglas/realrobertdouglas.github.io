@@ -4,9 +4,8 @@ title:  Empty conversations
 date:   2025-02-17
 categories: [business]
 comments: false
+subtitle: "When the Conversation Goes Blank"
 ---
-
-When the Conversation Goes Blank
 
 I’ll be in the middle of a good conversation—at least, I think it’s good. We’re talking about systems, ideas, strategy. It’s fluid, intelligent, insightful. The person across from me is keeping up, maybe even adding something valuable. Then I bring up something that veers just slightly into the practical—something real.
 

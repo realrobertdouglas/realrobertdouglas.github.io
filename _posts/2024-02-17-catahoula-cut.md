@@ -6,8 +6,6 @@ categories: [business]
 comments: false
 ---
 
-### The Catahoula Cut
-
 A key part of this story lies underground.
 
 Running beneath much of East and Central Texas is a geologic layer called the Catahoula Formation, or what some call the Catahoula cut. It’s rich in silica-bearing stone like chert and chalcedony, which ancient people quarried and shaped into cutting tools, blades, and projectile points.
