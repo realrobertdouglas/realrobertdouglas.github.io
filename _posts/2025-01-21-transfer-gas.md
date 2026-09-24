@@ -4,9 +4,8 @@ title:  Transfer gas
 date:   2025-01-21 00:00:00 +0000
 categories: [business, tools]
 comments: false
+subtitle: "Tanks, Transfers, and Timing: Scuba Lessons for Life"
 ---
-
-Tanks, Transfers, and Timing: Scuba Lessons for Life
 
 In technical scuba diving, the deeper you go, the more complex your gas strategy needs to be. Too much oxygen too deep and you go into seizures, too little too shallow and your motor functions collapse with no power to switch gasses. You can’t just carry one tank and hope for the best. You need stage tanks. Transfer gas. Deco gas. You need a plan.
 

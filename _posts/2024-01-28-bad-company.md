@@ -4,9 +4,8 @@ title:  Bad company
 date:   24-01-22 00:00:00 +0000
 categories: [sailing]
 comments: false
+subtitle: "Why Your Loneliness Might Be You"
 ---
-
-Why Your Loneliness Might Be You
 
 “If you are lonely when you are alone, you are in bad company.” – Jean-Paul Sartre
 

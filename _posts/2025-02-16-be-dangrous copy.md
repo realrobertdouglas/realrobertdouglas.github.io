@@ -4,9 +4,8 @@ title:  Be dangerous
 date:   2025-02-16
 categories: [business]
 comments: false
+subtitle: "Dangerous Doesn’t Mean Reckless"
 ---
-
-### Dangerous Doesn’t Mean Reckless
 
 Just because an activity is dangerous doesn’t mean you have to do it in a dangerous manner.
 

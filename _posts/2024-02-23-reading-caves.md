@@ -6,8 +6,6 @@ categories: [business]
 comments: false
 ---
 
-### Reading Caves
-
 There’s a kind of reading that doesn’t use words. It’s the kind you do with your fingertips and your fin tips, gliding just above a limestone floor that might suddenly disappear into shadow.
 Cave diving teaches you to read land like a detective reads a crime scene. And the deeper you go—into sinkholes, through flooded crevices, over collapsed columns—the more fluent you become in a strange and silent language carved by pressure, water, and time.
 

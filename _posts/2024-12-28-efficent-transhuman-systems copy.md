@@ -4,9 +4,8 @@ title:  Efficient transhuman systems
 date:   2024-12-28 00:00:00 +0000
 categories: [tools, future]
 comments: false
+subtitle: "How is your autonomy? Are you the controller—or the controlled?"
 ---
-
-## How is your autonomy? Are you the controller—or the controlled?
 
 Does your computer work for you, or do you work for it?
 

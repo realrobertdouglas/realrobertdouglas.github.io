@@ -58,6 +58,17 @@ a:hover {
   font-size: 20px;
 }
 
+/* Post header: an optional subtitle (front matter `subtitle:`) sits under the title */
+.post-subtitle {
+  margin: -4px 0 8px;
+  font-size: 19px;
+  line-height: 1.35;
+  color: #8c8c8c;
+}
+html[data-theme="dark"] .post-subtitle {
+  color: #9a9a9a;
+}
+
 /* Content */
 div.content pre {
   background: #333333;

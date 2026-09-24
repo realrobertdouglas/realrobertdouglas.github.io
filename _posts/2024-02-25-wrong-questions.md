@@ -4,9 +4,8 @@ title:  Wrong questions
 date:   24-02-25 00:00:00 +0000
 categories: [business]
 comments: false
+subtitle: "The Art of Asking the “Wrong” Question"
 ---
-
-### The Art of Asking the “Wrong” Question
 
 There’s a subtle power in asking a question you already know the answer to.
 
