@@ -1,5 +1,8 @@
 /* Site search: the box in the sidebar and its results (script: static/js/search.js) */
 
+.search[hidden] {
+  display: none;
+}
 .search .search__input {
   height: 32px;
   padding: 4px 10px;

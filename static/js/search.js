@@ -3,12 +3,14 @@
     Every word must match, in any order, at the start of a word ("star" finds "stars", "art" does not find "start").
     Title matches rank above body matches; words of 4+ letters also match with one typo ("dangrous" finds "dangerous").
     Keys: "/" jumps to the box, arrows move through results, Enter opens one, Escape clears.
+    If the index can't be reached the whole box is hidden rather than left looking broken.
 */
 (function () {
+  var box = document.getElementById('js-search');
   var input = document.getElementById('js-search__input');
   var list = document.getElementById('js-search__results');
   var status = document.getElementById('js-search__status');
-  if (!input || !list || !status) return;
+  if (!box || !input || !list || !status) return;
 
   var MAX_RESULTS = 10;
   var SNIPPET_BEFORE = 50;
@@ -23,7 +25,10 @@
   function load() {
     if (!loading) {
       loading = fetch('/search.json')
-        .then(function (response) { return response.json(); })
+        .then(function (response) {
+          if (!response.ok) throw new Error('search index ' + response.status);
+          return response.json();
+        })
         .then(function (data) {
           posts = data.map(function (post) {
             post.titleLc = post.title.toLowerCase();
@@ -32,12 +37,22 @@
             return post;
           });
         })
-        .catch(function () {
-          loading = null;
-          status.textContent = 'Search is unavailable right now.';
-        });
+        .catch(hideSearch);
     }
     return loading;
+  }
+
+  function hideSearch() {
+    box.hidden = true;
+    if (document.activeElement === input) input.blur();
+  }
+
+  // A header-only request, so a page whose index is missing hides the box up front
+  // without every visitor downloading the index itself.
+  function checkAvailable() {
+    fetch('/search.json', { method: 'HEAD' })
+      .then(function (response) { if (!response.ok) hideSearch(); })
+      .catch(hideSearch);
   }
 
   function escapeHtml(str) {
@@ -213,6 +228,9 @@
     setActive(-1);
   }
 
+  if (window.requestIdleCallback) requestIdleCallback(checkAvailable, { timeout: 3000 });
+  else setTimeout(checkAvailable, 1000);
+
   input.addEventListener('focus', load);
   input.addEventListener('input', function () {
     load().then(run);
@@ -239,7 +257,7 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey || box.hidden) return;
     var target = e.target;
     if (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
     e.preventDefault();
