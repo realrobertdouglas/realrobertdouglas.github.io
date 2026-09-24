@@ -246,3 +246,78 @@ html[data-theme="dark"] .search .search__input:focus {
     margin-top: 30px;
   }
 }
+
+/* Appearance toggle on the About page (script: static/js/theme-toggle.js) */
+.theme-toggle {
+  margin: 30px 0 10px;
+  padding: 0;
+  border: 0;
+}
+.theme-toggle[hidden] {
+  display: none;
+}
+.theme-toggle legend {
+  margin-bottom: 8px;
+  border: 0;
+  font-size: 13px;
+  color: #999;
+}
+.theme-toggle__options {
+  display: flex;
+  flex-wrap: wrap;
+}
+.theme-toggle label {
+  margin: 0 -1px 0 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.theme-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.theme-toggle span {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid #d8d8d4;
+  font-size: 14px;
+  color: #666;
+}
+.theme-toggle label:first-of-type span {
+  border-radius: 4px 0 0 4px;
+}
+.theme-toggle label:last-of-type span {
+  border-radius: 0 4px 4px 0;
+}
+.theme-toggle small {
+  font-size: 11px;
+  color: #999;
+}
+.theme-toggle input:checked + span {
+  position: relative;
+  border-color: #2d7f43;
+  background: #2d7f43;
+  color: #fff;
+}
+.theme-toggle input:checked + span small {
+  color: #d6ecdb;
+}
+.theme-toggle input:focus-visible + span {
+  outline: 2px solid #2d7f43;
+  outline-offset: 2px;
+}
+html[data-theme="dark"] .theme-toggle span {
+  border-color: #3a3f44;
+  color: #b8b8b8;
+}
+html[data-theme="dark"] .theme-toggle input:checked + span {
+  border-color: #5cc474;
+  background: #5cc474;
+  color: #16181a;
+}
+html[data-theme="dark"] .theme-toggle input:checked + span small {
+  color: #1e3a26;
+}
+html[data-theme="dark"] .theme-toggle input:focus-visible + span {
+  outline-color: #5cc474;
+}
