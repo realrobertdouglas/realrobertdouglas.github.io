@@ -25,6 +25,12 @@
   animation: rotation 40s linear 0s infinite;
 }
 
+/* The map always takes the ring's colour, whatever stroke the markup carries
+   (a cached older page had it fixed at #228B22, leaving a dark map in a bright ring) */
+.globe svg path {
+  stroke: currentColor;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .anim { animation: none; }
 }
