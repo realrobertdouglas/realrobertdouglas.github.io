@@ -6,6 +6,18 @@ layout: compress
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script>
+      /* Dark from 8pm to 8am, by the reader's own clock. Runs before paint, then rechecks each minute. */
+      (function () {
+        function applyTheme() {
+          var hour = new Date().getHours();
+          var dark = hour >= 20 || hour < 8;
+          document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        }
+        applyTheme();
+        setInterval(applyTheme, 60000);
+      })();
+    </script>
     <link rel="stylesheet" href="/static/css/publish_rotating_earth.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/static/img/favicon.ico" />
@@ -130,7 +142,7 @@ layout: compress
           </div>
           <!-- Social icons removed as requested -->
           <div class="search" id="js-search">
-            <input type="text" placeholder="seach site by keyword here" class="search__input form-control" id="js-search__input">
+            <input type="text" placeholder="search site by keyword here" class="search__input form-control" id="js-search__input">
             <ul class="search__results" id="js-search__results"></ul>
           </div>
           <!-- Navigation section removed as requested -->
