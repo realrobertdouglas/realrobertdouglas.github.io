@@ -10,7 +10,8 @@
 }
 
 .globe {
-  border: 2px solid #228B22;
+  color: #2d7f43; /* the ring and the map both follow this */
+  border: 2px solid currentColor;
   border-radius: 50%;
   height: 140px;
   overflow: hidden;
