@@ -1,0 +1,100 @@
+/* Site search: the box in the sidebar and its results (script: static/js/search.js) */
+
+.search[hidden] {
+  display: none;
+}
+.search .search__input {
+  height: 32px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  border-color: #e3e3e0;
+  box-shadow: none;
+}
+.search .search__input:focus {
+  border-color: #2d7f43;
+}
+.search__status {
+  margin: 6px 2px 0;
+  font-size: 11px;
+  color: #999;
+}
+.search__status:empty {
+  display: none;
+}
+.search__results {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  text-align: left;
+}
+.search__results[hidden] {
+  display: none;
+}
+.search__result a {
+  display: block;
+  padding: 8px 8px;
+  border-top: 1px solid #eeeeec;
+  color: #777;
+  text-decoration: none;
+}
+.search__result a:hover,
+.search__result.is-active a {
+  background: #eef5ef;
+  color: #777;
+  text-decoration: none;
+}
+.search__result-title {
+  display: block;
+  font-size: 14px;
+  color: #2d7f43;
+}
+.search__result-date {
+  display: block;
+  font-size: 11px;
+  color: #999;
+}
+.search__result-snippet {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.search__results mark {
+  padding: 0 1px;
+  border-radius: 2px;
+  background: #d6ecdb;
+  color: inherit;
+}
+
+/* On wide screens the sidebar is fixed, so long result lists scroll inside it */
+@media (min-width: 1024px) {
+  .search__results {
+    max-height: max(160px, calc(100vh - 400px));
+    overflow-y: auto;
+  }
+}
+
+/* Dark mode */
+html[data-theme="dark"] .search .search__input:focus {
+  border-color: #5cc474;
+}
+html[data-theme="dark"] .search__result a {
+  border-color: #2e3236;
+  color: #9a9a9a;
+}
+html[data-theme="dark"] .search__result a:hover,
+html[data-theme="dark"] .search__result.is-active a {
+  background: #23282c;
+  color: #9a9a9a;
+}
+html[data-theme="dark"] .search__result-title {
+  color: #5cc474;
+}
+html[data-theme="dark"] .search__result-date,
+html[data-theme="dark"] .search__status {
+  color: #7d7d7d;
+}
+html[data-theme="dark"] .search__results mark {
+  background: #2f4a36;
+}
