@@ -1,8 +1,8 @@
-title: The Blog of Robert Douglas
+title: Douglas Labs
 description: Build before it is too late. 
 author: Douglas Labs
 github: https://github.com/realrobertdouglas
-about: "Resources for Builders, <a href='/new-post/' style='color:inherit;text-decoration:none'>Thinkers</a>, and Doers"
+tagline: Life is short, art is long.
 disqus_shortname: ""
 google_analytics: UA-170356546-1
 
@@ -18,7 +18,7 @@ share:
   fb_appid: ""
 
 urls:
-    - text: Life is short, art is long.
+    - text: About
       url: /about/
 
 
