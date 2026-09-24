@@ -17,12 +17,9 @@ share:
   twitter_username:
   fb_appid: ""
 
-urls:
-    - text: About
-      url: /about/
 
 
-url: "https://realrobertdouglas.github.io"
+url: "https://douglas.lol"
 baseurl: ""
 
 markdown: kramdown
