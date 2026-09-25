@@ -7,12 +7,12 @@ comments: false
 ---
 
 There’s a kind of reading that doesn’t use words. It’s the kind you do with your fingertips and your fin tips, gliding just above a limestone floor that might suddenly disappear into shadow.
-Cave diving teaches you to read land like a detective reads a crime scene. And the deeper you go—into sinkholes, through flooded crevices, over collapsed columns—the more fluent you become in a strange and silent language carved by pressure, water, and time.
+Cave diving teaches you to read land like a detective reads a crime scene. And the deeper you go, into sinkholes, through flooded crevices, over collapsed columns, the more fluent you become in a strange and silent language carved by pressure, water, and time.
 
 It starts with shapes.
 
 A scalloped wall means water once moved fast here. A smooth, bulging dome could be the ceiling of a chamber still filled with trapped air behind a choke. Tall, slender pillars tell stories of stillness, of slow drips and centuries undisturbed. Sand piled against a slope means something shifted; maybe a landslide upstream, or a ceiling collapse farther down the system. Every ripple, every grain pattern, holds a clue.
-When you’re sleuthing around sinkholes, you're not just looking for caves- you’re reading the signs that one might be near. The way the light bends through tannic layers. The sudden drop-off where vegetation stops and bare rock begins. The thermocline that hits like a shiver, whispering there's more below.
+When you’re sleuthing around sinkholes, you're not just looking for caves, you’re reading the signs that one might be near. The way the light bends through tannic layers. The sudden drop-off where vegetation stops and bare rock begins. The thermocline that hits like a shiver, whispering there's more below.
 
 Some of the best leads aren’t the obvious ones. A ledge with a strange notch. A boulder split clean in two. A current that shouldn’t be there, tugging faintly but persistently toward a wall that looks solid until you’re close enough to see the dark sliver running along its base.
 
@@ -22,7 +22,7 @@ And sometimes, you chase ghosts.
 
 An air pocket that shouldn't be there. A breeze of cold water where there shouldn’t be flow. A cluster of crayfish facing the same direction, as if pulled by something you can’t yet see. You sleuth, you guess, and you go.
 
-Because caves don’t hand out maps. You earn them—one clue at a time.
+Because caves don’t hand out maps. You earn them, one clue at a time.
 
 When I ask someone for tips they usually tell me something that is non actionable like “Scalloped surfaces indicate high flow” and I’m thinking, no shit shirlock I’m either trying to hang onto them to move over that flow or am being pused out by it. Here are some real tips that I’ve leaned:
 
