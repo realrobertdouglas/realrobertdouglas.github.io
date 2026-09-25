@@ -1,6 +1,6 @@
 {%- comment -%}
   Reads the element symbols out of a plain-text formula, in order and without repeats: C2H6O gives C, H, O.
-  Sets formula_elements to all of them, and formula_shown to the ones whose pages carry information.
+  Sets formula_elements to all of them, and formula_shown to the ones that match an element page.
 {%- endcomment -%}
 {%- assign fe_symbols = '' -%}
 {%- assign fe_current = '' -%}
@@ -23,7 +23,7 @@
 {%- assign formula_shown = '' | split: '' -%}
 {%- for fe_symbol in formula_elements -%}
   {%- assign fe_element = site.elements | where: 'symbol', fe_symbol | first -%}
-  {%- if fe_element and fe_element.spooky != true -%}
+  {%- if fe_element -%}
     {%- assign formula_shown = formula_shown | push: fe_element -%}
   {%- endif -%}
 {%- endfor -%}

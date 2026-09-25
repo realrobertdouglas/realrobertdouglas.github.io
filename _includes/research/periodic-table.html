@@ -7,8 +7,7 @@
   <div class="pt" id="js-pt">
     <div class="pt-look" id="js-pt-look" aria-live="polite" hidden><div class="pt-look__in"></div></div>
     {%- for el in pt_elements -%}
-      <a class="pt-cell {% if el.spooky %}pt-plain{% else %}pt-{{ el.category | slugify }}{% endif %}" href="{{ el.url }}" title="{{ el.title }}" style="grid-column:{{ el.column }};grid-row:{{ el.row }}" data-symbol="{{ el.symbol }}" data-name="{{ el.title }}" data-number="{{ el.number }}"
-        {%- unless el.spooky %} data-category="{{ el.category }}" data-place="period {{ el.period }}{% if el.group %}, group {{ el.group }}{% endif %}" data-isotopes="{% for isotope in el.isotopes %}{{ isotope.mass_number }}:{{ isotope.abundance }}{% unless forloop.last %},{% endunless %}{% endfor %}"{% endunless %}>
+      <a class="pt-cell pt-{{ el.category | slugify }}" href="{{ el.url }}" title="{{ el.title }}" style="grid-column:{{ el.column }};grid-row:{{ el.row }}" data-symbol="{{ el.symbol }}" data-name="{{ el.title }}" data-number="{{ el.number }}" data-category="{{ el.category }}" data-place="period {{ el.period }}{% if el.group %}, group {{ el.group }}{% endif %}" data-isotopes="{% for isotope in el.isotopes %}{{ isotope.mass_number }}:{{ isotope.abundance }}{% unless forloop.last %},{% endunless %}{% endfor %}">
         <span class="pt-num">{{ el.number }}</span><span class="pt-sym">{{ el.symbol }}</span><span class="pt-name">{{ el.title }}</span>
       </a>
     {%- endfor -%}
@@ -17,7 +16,7 @@
   </div>
 </div>
 <ul class="pt-legend">
-  {%- assign pt_categories = 'Alkali metal,Alkaline earth metal,Transition metal,Post-transition metal,Metalloid,Reactive nonmetal,Halogen,Noble gas,Lanthanide' | split: ',' -%}
+  {%- assign pt_categories = 'Alkali metal,Alkaline earth metal,Transition metal,Post-transition metal,Metalloid,Reactive nonmetal,Halogen,Noble gas,Lanthanide,Actinide' | split: ',' -%}
   {%- for category in pt_categories -%}
     <li><span class="pt-swatch pt-{{ category | slugify }}"></span>{{ category }}</li>
   {%- endfor -%}

@@ -8,20 +8,18 @@ layout: default
     <span class="rs-badge" aria-hidden="true">{{ page.symbol }}</span>
     <div>
       <h1 class="post-title">{{ page.title }}</h1>
-      <p class="post-subtitle">{{ page.symbol }} · atomic number {{ page.number }}{% unless page.spooky %} · {{ page.category }} · period {{ page.period }}{% if page.group %}, group {{ page.group }}{% endif %}{% endunless %}</p>
+      <p class="post-subtitle">{{ page.symbol }} · atomic number {{ page.number }} · {{ page.category }} · period {{ page.period }}{% if page.group %}, group {{ page.group }}{% endif %}</p>
     </div>
   </header>
 
-  {% if page.spooky %}
-    {% if notes != '' %}<div class="post-content">{{ content }}</div>{% endif %}
-  {% else %}
-    <section class="rs-section">
-      <h2>Notes</h2>
-      {% if notes != '' %}<div class="post-content">{{ content }}</div>{% else %}<p class="rs-empty">Nothing written yet.</p>{% endif %}
-    </section>
+  <section class="rs-section">
+    <h2>Notes</h2>
+    {% if notes != '' %}<div class="post-content">{{ content }}</div>{% else %}<p class="rs-empty">Nothing written yet.</p>{% endif %}
+  </section>
 
-    <section class="rs-section">
-      <h2>Natural isotopes</h2>
+  <section class="rs-section">
+    <h2>Natural isotopes</h2>
+    {% if page.isotopes.size > 0 %}
       <div class="rs-scroll">
         <table class="rs-table">
           <thead>
@@ -40,28 +38,30 @@ layout: default
         </table>
       </div>
       <p class="rs-source">Abundance is the mole fraction of the element found as that isotope on Earth; digits in parentheses are the uncertainty in the last digits. Masses and abundances from NIST, <a href="https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">Atomic Weights and Isotopic Compositions</a> (J. S. Coursey, D. J. Schwab, J. J. Tsai and R. A. Dragoset, National Institute of Standards and Technology).</p>
-    </section>
+    {% else %}
+      <p class="rs-empty">No natural isotope with a defined abundance in NIST's <a href="https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">Atomic Weights and Isotopic Compositions</a>.</p>
+    {% endif %}
+  </section>
 
-    {% assign molecules = site.molecules | sort: 'title' %}
-    {% assign compounds = site.compounds | sort: 'title' %}
-    {% for group in (1..2) %}
-      {% if group == 1 %}{% assign docs = molecules %}{% else %}{% assign docs = compounds %}{% endif %}
-      <section class="rs-section">
-        <h2>{% if group == 1 %}Molecules{% else %}Compounds{% endif %}</h2>
-        {% assign found = 0 %}
-        <ul class="rs-in">
-          {% for doc in docs %}
-            {% include research/formula-elements.html formula=doc.formula %}
-            {% if formula_elements contains page.symbol %}
-              {% assign found = found | plus: 1 %}
-              <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-        {% if found == 0 %}<p class="rs-empty">None listed yet.</p>{% endif %}
-      </section>
-    {% endfor %}
-  {% endif %}
+  {% assign molecules = site.molecules | sort: 'title' %}
+  {% assign compounds = site.compounds | sort: 'title' %}
+  {% for group in (1..2) %}
+    {% if group == 1 %}{% assign docs = molecules %}{% else %}{% assign docs = compounds %}{% endif %}
+    <section class="rs-section">
+      <h2>{% if group == 1 %}Molecules{% else %}Compounds{% endif %}</h2>
+      {% assign found = 0 %}
+      <ul class="rs-in">
+        {% for doc in docs %}
+          {% include research/formula-elements.html formula=doc.formula %}
+          {% if formula_elements contains page.symbol %}
+            {% assign found = found | plus: 1 %}
+            <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% if found == 0 %}<p class="rs-empty">None listed yet.</p>{% endif %}
+    </section>
+  {% endfor %}
 
   {% assign prev_number = page.number | minus: 1 %}
   {% assign next_number = page.number | plus: 1 %}
