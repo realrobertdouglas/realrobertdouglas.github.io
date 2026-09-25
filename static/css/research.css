@@ -257,7 +257,7 @@ html[data-theme="dark"] .rs-page {
   grid-column: 3 / 13;
   grid-row: 1 / 4;
   position: relative;
-  margin: 0 6px 6px;
+  margin: 0 4px 4px;
 }
 .pt-look[hidden] {
   display: none;
@@ -266,14 +266,18 @@ html[data-theme="dark"] .rs-page {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 6px 10px;
+  gap: 10px;
+  padding: 5px 8px;
   overflow: auto;
   border: 1px solid var(--rs-line);
   border-radius: 6px;
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: 12px;
+  line-height: 1.3;
+}
+/* Centered by auto margins, so a long quick look scrolls from its top instead of being cut off above */
+.pt-look__in > * {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .pt-look__in p {
   margin: 0;
@@ -285,14 +289,14 @@ html[data-theme="dark"] .rs-page {
 }
 .pt-look__sym {
   flex: none;
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--rs-accent);
   border-radius: 6px;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--rs-accent);
 }
@@ -301,7 +305,7 @@ html[data-theme="dark"] .rs-page {
   flex: 1;
 }
 .pt-look__title strong {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--pt-ink);
 }
