@@ -7,6 +7,7 @@
   --rs-ink: #333;
   --rs-match: rgba(45, 127, 67, .10);
   --rs-accent: #2d7f43;
+  --rs-bg: #fff;
   /* Periodic table: text, and a background per category */
   --pt-ink: #333;
   --pt-mute: #777;
@@ -28,6 +29,7 @@ html[data-theme="dark"] .rs-page {
   --rs-ink: #e0e0e0;
   --rs-match: rgba(92, 196, 116, .14);
   --rs-accent: #5cc474;
+  --rs-bg: #1e2124;
   --pt-ink: #e8e8e8;
   --pt-mute: #9a9a9a;
   --pt-alkali-metal: #4a3024;
@@ -314,6 +316,48 @@ html[data-theme="dark"] .rs-page {
 }
 .pt-look sup {
   font-size: 70%;
+}
+.pt-look__close {
+  display: none;
+}
+
+/* Table wider than the screen (set by the script): the quick look is a card pinned to the bottom of the
+   screen, shown only while an element is selected */
+.is-narrow .pt-look {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 20;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.is-narrow .pt-look:not(.is-open) {
+  display: none;
+}
+.is-narrow .pt-look__in {
+  position: static;
+  padding: 10px 36px 10px 12px;
+  background: var(--rs-bg);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.is-narrow .pt-look__close {
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--pt-mute);
+  cursor: pointer;
 }
 
 .pt-legend {
