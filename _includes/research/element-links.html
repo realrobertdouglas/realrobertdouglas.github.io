@@ -1,0 +1,5 @@
+{%- comment -%}Links to the elements in include.formula, by name, or by symbol with short=true.{%- endcomment -%}
+{%- include research/formula-elements.html formula=include.formula -%}
+{%- for el in formula_shown -%}
+  <a href="{{ el.url }}" title="{{ el.title }}">{% if include.short %}{{ el.symbol }}{% else %}{{ el.title }}{% endif %}</a>{% unless forloop.last %}{% if include.short %} {% else %}, {% endif %}{% endunless %}
+{%- endfor -%}

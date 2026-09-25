@@ -43,8 +43,8 @@ layout: compress
     <link rel="shortcut icon" href="/static/img/favicon.ico" />
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
     <meta name="author" content="{{ site.author }}" />
-    {% comment %}Description for search results and link previews: an explicit description, else the post's subtitle, else its opening paragraph.{% endcomment %}
-    {% assign meta_description = page.description | default: page.subtitle %}
+    {% comment %}Description for search results and link previews: an explicit description, else a research summary or the post's subtitle, else its opening paragraph.{% endcomment %}
+    {% assign meta_description = page.description | default: page.summary | default: page.subtitle %}
     {% unless meta_description %}{% if page.excerpt %}{% assign meta_description = page.excerpt | strip_html | normalize_whitespace | truncate: 160 %}{% endif %}{% endunless %}
     {% assign meta_description = meta_description | default: site.description | strip %}
     <meta name="description" content="{{ meta_description | escape }}" />
@@ -130,6 +130,7 @@ layout: compress
     <link rel="stylesheet" href="/static/css/search.css">
 
     <link rel="stylesheet" href="/static/css/main.css">
+    {% if page.research %}<link rel="stylesheet" href="/static/css/research.css">{% endif %}
 
     <noscript><style>.search { display: none; }</style></noscript>
   </head>
@@ -152,6 +153,7 @@ layout: compress
             <p class="search__status" id="js-search__status" aria-live="polite"></p>
             <ul class="search__results" id="js-search__results" role="listbox" aria-label="Search results" hidden></ul>
           </div>
+          <nav class="sidebar-nav" aria-label="Sections"><a href="/research/">Research</a></nav>
           {% unless page.hide_drop %}{% include secure-drop.html %}{% endunless %}
           <!-- Navigation section removed as requested -->
         </div>

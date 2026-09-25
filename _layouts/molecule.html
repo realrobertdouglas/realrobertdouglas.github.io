@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign notes = content | strip -%}
+<article class="post rs-page">
+  {% include research/crumbs.html elements=true %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-subtitle">Molecule · {% include research/formula.html formula=page.formula %}</p>
+  </header>
+
+  <section class="rs-section">
+    <h2>Elements</h2>
+    <p>{% include research/element-links.html formula=page.formula %}</p>
+  </section>
+
+  <section class="rs-section">
+    <h2>Isomers</h2>
+    {% if page.isomers.size == 1 %}<p class="rs-empty">{{ page.title }} has no other isomers.</p>{% endif %}
+    {% for isomer in page.isomers %}
+      <div class="rs-isomer">
+        <h3>{{ isomer.name }} {% include research/formula.html formula=isomer.structure %}</h3>
+        <p><span class="rs-label">How it's made:</span> {{ isomer.made }}</p>
+      </div>
+    {% endfor %}
+  </section>
+
+  {% if notes != '' %}
+    <section class="rs-section">
+      <h2>Notes</h2>
+      <div class="post-content">{{ content }}</div>
+    </section>
+  {% endif %}
+</article>

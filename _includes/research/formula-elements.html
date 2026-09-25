@@ -1,0 +1,29 @@
+{%- comment -%}
+  Reads the element symbols out of a plain-text formula, in order and without repeats: C2H6O gives C, H, O.
+  Sets formula_elements to all of them, and formula_shown to the ones whose pages carry information.
+{%- endcomment -%}
+{%- assign fe_symbols = '' -%}
+{%- assign fe_current = '' -%}
+{%- assign fe_chars = include.formula | split: '' -%}
+{%- for fe_char in fe_chars -%}
+  {%- assign fe_up = fe_char | upcase -%}
+  {%- assign fe_down = fe_char | downcase -%}
+  {%- if fe_up == fe_down -%}
+    {%- comment -%}A digit or bracket ends a symbol{%- endcomment -%}
+    {%- assign fe_symbols = fe_symbols | append: ' ' | append: fe_current -%}
+    {%- assign fe_current = '' -%}
+  {%- elsif fe_char == fe_up -%}
+    {%- assign fe_symbols = fe_symbols | append: ' ' | append: fe_current -%}
+    {%- assign fe_current = fe_char -%}
+  {%- else -%}
+    {%- assign fe_current = fe_current | append: fe_char -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign formula_elements = fe_symbols | append: ' ' | append: fe_current | split: ' ' | uniq -%}
+{%- assign formula_shown = '' | split: '' -%}
+{%- for fe_symbol in formula_elements -%}
+  {%- assign fe_element = site.elements | where: 'symbol', fe_symbol | first -%}
+  {%- if fe_element and fe_element.spooky != true -%}
+    {%- assign formula_shown = formula_shown | push: fe_element -%}
+  {%- endif -%}
+{%- endfor -%}

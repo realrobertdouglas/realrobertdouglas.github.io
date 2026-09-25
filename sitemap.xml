@@ -9,6 +9,21 @@ layout: null
   <url>
     <loc>{{ site.url }}/about/</loc>
   </url>
+  <url>
+    <loc>{{ site.url }}/research/</loc>
+  </url>
+  {% for project in site.research %}
+  <url>
+    <loc>{{ site.url }}{{ project.url }}</loc>
+    <lastmod>{{ project.updated | date_to_xmlschema }}</lastmod>
+  </url>
+  {% endfor %}
+  {% assign research_pages = site.elements | concat: site.molecules | concat: site.compounds %}
+  {% for doc in research_pages %}
+  <url>
+    <loc>{{ site.url }}{{ doc.url }}</loc>
+  </url>
+  {% endfor %}
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>

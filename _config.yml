@@ -8,7 +8,30 @@ disqus_shortname: ""
 enableTags: true
 tagarray: []
 
-collections: {}
+# Research: /research/ lists the projects in _research; the elements project draws on the other three.
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+  elements:
+    output: true
+    permalink: /research/elements/:name/
+  molecules:
+    output: true
+    permalink: /research/molecules/:name/
+  compounds:
+    output: true
+    permalink: /research/compounds/:name/
+
+defaults:
+  - scope: { path: "", type: research }
+    values: { layout: research, research: true }
+  - scope: { path: "", type: elements }
+    values: { layout: element, research: true }
+  - scope: { path: "", type: molecules }
+    values: { layout: molecule, research: true }
+  - scope: { path: "", type: compounds }
+    values: { layout: compound, research: true }
 
 social: []
 

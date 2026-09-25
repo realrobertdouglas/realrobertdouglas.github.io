@@ -1,0 +1,74 @@
+---
+layout: default
+---
+{%- assign notes = content | strip -%}
+<article class="post rs-page">
+  {% include research/crumbs.html elements=true %}
+  <header class="post-header rs-head">
+    <span class="rs-badge" aria-hidden="true">{{ page.symbol }}</span>
+    <div>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-subtitle">{{ page.symbol }} · atomic number {{ page.number }}{% unless page.spooky %} · {{ page.category }} · period {{ page.period }}{% if page.group %}, group {{ page.group }}{% endif %}{% endunless %}</p>
+    </div>
+  </header>
+
+  {% if page.spooky %}
+    {% if notes != '' %}<div class="post-content">{{ content }}</div>{% endif %}
+  {% else %}
+    <section class="rs-section">
+      <h2>Notes</h2>
+      {% if notes != '' %}<div class="post-content">{{ content }}</div>{% else %}<p class="rs-empty">Nothing written yet.</p>{% endif %}
+    </section>
+
+    <section class="rs-section">
+      <h2>Natural isotopes</h2>
+      <div class="rs-scroll">
+        <table class="rs-table">
+          <thead>
+            <tr><th scope="col">Isotope</th><th scope="col">Relative atomic mass</th><th scope="col">Abundance</th><th scope="col">How it's obtained</th></tr>
+          </thead>
+          <tbody>
+            {% for isotope in page.isotopes %}
+              <tr>
+                <th scope="row"><sup>{{ isotope.mass_number }}</sup>{{ page.symbol }}</th>
+                <td class="rs-num">{{ isotope.relative_atomic_mass }}</td>
+                <td class="rs-num">{{ isotope.abundance }}</td>
+                <td>{{ isotope.obtained | markdownify | remove: '<p>' | remove: '</p>' }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p class="rs-source">Abundance is the mole fraction of the element found as that isotope on Earth; digits in parentheses are the uncertainty in the last digits. Masses and abundances from NIST, <a href="https://www.nist.gov/pml/atomic-weights-and-isotopic-compositions-relative-atomic-masses">Atomic Weights and Isotopic Compositions</a> (J. S. Coursey, D. J. Schwab, J. J. Tsai and R. A. Dragoset, National Institute of Standards and Technology).</p>
+    </section>
+
+    {% assign molecules = site.molecules | sort: 'title' %}
+    {% assign compounds = site.compounds | sort: 'title' %}
+    {% for group in (1..2) %}
+      {% if group == 1 %}{% assign docs = molecules %}{% else %}{% assign docs = compounds %}{% endif %}
+      <section class="rs-section">
+        <h2>{% if group == 1 %}Molecules{% else %}Compounds{% endif %}</h2>
+        {% assign found = 0 %}
+        <ul class="rs-in">
+          {% for doc in docs %}
+            {% include research/formula-elements.html formula=doc.formula %}
+            {% if formula_elements contains page.symbol %}
+              {% assign found = found | plus: 1 %}
+              <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if found == 0 %}<p class="rs-empty">None listed yet.</p>{% endif %}
+      </section>
+    {% endfor %}
+  {% endif %}
+
+  {% assign prev_number = page.number | minus: 1 %}
+  {% assign next_number = page.number | plus: 1 %}
+  {% assign prev = site.elements | where: 'number', prev_number | first %}
+  {% assign next = site.elements | where: 'number', next_number | first %}
+  <nav class="PageNavigation" aria-label="Neighboring elements">
+    {% if prev %}<a class="prev" href="{{ prev.url }}">&laquo; {{ prev.number }} {{ prev.title }}</a>{% endif %}
+    {% if next %}<a class="next" href="{{ next.url }}">{{ next.title }} {{ next.number }} &raquo;</a>{% endif %}
+  </nav>
+</article>
