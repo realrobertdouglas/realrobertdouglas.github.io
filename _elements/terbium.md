@@ -10,5 +10,5 @@ isotopes:
   - mass_number: 159
     relative_atomic_mass: "158.9253547(19)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. A rare earth recovered from ion-adsorption clay in southern China and from bastnäsite; separated by solvent extraction."
 ---

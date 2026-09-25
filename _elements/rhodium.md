@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 103
     relative_atomic_mass: "102.9054980(26)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. A platinum-group by-product of Bushveld mining, with a tiny annual world output."
 ---

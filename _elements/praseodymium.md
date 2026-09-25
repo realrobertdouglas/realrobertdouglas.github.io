@@ -10,5 +10,5 @@ isotopes:
   - mass_number: 141
     relative_atomic_mass: "140.9076576(23)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. A light rare earth extracted with the others from bastnäsite (Bayan Obo, Mountain Pass) and monazite (Mount Weld), then separated by solvent extraction."
 ---

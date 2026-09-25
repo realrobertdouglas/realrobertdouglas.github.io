@@ -11,9 +11,9 @@ isotopes:
   - mass_number: 85
     relative_atomic_mass: "84.9117897379(54)"
     abundance: "0.7217(2)"
-    obtained: ""
+    obtained: "Comes with rubidium recovered from lepidolite tailings and from the cesium ore at the Tanco mine, Manitoba."
   - mass_number: 87
     relative_atomic_mass: "86.9091805310(60)"
     abundance: "0.2783(2)"
-    obtained: ""
+    obtained: "Comes with rubidium recovered from lepidolite tailings and from the cesium ore at the Tanco mine, Manitoba."
 ---

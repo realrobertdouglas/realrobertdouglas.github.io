@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 209
     relative_atomic_mass: "208.9803991(16)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only naturally abundant isotope. A by-product of lead and copper refining; China and Vietnam supply most of the world market."
 ---

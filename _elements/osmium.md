@@ -11,29 +11,29 @@ isotopes:
   - mass_number: 184
     relative_atomic_mass: "183.9524885(14)"
     abundance: "0.0002(1)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 186
     relative_atomic_mass: "185.9538350(16)"
     abundance: "0.0159(3)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 187
     relative_atomic_mass: "186.9557474(16)"
     abundance: "0.0196(2)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 188
     relative_atomic_mass: "187.9558352(16)"
     abundance: "0.1324(8)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 189
     relative_atomic_mass: "188.9581442(17)"
     abundance: "0.1615(5)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 190
     relative_atomic_mass: "189.9584437(17)"
     abundance: "0.2626(2)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
   - mass_number: 192
     relative_atomic_mass: "191.9614770(29)"
     abundance: "0.4078(19)"
-    obtained: ""
+    obtained: "A platinum-group by-product of Bushveld and Norilsk mining."
 ---

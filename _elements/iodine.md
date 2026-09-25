@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 127
     relative_atomic_mass: "126.9044719(39)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. Extracted from Chilean caliche brines and from oilfield brines in Japan and Oklahoma."
 ---

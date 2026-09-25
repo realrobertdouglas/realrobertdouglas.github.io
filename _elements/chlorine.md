@@ -11,9 +11,9 @@ isotopes:
   - mass_number: 35
     relative_atomic_mass: "34.968852682(37)"
     abundance: "0.7576(10)"
-    obtained: ""
+    obtained: "Comes with chlorine made by chlor-alkali electrolysis of NaCl brine."
   - mass_number: 37
     relative_atomic_mass: "36.965902602(55)"
     abundance: "0.2424(10)"
-    obtained: ""
+    obtained: "Comes with chlorine made by chlor-alkali electrolysis of NaCl brine."
 ---

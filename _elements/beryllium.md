@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 9
     relative_atomic_mass: "9.012183065(82)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. Comes with beryllium produced almost entirely by Materion from bertrandite mined near Delta, Utah."
 ---

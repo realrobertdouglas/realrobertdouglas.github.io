@@ -11,9 +11,9 @@ isotopes:
   - mass_number: 50
     relative_atomic_mass: "49.94715601(95)"
     abundance: "0.00250(4)"
-    obtained: ""
+    obtained: "Comes with vanadium recovered from vanadium-bearing magnetite in South Africa, China and Russia, and from spent oil-refinery catalysts."
   - mass_number: 51
     relative_atomic_mass: "50.94395704(94)"
     abundance: "0.99750(4)"
-    obtained: ""
+    obtained: "Comes with vanadium recovered from vanadium-bearing magnetite in South Africa, China and Russia, and from spent oil-refinery catalysts."
 ---
