@@ -9,7 +9,7 @@ subtitle: "I Used to Write Things Down I Didn’t Understand"
 
 When I was younger, I had a habit.
 
-Any time something confused me—something someone said, some math that didn’t make sense — I’d write it down. I wasn’t trying to journal. I just didn’t want to forget what confused me, because I assumed one day I’d come back to it with enough wisdom to finally understand and close the loop.
+Any time something confused me, something someone said, some math that didn’t make sense, I’d write it down. I wasn’t trying to journal. I just didn’t want to forget what confused me, because I assumed one day I’d come back to it with enough wisdom to finally understand and close the loop.
 
 Some entries were simple:
 
@@ -33,7 +33,7 @@ Eventually, I stopped writing things down.
 
 Not because I figured it all out. But because I realized… there wasn’t much to figure out.
 
-Most bad behavior isn’t a mystery—it’s a reflection. Of someone’s environment. Their history. Their limitations. Their wounds. Their worldview.
+Most bad behavior isn’t a mystery. It’s a reflection. Of someone’s environment. Their history. Their limitations. Their wounds. Their worldview.
 
 What used to confuse me now just makes me sad. Or, if I’m honest, makes me careful. Careful about who I let in. Who I give energy to. Who I expect answers from.
 

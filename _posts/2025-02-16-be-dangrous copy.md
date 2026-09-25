@@ -9,12 +9,12 @@ subtitle: "Dangerous Doesn’t Mean Reckless"
 
 Just because an activity is dangerous doesn’t mean you have to do it in a dangerous manner.
 
-Skydiving isn’t reckless when you’ve checked your rig ten times. Riding a motorcycle isn’t irresponsible when you’ve mastered the machine and studied the road like scripture. Caving, diving, sailing through storms—none of these are reckless if you’ve earned your place there.
+Skydiving isn’t reckless when you’ve checked your rig ten times. Riding a motorcycle isn’t irresponsible when you’ve mastered the machine and studied the road like scripture. Caving, diving, sailing through storms. None of these are reckless if you’ve earned your place there.
 
 The danger isn’t the problem.
 It’s how you meet it.
 
-Some people avoid danger completely. They never push boundaries, never test the edge. Others charge in blind, convinced courage is the same as chaos. But real growth—real change—lives in the space between fear and preparation. That’s where it happens.
+Some people avoid danger completely. They never push boundaries, never test the edge. Others charge in blind, convinced courage is the same as chaos. But real growth, real change, lives in the space between fear and preparation. That’s where it happens.
 
 This is where the growth is.
 Not in the safety of comfort.
@@ -25,6 +25,6 @@ Doing hard, dangerous things well teaches you something no book ever can. It tea
 
 You don’t grow when everything is safe.
 You don’t grow when everything is falling apart.
-You grow where the danger is real—but you’re ready for it.
+You grow where the danger is real, but you’re ready for it.
 
 I rarely fear danger, but I always respect it. 
