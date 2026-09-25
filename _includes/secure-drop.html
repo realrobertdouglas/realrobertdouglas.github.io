@@ -1,7 +1,7 @@
 <style>
 .sdrop{--sd-line:#dcdcdc;--sd-mute:#888;--sd-ok:#2f8f4a;--sd-bad:#b3261e;--sd-field:#fff;margin-top:22px;text-align:left}
 html[data-theme="dark"] .sdrop{--sd-line:#3a3f44;--sd-mute:#7d7d7d;--sd-ok:#5cc474;--sd-bad:#ff8a80;--sd-field:#16181a}
-.sdrop .sd-open{background:none;border:0;padding:0;margin:0;width:auto;font:inherit;font-size:15px;color:var(--sd-ok);cursor:pointer;text-align:left}
+.sdrop .sd-open{display:block;background:none;border:0;padding:0;margin:0 auto;width:auto;font:inherit;font-size:15px;color:var(--sd-ok);cursor:pointer;text-align:center}
 .sdrop .sd-open:hover{text-decoration:underline}
 .sdrop form{margin-top:8px}
 .sdrop textarea{display:block;width:100%;min-height:92px;resize:vertical;background:var(--sd-field);border:1px solid var(--sd-line);border-radius:4px;padding:7px 9px;font:inherit;font-size:13px;color:inherit}
@@ -11,7 +11,7 @@ html[data-theme="dark"] .sdrop form button{color:#0f1a12}
 .sdrop form button:disabled{opacity:.6;cursor:default}
 .sdrop p{font-size:11.5px;color:var(--sd-mute);margin:6px 0 0;line-height:1.35}
 .sdrop p.sd-bad{color:var(--sd-bad)}
-.sdrop .sd-done{border:1px solid var(--sd-ok);border-radius:4px;padding:8px 10px;font-size:12.5px;line-height:1.4}
+.sdrop .sd-done{text-align:center;margin-top:8px;border:1px solid var(--sd-ok);border-radius:4px;padding:8px 10px;font-size:12.5px;line-height:1.4}
 .sdrop .sd-done strong{color:var(--sd-ok);font-weight:400}
 .sdrop [hidden]{display:none!important}
 </style>
