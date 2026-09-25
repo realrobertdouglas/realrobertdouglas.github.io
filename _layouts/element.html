@@ -20,7 +20,7 @@ layout: default
   <section class="rs-section">
     <h2>Electrons</h2>
     {% include research/electron-shells.html configuration=page.configuration category=page.category symbol=page.symbol name=page.title %}
-    <p class="rs-source">{% if page.configuration_predicted %}Predicted by calculation; not yet measured. {% endif %}Green dots are the outer shell's s and p electrons. Lighter green are the d electrons of transition metals, and the d and f electrons of lanthanides and actinides: they often take part in bonding, but not always. Grey dots are the core. {% if page.number <= 108 %}Ground-state configuration from the NIST <a href="https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html">Atomic Spectra Database</a> (A. Kramida, Yu. Ralchenko, J. Reader and the NIST ASD Team).{% else %}Configuration from relativistic calculations; NIST lists ground states up to element 108.{% endif %}</p>
+    <p class="rs-source">{% if page.configuration_predicted %}Predicted by calculation; not yet measured. {% endif %}Green dots are the outer shell's s and p electrons. Softer green dots are the d electrons of transition metals, and the d and f electrons of lanthanides and actinides: they often take part in bonding, but not always. Grey dots are the core. {% if page.number <= 108 %}Ground-state configuration from the NIST <a href="https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html">Atomic Spectra Database</a> (A. Kramida, Yu. Ralchenko, J. Reader and the NIST ASD Team).{% else %}Configuration from relativistic calculations; NIST lists ground states up to element 108.{% endif %}</p>
   </section>
 
   <section class="rs-section">
