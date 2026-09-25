@@ -15,7 +15,7 @@ If you believe I’ve exposed personal or sensitive information erroneously plea
 <fieldset class="theme-toggle" id="js-theme-toggle" hidden>
   <legend>Appearance</legend>
   <div class="theme-toggle__options">
-    <label><input type="radio" name="theme" value="auto"><span>Auto <small>dark 8pm–8am</small></span></label>
+    <label><input type="radio" name="theme" value="auto"><span>Auto <small>dark at night, or when your device is</small></span></label>
     <label><input type="radio" name="theme" value="light"><span>Light</span></label>
     <label><input type="radio" name="theme" value="dark"><span>Dark</span></label>
   </div>
