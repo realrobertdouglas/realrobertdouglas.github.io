@@ -1,18 +1,20 @@
 {%- comment -%}
   Every cell links to its element's page. With JavaScript (static/js/periodic-table.js) a click opens
   a quick look in the empty space above the transition metals instead, and a second click opens the page.
+  The 57–71 and 89–103 markers open the whole lanthanide or actinide series in the quick look; without
+  JavaScript they jump to that series' row under the table.
 {%- endcomment -%}
 {%- assign pt_elements = site.elements | sort: 'number' -%}
 <div class="pt-scroll">
   <div class="pt" id="js-pt">
     <div class="pt-look" id="js-pt-look" aria-live="polite" hidden><div class="pt-look__in"></div></div>
     {%- for el in pt_elements -%}
-      <a class="pt-cell pt-{{ el.category | slugify }}" href="{{ el.url }}" title="{{ el.title }}" style="grid-column:{{ el.column }};grid-row:{{ el.row }}" data-symbol="{{ el.symbol }}" data-name="{{ el.title }}" data-number="{{ el.number }}" data-category="{{ el.category }}" data-place="period {{ el.period }}{% if el.group %}, group {{ el.group }}{% endif %}" data-isotopes="{% for isotope in el.isotopes %}{{ isotope.mass_number }}:{{ isotope.abundance }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+      <a class="pt-cell pt-{{ el.category | slugify }}"{% if el.number == 57 %} id="pt-lanthanides"{% elsif el.number == 89 %} id="pt-actinides"{% endif %} href="{{ el.url }}" title="{{ el.title }}" style="grid-column:{{ el.column }};grid-row:{{ el.row }}" data-symbol="{{ el.symbol }}" data-name="{{ el.title }}" data-number="{{ el.number }}" data-category="{{ el.category }}" data-place="period {{ el.period }}{% if el.group %}, group {{ el.group }}{% endif %}" data-isotopes="{% for isotope in el.isotopes %}{{ isotope.mass_number }}:{{ isotope.abundance }}{% unless forloop.last %},{% endunless %}{% endfor %}">
         <span class="pt-num">{{ el.number }}</span><span class="pt-sym">{{ el.symbol }}</span><span class="pt-name">{{ el.title }}</span>
       </a>
     {%- endfor -%}
-    <span class="pt-gap" style="grid-column:3;grid-row:6">57–71</span>
-    <span class="pt-gap" style="grid-column:3;grid-row:7">89–103</span>
+    <a class="pt-series" href="#pt-lanthanides" style="grid-column:3;grid-row:6" data-label="Lanthanides" data-first="57" data-last="71" aria-label="Lanthanides, elements 57 to 71">57–71</a>
+    <a class="pt-series" href="#pt-actinides" style="grid-column:3;grid-row:7" data-label="Actinides" data-first="89" data-last="103" aria-label="Actinides, elements 89 to 103">89–103</a>
   </div>
 </div>
 <ul class="pt-legend">
