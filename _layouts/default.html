@@ -151,6 +151,7 @@ layout: compress
             <p class="search__status" id="js-search__status" aria-live="polite"></p>
             <ul class="search__results" id="js-search__results" role="listbox" aria-label="Search results" hidden></ul>
           </div>
+          {% unless page.hide_drop %}{% include secure-drop.html %}{% endunless %}
           <!-- Navigation section removed as requested -->
         </div>
         <!-- end /.fixed-condition -->
