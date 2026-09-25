@@ -10,7 +10,6 @@
   /* Periodic table: text, and a background per category */
   --pt-ink: #333;
   --pt-mute: #777;
-  --pt-plain: #e6e6e6;
   --pt-alkali-metal: #fbe1d3;
   --pt-alkaline-earth-metal: #fcefc7;
   --pt-transition-metal: #e1eaf6;
@@ -20,6 +19,7 @@
   --pt-halogen: #f6deea;
   --pt-noble-gas: #dbeff3;
   --pt-lanthanide: #f2e8d5;
+  --pt-actinide: #f0dcd7;
   padding-bottom: 20px;
 }
 html[data-theme="dark"] .rs-page {
@@ -30,7 +30,6 @@ html[data-theme="dark"] .rs-page {
   --rs-accent: #5cc474;
   --pt-ink: #e8e8e8;
   --pt-mute: #9a9a9a;
-  --pt-plain: #33383d;
   --pt-alkali-metal: #4a3024;
   --pt-alkaline-earth-metal: #463d1f;
   --pt-transition-metal: #26344a;
@@ -40,6 +39,7 @@ html[data-theme="dark"] .rs-page {
   --pt-halogen: #452538;
   --pt-noble-gas: #1f3d42;
   --pt-lanthanide: #40361f;
+  --pt-actinide: #4a2620;
 }
 
 .rs-crumbs {
@@ -232,8 +232,6 @@ html[data-theme="dark"] .rs-page {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
-.pt-plain { background: transparent; box-shadow: inset 0 0 0 1px var(--pt-plain); }
-.pt-plain .pt-sym { font-weight: 400; color: var(--pt-mute); }
 .pt-alkali-metal { background: var(--pt-alkali-metal); }
 .pt-alkaline-earth-metal { background: var(--pt-alkaline-earth-metal); }
 .pt-transition-metal { background: var(--pt-transition-metal); }
@@ -243,6 +241,7 @@ html[data-theme="dark"] .rs-page {
 .pt-halogen { background: var(--pt-halogen); }
 .pt-noble-gas { background: var(--pt-noble-gas); }
 .pt-lanthanide { background: var(--pt-lanthanide); }
+.pt-actinide { background: var(--pt-actinide); }
 
 .pt-gap {
   display: flex;
