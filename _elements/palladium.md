@@ -7,6 +7,7 @@ period: 5
 group: 10
 column: 10
 row: 5
+configuration: "[Kr] 4d10"
 isotopes:
   - mass_number: 102
     relative_atomic_mass: "101.9056022(28)"

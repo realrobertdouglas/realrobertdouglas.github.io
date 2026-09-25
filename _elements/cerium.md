@@ -6,6 +6,7 @@ category: Lanthanide
 period: 6
 column: 4
 row: 9
+configuration: "[Xe] 4f1 5d1 6s2"
 isotopes:
   - mass_number: 136
     relative_atomic_mass: "135.90712921(41)"

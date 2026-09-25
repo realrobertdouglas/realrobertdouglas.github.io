@@ -454,3 +454,87 @@ html[data-theme="dark"] .rs-page {
   height: 11px;
   border-radius: 2px;
 }
+
+/* Electron shells on element pages (_includes/research/electron-shells.html) */
+.rs-page {
+  --ec-outer: #2d7f43;
+  --ec-inner: #9ccfa9;
+  --ec-core: #b9b9b9;
+  --ec-ring: #e2e2e2;
+}
+html[data-theme="dark"] .rs-page {
+  --ec-outer: #5cc474;
+  --ec-inner: #2f6a3e;
+  --ec-core: #5a5f64;
+  --ec-ring: #33383d;
+}
+.ec-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+.ec {
+  flex: none;
+  width: 220px;
+  height: 220px;
+}
+.ec-ring {
+  fill: none;
+  stroke: var(--ec-ring);
+  stroke-width: 1;
+}
+.ec-ring--outer {
+  stroke: var(--ec-outer);
+  stroke-opacity: .45;
+}
+.ec .ec-core { fill: var(--ec-core); }
+.ec .ec-inner { fill: var(--ec-inner); }
+.ec .ec-outer { fill: var(--ec-outer); }
+.ec-nucleus {
+  fill: none;
+  stroke: var(--rs-accent);
+  stroke-width: 1.5;
+}
+.ec-symbol {
+  fill: var(--rs-ink, currentColor);
+  font-size: 15px;
+  font-weight: 700;
+}
+.ec-text {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.ec-text p {
+  margin: 0 0 6px;
+}
+.ec-text sup {
+  font-size: 70%;
+}
+.ec-config {
+  font-size: 18px;
+  color: var(--pt-ink);
+}
+.ec-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--rs-mute);
+}
+.ec-legend li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ec-key {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ec-legend .ec-core { background: var(--ec-core); }
+.ec-legend .ec-inner { background: var(--ec-inner); }
+.ec-legend .ec-outer { background: var(--ec-outer); }

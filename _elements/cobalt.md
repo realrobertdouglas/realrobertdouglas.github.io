@@ -7,6 +7,7 @@ period: 4
 group: 9
 column: 9
 row: 4
+configuration: "[Ar] 3d7 4s2"
 isotopes:
   - mass_number: 59
     relative_atomic_mass: "58.93319429(56)"

@@ -6,6 +6,7 @@ category: Actinide
 period: 7
 column: 4
 row: 10
+configuration: "[Rn] 6d2 7s2"
 isotopes:
   - mass_number: 232
     relative_atomic_mass: "232.0380558(21)"
