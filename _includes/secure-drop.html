@@ -19,13 +19,15 @@ html[data-theme="dark"] .sd-dialog .sd-send{color:#0f1a12}
 .sd-dialog .sd-done{border:1px solid var(--sd-ok);border-radius:6px;padding:14px;text-align:center}
 .sd-dialog .sd-done strong{color:var(--sd-ok);font-weight:400;font-size:17px}
 .sd-dialog .sd-done small{display:block;color:var(--sd-mute);margin-top:4px}
-.sd-dialog .sd-how{margin-top:16px;padding-top:14px;border-top:1px solid var(--sd-line);font-size:13.5px;line-height:1.5;color:var(--sd-mute)}
+.sd-dialog .sd-how{margin-top:16px;padding-top:14px;border-top:1px solid var(--sd-line);font-size:13.5px;line-height:1.5;color:var(--sd-mute);container-type:inline-size}
 .sd-dialog .sd-how b{color:var(--sd-head);font-weight:400}
 .sd-dialog .sd-how ol{margin:4px 0 10px;padding-left:18px}
 .sd-dialog .sd-how li{margin:2px 0}
 .sd-dialog .sd-how p{margin:0 0 8px}
 .sd-dialog .sd-how a{color:var(--sd-ok)}
-.sd-dialog .sd-fp{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.02em;word-spacing:.25em}
+/* The fingerprint never wraps: beside its label when there is room, else on its own line, shrunk to fit */
+.sd-dialog .sd-fp{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.02em;white-space:nowrap}
+@container (max-width:430px){.sd-dialog .sd-fp{display:block;font-size:min(11px,3.1cqi)}}
 .sd-dialog [hidden]{display:none!important}
 </style>
 <div class="sdrop">
