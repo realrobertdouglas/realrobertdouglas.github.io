@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 89
     relative_atomic_mass: "88.9058403(24)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. Comes with yttrium recovered from ion-adsorption clay in southern China, from monazite and xenotime, and from bastnäsite at Mountain Pass."
 ---

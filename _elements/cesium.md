@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 133
     relative_atomic_mass: "132.9054519610(80)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. Produced almost entirely from pollucite at the Tanco mine, Manitoba, with a small share from lepidolite by-products."
 ---

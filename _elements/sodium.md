@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 23
     relative_atomic_mass: "22.9897692820(19)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. Comes with sodium from rock-salt and evaporite mines; metallic sodium is made by molten-NaCl electrolysis in Downs cells."
 ---

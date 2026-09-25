@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 75
     relative_atomic_mass: "74.92159457(95)"
     abundance: "1"
-    obtained: ""
+    obtained: "The only stable isotope. A by-product of copper and gold smelting, recovered from flue dust as arsenic trioxide."
 ---
