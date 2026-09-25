@@ -1,12 +1,14 @@
 <style>
 .sdrop{--sd-line:#dcdcdc;--sd-mute:#888;--sd-ok:#2f8f4a;--sd-bad:#b3261e;--sd-field:#fff;margin-top:22px;text-align:left}
 html[data-theme="dark"] .sdrop{--sd-line:#3a3f44;--sd-mute:#7d7d7d;--sd-ok:#5cc474;--sd-bad:#ff8a80;--sd-field:#16181a}
-.sdrop h2{font-size:15px;font-weight:400;margin:0 0 6px;color:inherit}
+.sdrop .sd-open{background:none;border:0;padding:0;margin:0;width:auto;font:inherit;font-size:15px;color:var(--sd-ok);cursor:pointer;text-align:left}
+.sdrop .sd-open:hover{text-decoration:underline}
+.sdrop form{margin-top:8px}
 .sdrop textarea{display:block;width:100%;min-height:92px;resize:vertical;background:var(--sd-field);border:1px solid var(--sd-line);border-radius:4px;padding:7px 9px;font:inherit;font-size:13px;color:inherit}
 .sdrop textarea:focus{outline:2px solid var(--sd-ok);outline-offset:-1px}
-.sdrop button{margin-top:7px;width:100%;background:var(--sd-ok);color:#fff;border:0;border-radius:4px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
-html[data-theme="dark"] .sdrop button{color:#0f1a12}
-.sdrop button:disabled{opacity:.6;cursor:default}
+.sdrop form button{margin-top:7px;width:100%;background:var(--sd-ok);color:#fff;border:0;border-radius:4px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+html[data-theme="dark"] .sdrop form button{color:#0f1a12}
+.sdrop form button:disabled{opacity:.6;cursor:default}
 .sdrop p{font-size:11.5px;color:var(--sd-mute);margin:6px 0 0;line-height:1.35}
 .sdrop p.sd-bad{color:var(--sd-bad)}
 .sdrop .sd-done{border:1px solid var(--sd-ok);border-radius:4px;padding:8px 10px;font-size:12.5px;line-height:1.4}
@@ -14,13 +16,12 @@ html[data-theme="dark"] .sdrop button{color:#0f1a12}
 .sdrop [hidden]{display:none!important}
 </style>
 <div class="sdrop" data-secure-drop-box>
-  <h2>🔒 Message me privately</h2>
-  <form data-secure-drop autocomplete="off">
-    <textarea name="message" aria-label="Private message to Robert" placeholder="Only I can read this. Add a way to reply, or stay anonymous." maxlength="100000"></textarea>
-    <button type="submit">Encrypt &amp; send</button>
+  <button type="button" class="sd-open" aria-expanded="false" aria-controls="sd-form" onclick="var f=document.getElementById('sd-form');f.hidden=!f.hidden;this.setAttribute('aria-expanded',!f.hidden);if(!f.hidden)f.querySelector('textarea').focus();">🔒 Message me privately</button>
+  <form id="sd-form" data-secure-drop autocomplete="off" hidden>
+    <textarea name="message" aria-label="Private message to Robert" placeholder="Only I can read it." maxlength="100000"></textarea>
+    <button type="submit">Send</button>
   </form>
-  <div class="sd-done" data-done hidden><strong>✓ Sent, encrypted.</strong><br>Only I can read it. Reference <span data-ref></span>.</div>
+  <div class="sd-done" data-done hidden><strong>✓ Sent.</strong> Only I can read it.</div>
   <p data-status aria-live="polite"></p>
-  <p>Encrypted in your browser before it's sent. <a href="/message/">How it works</a></p>
 </div>
 <script type="module" src="/static/js/secure-drop.js"></script>
