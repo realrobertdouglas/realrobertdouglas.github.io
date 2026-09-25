@@ -1,0 +1,335 @@
+/* Research pages: /research/, the elements project and its element, molecule and compound pages.
+   Loaded by default.html on pages with `research: true` (set for the collections in _config.yml). */
+
+.rs-page {
+  --rs-line: #eee;
+  --rs-mute: #999;
+  --rs-ink: #333;
+  --rs-match: rgba(45, 127, 67, .10);
+  --rs-accent: #2d7f43;
+  /* Periodic table: text, and a background per category */
+  --pt-ink: #333;
+  --pt-mute: #777;
+  --pt-plain: #e6e6e6;
+  --pt-alkali-metal: #fbe1d3;
+  --pt-alkaline-earth-metal: #fcefc7;
+  --pt-transition-metal: #e1eaf6;
+  --pt-post-transition-metal: #dfeee7;
+  --pt-metalloid: #ece3f4;
+  --pt-reactive-nonmetal: #dcefdf;
+  --pt-halogen: #f6deea;
+  --pt-noble-gas: #dbeff3;
+  --pt-lanthanide: #f2e8d5;
+  padding-bottom: 20px;
+}
+html[data-theme="dark"] .rs-page {
+  --rs-line: #2e3236;
+  --rs-mute: #7d7d7d;
+  --rs-ink: #e0e0e0;
+  --rs-match: rgba(92, 196, 116, .14);
+  --rs-accent: #5cc474;
+  --pt-ink: #e8e8e8;
+  --pt-mute: #9a9a9a;
+  --pt-plain: #33383d;
+  --pt-alkali-metal: #4a3024;
+  --pt-alkaline-earth-metal: #463d1f;
+  --pt-transition-metal: #26344a;
+  --pt-post-transition-metal: #213a30;
+  --pt-metalloid: #372c45;
+  --pt-reactive-nonmetal: #1f3d27;
+  --pt-halogen: #452538;
+  --pt-noble-gas: #1f3d42;
+  --pt-lanthanide: #40361f;
+}
+
+.rs-crumbs {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--rs-mute);
+}
+.rs-lead {
+  font-size: 17px;
+}
+.rs-section h2 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+.rs-empty {
+  color: var(--rs-mute);
+  font-style: italic;
+}
+.rs-source {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--rs-mute);
+}
+.rs-label {
+  color: var(--rs-mute);
+}
+.rs-formula sub,
+.rs-formula sup {
+  font-size: 70%;
+}
+
+/* Element page header: the symbol in a tile beside the name */
+.rs-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rs-head .post-subtitle {
+  margin: 0;
+}
+.rs-badge {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--rs-accent);
+  border-radius: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--rs-accent);
+}
+
+/* Tables */
+.rs-scroll {
+  overflow-x: auto;
+}
+.rs-table {
+  width: 100%;
+  margin: 6px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.rs-table th,
+.rs-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--rs-line);
+  text-align: left;
+  vertical-align: top;
+}
+.rs-table thead th {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--rs-mute);
+  white-space: nowrap;
+}
+.rs-table tbody th {
+  font-weight: 400;
+  color: var(--rs-ink);
+  white-space: nowrap;
+}
+.rs-num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rs-list tbody tr {
+  transition: background-color .15s;
+}
+.rs-list tbody tr.is-match {
+  background: var(--rs-match);
+}
+.rs-list tbody tr.is-match th {
+  box-shadow: inset 3px 0 0 var(--rs-accent);
+}
+
+/* Molecules and compounds an element appears in */
+.rs-in {
+  padding-left: 18px;
+}
+
+/* Isomers */
+.rs-isomer h3 {
+  margin: 18px 0 4px;
+  font-size: 17px;
+  color: var(--rs-ink);
+}
+.rs-isomer h3 .rs-formula {
+  margin-left: 6px;
+  font-size: 15px;
+  color: var(--rs-mute);
+}
+
+/* /research/ */
+.rs-projects {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.rs-projects li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rs-line);
+}
+.rs-projects h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+.rs-projects p {
+  margin: 0 0 4px;
+}
+
+/* Periodic table: 18 columns; lanthanides and actinides in rows 9 and 10 after a spacer row */
+.pt-scroll {
+  overflow-x: auto;
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+}
+.pt {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  grid-template-rows: repeat(7, auto) 10px auto auto;
+  gap: 3px;
+  min-width: 560px;
+}
+.pt .pt-cell,
+.pt .pt-cell:link,
+.pt .pt-cell:visited {
+  position: relative;
+  aspect-ratio: 1 / 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: var(--pt-ink);
+  line-height: 1;
+  text-decoration: none;
+  transition: transform .1s, box-shadow .1s;
+}
+.pt .pt-cell:hover,
+.pt .pt-cell:focus-visible {
+  color: var(--pt-ink);
+  text-decoration: none;
+  transform: scale(1.12);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+.pt-cell:focus-visible,
+.pt-cell.is-selected {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 1px;
+  z-index: 2;
+}
+.pt-num {
+  font-size: 9px;
+  color: var(--pt-mute);
+}
+.pt-sym {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.pt-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.pt-plain { background: transparent; box-shadow: inset 0 0 0 1px var(--pt-plain); }
+.pt-plain .pt-sym { font-weight: 400; color: var(--pt-mute); }
+.pt-alkali-metal { background: var(--pt-alkali-metal); }
+.pt-alkaline-earth-metal { background: var(--pt-alkaline-earth-metal); }
+.pt-transition-metal { background: var(--pt-transition-metal); }
+.pt-post-transition-metal { background: var(--pt-post-transition-metal); }
+.pt-metalloid { background: var(--pt-metalloid); }
+.pt-reactive-nonmetal { background: var(--pt-reactive-nonmetal); }
+.pt-halogen { background: var(--pt-halogen); }
+.pt-noble-gas { background: var(--pt-noble-gas); }
+.pt-lanthanide { background: var(--pt-lanthanide); }
+
+.pt-gap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--pt-mute);
+}
+
+/* Quick look: fills the empty space above the transition metals; its content never resizes the grid */
+.pt-look {
+  grid-column: 3 / 13;
+  grid-row: 1 / 4;
+  position: relative;
+  margin: 0 6px 6px;
+}
+.pt-look[hidden] {
+  display: none;
+}
+.pt-look__in {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  overflow: auto;
+  border: 1px solid var(--rs-line);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.pt-look__in p {
+  margin: 0;
+}
+.pt-look__hint {
+  width: 100%;
+  text-align: center;
+  color: var(--pt-mute);
+}
+.pt-look__sym {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--rs-accent);
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--rs-accent);
+}
+.pt-look__text {
+  min-width: 0;
+  flex: 1;
+}
+.pt-look__title strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--pt-ink);
+}
+.pt-look__open {
+  float: right;
+  margin-left: 8px;
+}
+.pt-look sup {
+  font-size: 70%;
+}
+
+.pt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--rs-mute);
+}
+.pt-legend li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.pt-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}

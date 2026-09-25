@@ -1,0 +1,34 @@
+---
+title: Elements
+summary: A clickable periodic table of all 118 elements, with their natural isotopes and the molecules and compounds they make up.
+updated: 2026-09-25
+---
+<p class="rs-lead">Every element links to its own page. Below the table are the molecules and compounds I have written up so far.</p>
+
+{% include research/periodic-table.html %}
+
+{% assign molecules = site.molecules | sort: 'title' %}
+{% assign compounds = site.compounds | sort: 'title' %}
+{% for group in (1..2) %}
+  {% if group == 1 %}{% assign docs = molecules %}{% else %}{% assign docs = compounds %}{% endif %}
+  <h2 class="section-title">{% if group == 1 %}Molecules{% else %}Compounds{% endif %}</h2>
+  <div class="rs-scroll">
+    <table class="rs-table rs-list">
+      <thead>
+        <tr><th scope="col">{% if group == 1 %}Molecule{% else %}Compound{% endif %}</th><th scope="col">Formula</th><th scope="col">Elements</th></tr>
+      </thead>
+      <tbody>
+        {% for doc in docs %}
+          {% include research/formula-elements.html formula=doc.formula %}
+          <tr data-elements="{{ formula_shown | map: 'symbol' | join: ' ' }}">
+            <th scope="row"><a href="{{ doc.url }}">{{ doc.title }}</a></th>
+            <td>{% include research/formula.html formula=doc.formula %}</td>
+            <td>{% include research/element-links.html formula=doc.formula short=true %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endfor %}
+
+<script src="/static/js/periodic-table.js"></script>

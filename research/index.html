@@ -1,0 +1,20 @@
+---
+layout: default
+title: Research
+permalink: /research/
+description: Research projects on douglas.lol, newest updates first.
+research: true
+---
+<div class="rs-page">
+  <h1 class="post-title">Research</h1>
+  <ul class="rs-projects">
+    {% assign projects = site.research | sort: 'updated' | reverse %}
+    {% for project in projects %}
+      <li>
+        <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+        <p>{{ project.summary }}</p>
+        <span class="time">Updated {{ project.updated | date: '%B %-d, %Y' }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

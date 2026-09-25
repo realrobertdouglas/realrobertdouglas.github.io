@@ -53,6 +53,14 @@ a:hover {
   font-size: 13px;
   font-style: italic;
 }
+.sidebar-nav {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 15px;
+}
+.sidebar-nav + .sdrop {
+  margin-top: 6px;
+}
 .section-title {
   margin-top: 30px;
   font-size: 20px;

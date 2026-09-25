@@ -1,0 +1,3 @@
+{%- comment -%}A formula typed as plain text, shown with subscripts: C2H6O becomes C<sub>2</sub>H<sub>6</sub>O.{%- endcomment -%}
+{%- assign f = include.formula | escape | replace: '0', '<sub>0</sub>' | replace: '1', '<sub>1</sub>' | replace: '2', '<sub>2</sub>' | replace: '3', '<sub>3</sub>' | replace: '4', '<sub>4</sub>' | replace: '5', '<sub>5</sub>' | replace: '6', '<sub>6</sub>' | replace: '7', '<sub>7</sub>' | replace: '8', '<sub>8</sub>' | replace: '9', '<sub>9</sub>' | replace: '</sub><sub>', '' -%}
+<span class="rs-formula">{{ f }}</span>
