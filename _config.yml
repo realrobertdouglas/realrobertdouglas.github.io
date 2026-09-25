@@ -4,7 +4,6 @@ author: Douglas Labs
 github: https://github.com/realrobertdouglas
 tagline: Life is short, art is long.
 disqus_shortname: ""
-google_analytics: UA-170356546-1
 
 enableTags: true
 tagarray: []
@@ -23,8 +22,21 @@ url: "https://douglas.lol"
 baseurl: ""
 
 markdown: kramdown
-gems:
+plugins:
   - jekyll-gist
+
+# Files kept in the repo but not published. Setting this replaces Jekyll's own list,
+# so its defaults (Gemfile ... vendor, and CNAME from GitHub Pages) are repeated here.
+exclude:
+  - new-post
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 compress_html:
   clippings: all

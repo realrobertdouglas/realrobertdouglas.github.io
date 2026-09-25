@@ -2,22 +2,25 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <script>
-      /* Theme: "auto" (the default) is dark from 8pm to 8am by the reader's own clock; "light" or "dark",
-         chosen on the About page, is remembered in this browser. Runs before paint, then rechecks each minute. */
+      /* Theme: "auto" (the default) is dark when the reader's device is set to dark, and from 8pm to 8am by
+         their own clock; "light" or "dark", chosen on the About page, is remembered in this browser.
+         Runs before paint, then rechecks each minute and whenever the device setting changes. */
       (function () {
         var KEY = 'theme';
+        var deviceDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
         function preference() {
           try { return localStorage.getItem(KEY) || 'auto'; } catch (e) { return 'auto'; }
         }
         function applyTheme() {
           var pref = preference();
           var hour = new Date().getHours();
-          var dark = pref === 'dark' || (pref === 'auto' && (hour >= 20 || hour < 8));
+          var night = hour >= 20 || hour < 8;
+          var dark = pref === 'dark' || (pref === 'auto' && (night || (deviceDark && deviceDark.matches)));
           document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
         }
         window.siteTheme = {
@@ -32,6 +35,7 @@ layout: compress
         };
         applyTheme();
         setInterval(applyTheme, 60000);
+        if (deviceDark && deviceDark.addEventListener) deviceDark.addEventListener('change', applyTheme);
       })();
     </script>
     <link rel="stylesheet" href="/static/css/publish_rotating_earth.css">
@@ -69,9 +73,18 @@ layout: compress
       <meta content="{{ site.url }}/about/" property="article:author">
     {% endif %}
 
+    {% comment %}Link-preview image: the post's own image if it names one, else the site card.{% endcomment %}
     {% if page.image %}
-      <meta content="{{ site.url }}/static/img/posts/{{ page.image }}" property="og:image">
+      {% capture share_image %}{{ site.url }}/static/img/posts/{{ page.image }}{% endcapture %}
+    {% else %}
+      {% capture share_image %}{{ site.url }}/static/img/social-card.png{% endcapture %}
     {% endif %}
+    <meta content="{{ share_image }}" property="og:image">
+    {% unless page.image %}
+      <meta content="1200" property="og:image:width">
+      <meta content="630" property="og:image:height">
+    {% endunless %}
+    <meta content="{{ site.title }}" property="og:site_name">
 
     {% if page.categories %}
       {% for category in page.categories limit:1 %}
@@ -85,9 +98,11 @@ layout: compress
       {% endfor %}
     {% endif %}
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
-    <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {% if site.share.twitter_username %}
+      <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
+      <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
+    {% endif %}
 
     {% if page.title %}
       <meta name="twitter:title" content="{{ page.title }}">
@@ -101,9 +116,7 @@ layout: compress
 
     <meta name="twitter:description" content="{{ meta_description | escape }}">
 
-    {% if page.header-img %}
-      <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
-    {% endif %}
+    <meta name="twitter:image" content="{{ share_image }}">
 
     <!-- Font awesome icons -->
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -115,21 +128,9 @@ layout: compress
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/search.css">
-    <link rel="stylesheet" href="/static/css/thickbox.css">
 
     <link rel="stylesheet" href="/static/css/main.css">
 
-    {% if jekyll.environment == "production" %}
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
     <noscript><style>.search { display: none; }</style></noscript>
   </head>
   <body>
@@ -166,13 +167,6 @@ layout: compress
     </div>
     <!-- end /.container -->
 
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/search.js"></script>
-    <script src="/static/js/thickbox-compressed.js"></script>
-    <script src="/static/js/projects.js"></script>
   </body>
 </html>
