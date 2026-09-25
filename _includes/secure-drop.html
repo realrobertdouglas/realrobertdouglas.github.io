@@ -1,27 +1,57 @@
 <style>
-.sdrop{--sd-line:#dcdcdc;--sd-mute:#888;--sd-ok:#2f8f4a;--sd-bad:#b3261e;--sd-field:#fff;margin-top:22px;text-align:left}
-html[data-theme="dark"] .sdrop{--sd-line:#3a3f44;--sd-mute:#7d7d7d;--sd-ok:#5cc474;--sd-bad:#ff8a80;--sd-field:#16181a}
-.sdrop .sd-open{display:block;background:none;border:0;padding:0;margin:0 auto;width:auto;font:inherit;font-size:15px;color:var(--sd-ok);cursor:pointer;text-align:center}
+.sdrop{--sd-line:#dcdcdc;--sd-mute:#777;--sd-ok:#2f8f4a;--sd-bad:#b3261e;--sd-field:#fff;--sd-bg:#fff;--sd-ink:#333;--sd-head:#222;--sd-soft:#f6f6f4;margin-top:22px;text-align:center}
+html[data-theme="dark"] .sdrop{--sd-line:#3a3f44;--sd-mute:#8a8a8a;--sd-ok:#5cc474;--sd-bad:#ff8a80;--sd-field:#16181a;--sd-bg:#1e2124;--sd-ink:#b8b8b8;--sd-head:#e0e0e0;--sd-soft:#181a1c}
+.sdrop .sd-open{background:none;border:0;padding:0;font:inherit;font-size:15px;color:var(--sd-ok);cursor:pointer}
 .sdrop .sd-open:hover{text-decoration:underline}
-.sdrop form{margin-top:8px}
-.sdrop textarea{display:block;width:100%;min-height:92px;resize:vertical;background:var(--sd-field);border:1px solid var(--sd-line);border-radius:4px;padding:7px 9px;font:inherit;font-size:13px;color:inherit}
-.sdrop textarea:focus{outline:2px solid var(--sd-ok);outline-offset:-1px}
-.sdrop form button{margin-top:7px;width:100%;background:var(--sd-ok);color:#fff;border:0;border-radius:4px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
-html[data-theme="dark"] .sdrop form button{color:#0f1a12}
-.sdrop form button:disabled{opacity:.6;cursor:default}
-.sdrop p{font-size:11.5px;color:var(--sd-mute);margin:6px 0 0;line-height:1.35}
-.sdrop p.sd-bad{color:var(--sd-bad)}
-.sdrop .sd-done{text-align:center;margin-top:8px;border:1px solid var(--sd-ok);border-radius:4px;padding:8px 10px;font-size:12.5px;line-height:1.4}
-.sdrop .sd-done strong{color:var(--sd-ok);font-weight:400}
-.sdrop [hidden]{display:none!important}
+.sd-dialog{width:min(480px,calc(100vw - 32px));max-height:calc(100vh - 32px);border:1px solid var(--sd-line);border-radius:10px;padding:0;background:var(--sd-bg);color:var(--sd-ink);text-align:left;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.sd-dialog::backdrop{background:rgba(0,0,0,.55)}
+.sd-dialog .sd-in{padding:20px 22px 18px}
+.sd-dialog h2{margin:0 0 12px;font-size:20px;font-weight:400;color:var(--sd-head);padding-right:28px}
+.sd-dialog .sd-x{position:absolute;top:12px;right:12px;background:none;border:0;font-size:22px;line-height:1;color:var(--sd-mute);cursor:pointer;padding:4px 8px;border-radius:4px}
+.sd-dialog .sd-x:hover{color:var(--sd-head);background:var(--sd-soft)}
+.sd-dialog textarea{display:block;width:100%;min-height:150px;resize:vertical;background:var(--sd-field);border:1px solid var(--sd-line);border-radius:6px;padding:10px 12px;font:inherit;font-size:15px;color:var(--sd-head)}
+.sd-dialog textarea:focus{outline:2px solid var(--sd-ok);outline-offset:-1px}
+.sd-dialog .sd-send{margin-top:10px;width:100%;background:var(--sd-ok);color:#fff;border:0;border-radius:6px;padding:9px 12px;font:inherit;font-size:15px;cursor:pointer}
+html[data-theme="dark"] .sd-dialog .sd-send{color:#0f1a12}
+.sd-dialog .sd-send:disabled{opacity:.6;cursor:default}
+.sd-dialog [data-status]{font-size:13px;margin:6px 0 0;min-height:1em}
+.sd-dialog .sd-bad{color:var(--sd-bad)}
+.sd-dialog .sd-done{border:1px solid var(--sd-ok);border-radius:6px;padding:14px;text-align:center}
+.sd-dialog .sd-done strong{color:var(--sd-ok);font-weight:400;font-size:17px}
+.sd-dialog .sd-done small{display:block;color:var(--sd-mute);margin-top:4px}
+.sd-dialog .sd-how{margin-top:16px;padding-top:14px;border-top:1px solid var(--sd-line);font-size:13.5px;line-height:1.5;color:var(--sd-mute)}
+.sd-dialog .sd-how b{color:var(--sd-head);font-weight:400}
+.sd-dialog .sd-how ol{margin:4px 0 10px;padding-left:18px}
+.sd-dialog .sd-how li{margin:2px 0}
+.sd-dialog .sd-how p{margin:0 0 8px}
+.sd-dialog .sd-how a{color:var(--sd-ok)}
+.sd-dialog .sd-fp{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.02em;word-spacing:.25em}
+.sd-dialog [hidden]{display:none!important}
 </style>
-<div class="sdrop" data-secure-drop-box>
-  <button type="button" class="sd-open" aria-expanded="false" aria-controls="sd-form" onclick="var f=document.getElementById('sd-form');f.hidden=!f.hidden;this.setAttribute('aria-expanded',!f.hidden);if(!f.hidden)f.querySelector('textarea').focus();">🔒 Message me privately</button>
-  <form id="sd-form" data-secure-drop autocomplete="off" hidden>
-    <textarea name="message" aria-label="Private message to Robert" placeholder="Only I can read it." maxlength="100000"></textarea>
-    <button type="submit">Send</button>
-  </form>
-  <div class="sd-done" data-done hidden><strong>✓ Sent.</strong> Only I can read it.</div>
-  <p data-status aria-live="polite"></p>
+<div class="sdrop">
+  <button type="button" class="sd-open" data-drop-open aria-haspopup="dialog">🔒 Message me privately</button>
+  <dialog class="sd-dialog" id="sd-dialog" aria-labelledby="sd-title" data-secure-drop-box>
+    <div class="sd-in">
+      <button type="button" class="sd-x" data-drop-close aria-label="Close">×</button>
+      <h2 id="sd-title">🔒 Message me privately</h2>
+      <form data-secure-drop autocomplete="off">
+        <textarea name="message" aria-label="Your message" placeholder="Only I can read this. Add a way to reply, or stay anonymous." maxlength="100000"></textarea>
+        <button type="submit" class="sd-send">Send</button>
+        <p data-status aria-live="polite"></p>
+      </form>
+      <div class="sd-done" data-done hidden><strong>✓ Sent.</strong> Only I can read it.<small>Reference <span data-ref></span>. Keep it if you want to mention this message later.</small></div>
+      <div class="sd-how">
+        <b>How it works</b>
+        <ol>
+          <li>Your browser locks the message with my <a href="/static/robert-drop.asc">public key</a> before it leaves your computer (PGP encryption).</li>
+          <li>The server only stores the locked version. I get a note that something arrived, never what it says.</li>
+          <li>I unlock it on my own computer with my private key, which never goes online.</li>
+        </ol>
+        <p>Want to stay fully anonymous? Open this site in <a href="https://www.torproject.org/download/" target="_blank" rel="noopener">Tor Browser</a> and leave out any way to reply.</p>
+        <p>Learn more: <a href="https://ssd.eff.org/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work" target="_blank" rel="noopener">How public key encryption works (EFF)</a> · <a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy" target="_blank" rel="noopener">PGP on Wikipedia</a> · <a href="/message/">Full details</a></p>
+        <p style="margin:0">Key fingerprint: <span class="sd-fp">B49C 0C47 6209 A4DA 36AE 5956 2BBD 83AA FFD8 AEC0</span></p>
+      </div>
+    </div>
+  </dialog>
 </div>
 <script type="module" src="/static/js/secure-drop.js"></script>
