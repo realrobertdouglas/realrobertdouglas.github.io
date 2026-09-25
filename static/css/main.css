@@ -304,3 +304,58 @@ html[data-theme="dark"] .theme-toggle input:checked + span small {
 html[data-theme="dark"] .theme-toggle input:focus-visible + span {
   outline-color: #5cc474;
 }
+
+/* Category buttons (category pages): quiet pills, the current one in green; matches the share pills */
+div.post-content .btn-tags,
+div.post-content .btn-tags:link,
+div.post-content .btn-tags:visited {
+  border: 1px solid #e3e3e3;
+  background: #f6f6f4;
+  color: #2f8f4a;
+  border-radius: 999px;
+  padding: 3px 14px;
+  font-size: 15px;
+  box-shadow: none;
+}
+div.post-content .btn-tags:hover {
+  border-color: #2f8f4a;
+  background: #f6f6f4;
+  color: #2f8f4a;
+  text-decoration: none;
+}
+div.post-content .btn-tags.active,
+div.post-content .btn-tags.active:hover {
+  border-color: #2f8f4a;
+  background: #eef6f0;
+  color: #1e3a26;
+  box-shadow: none;
+  cursor: default;
+}
+div.post-content .btn-tags:focus {
+  outline: none;
+}
+div.post-content .btn-tags:focus-visible {
+  outline: 2px solid #2f8f4a;
+  outline-offset: 2px;
+}
+html[data-theme="dark"] div.post-content .btn-tags,
+html[data-theme="dark"] div.post-content .btn-tags:link,
+html[data-theme="dark"] div.post-content .btn-tags:visited {
+  border-color: #34383c;
+  background: #26292d;
+  color: #5cc474;
+}
+html[data-theme="dark"] div.post-content .btn-tags:hover {
+  border-color: #5cc474;
+  background: #26292d;
+  color: #8fd9a0;
+}
+html[data-theme="dark"] div.post-content .btn-tags.active,
+html[data-theme="dark"] div.post-content .btn-tags.active:hover {
+  border-color: #5cc474;
+  background: #1f2a22;
+  color: #e0e0e0;
+}
+html[data-theme="dark"] div.post-content .btn-tags:focus-visible {
+  outline-color: #5cc474;
+}
