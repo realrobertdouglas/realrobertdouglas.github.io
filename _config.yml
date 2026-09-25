@@ -29,6 +29,7 @@ plugins:
 # so its defaults (Gemfile ... vendor, and CNAME from GitHub Pages) are repeated here.
 exclude:
   - new-post
+  - serve.sh
   - CNAME
   - Gemfile
   - Gemfile.lock
