@@ -10,5 +10,5 @@ isotopes:
   - mass_number: 165
     relative_atomic_mass: "164.9303288(21)"
     abundance: "1"
-    obtained: "The only stable isotope. A rare earth recovered from ion-adsorption clay in southern China and from xenotime; separated by solvent extraction."
+    obtained: "The only stable isotope. Solvent extraction from heavy rare earths; Ho2O3 is reduced with Ca or by molten-salt electrolysis."
 ---

@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 127
     relative_atomic_mass: "126.9044719(39)"
     abundance: "1"
-    obtained: "The only stable isotope. Extracted from Chilean caliche brines and from oilfield brines in Japan and Oklahoma."
+    obtained: "The only stable isotope. Caliche brine is oxidized with NO2 or Cl2 to elemental I2, which is stripped with air or adsorbed on ion-exchange resin, then flaked out from the melt."
 ---

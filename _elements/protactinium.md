@@ -10,5 +10,5 @@ isotopes:
   - mass_number: 231
     relative_atomic_mass: "231.0358842(24)"
     abundance: "1"
-    obtained: "The only naturally abundant isotope. A decay-chain trace in uranium ore; the world stock — about 125 g — was pulled from spent Springfields fuel liquor by the UKAEA in 1961."
+    obtained: "The only naturally abundant isotope. Trace of the U decay chain, separated by ion exchange from spent uranium fuel liquor. The world stock (~125 g) was pulled by the UKAEA in 1961."
 ---

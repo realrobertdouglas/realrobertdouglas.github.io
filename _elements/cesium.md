@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 133
     relative_atomic_mass: "132.9054519610(80)"
     abundance: "1"
-    obtained: "The only stable isotope. Produced almost entirely from pollucite at the Tanco mine, Manitoba, with a small share from lepidolite by-products."
+    obtained: "The only stable isotope. Pollucite is acid-leached, and Cs is separated from Rb by fractional crystallization of Cs alum or by ion exchange; metallic Cs comes from reducing CsCl with Ca under vacuum."
 ---

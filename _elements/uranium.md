@@ -10,13 +10,13 @@ isotopes:
   - mass_number: 234
     relative_atomic_mass: "234.0409523(19)"
     abundance: "0.000054(5)"
-    obtained: "A trace in natural uranium; not separated on its own but co-enriched with U-235 in the gas-centrifuge cascade."
+    obtained: "A trace in natural U; not separated on its own but co-enriched with ²³⁵U in the centrifuge cascade because its mass is close to ²³⁵U."
   - mass_number: 235
     relative_atomic_mass: "235.0439301(19)"
     abundance: "0.007204(6)"
-    obtained: "Enriched from 0.72% to 3–5% for light-water reactor fuel and to more than 90% for weapons and some research reactors, by gas centrifuge (Urenco, Rosatom, CNNC) or, historically, gaseous diffusion (Oak Ridge, Paducah, Portsmouth)."
+    obtained: "Gas centrifuges spin UF6 at ~500 m/s in cascades of thousands of machines; the heavier ²³⁸UF6 migrates outward, and the ²³⁵UF6-richer fraction is drawn from the axis and cascaded upward. Historic route: gaseous diffusion of UF6 through porous nickel barriers, which needed vastly more electricity."
   - mass_number: 238
     relative_atomic_mass: "238.0507884(20)"
     abundance: "0.992742(10)"
-    obtained: "The bulk of natural uranium and the tails from enrichment (depleted uranium); used in fast-reactor blankets, radiation shielding and armor-piercing rounds."
+    obtained: "The bulk of natural U, and the depleted-U tails left by centrifuge enrichment; the tails are stored as UF6 or converted to U3O8 and used for shielding and armor-piercing rounds."
 ---
