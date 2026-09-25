@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 93
     relative_atomic_mass: "92.9063730(20)"
     abundance: "1"
-    obtained: "The only stable isotope. Drawn almost entirely from pyrochlore at CBMM's Araxá mine in Brazil (about 85% of world supply) and Niobec in Quebec."
+    obtained: "The only stable isotope. Pyrochlore is dissolved in HF/H2SO4; Nb is separated from Ta by solvent extraction into MIBK. Nb2O5 is reduced by aluminothermite for ferroniobium, or by Na for pure metal."
 ---

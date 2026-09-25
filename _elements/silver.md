@@ -11,9 +11,9 @@ isotopes:
   - mass_number: 107
     relative_atomic_mass: "106.9050916(26)"
     abundance: "0.51839(8)"
-    obtained: "Comes with silver mostly recovered as a by-product of lead-zinc and copper mining (Fresnillo, KGHM, Peñoles), with a smaller share from primary silver mines."
+    obtained: "From copper-refinery anode slime and Pb refining. Doré bullion is parted in nitric acid (Ag dissolves, Au doesn't), then Ag is electrowon from AgNO3."
   - mass_number: 109
     relative_atomic_mass: "108.9047553(14)"
     abundance: "0.48161(8)"
-    obtained: "Comes with silver mostly recovered as a by-product of lead-zinc and copper mining (Fresnillo, KGHM, Peñoles), with a smaller share from primary silver mines."
+    obtained: "From copper-refinery anode slime and Pb refining. Doré bullion is parted in nitric acid (Ag dissolves, Au doesn't), then Ag is electrowon from AgNO3."
 ---

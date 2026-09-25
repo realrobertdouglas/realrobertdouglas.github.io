@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 59
     relative_atomic_mass: "58.93319429(56)"
     abundance: "1"
-    obtained: "The only stable isotope. Comes with cobalt co-mined with copper in the DRC's Katanga belt (Mutanda, Tenke Fungurume) and with nickel at Norilsk and in Indonesian laterite operations."
+    obtained: "The only stable isotope. Sulfide or laterite ore is leached; Co is split from Ni by solvent extraction (Cyanex or D2EHPA), and Co3O4 is reduced with hydrogen or aluminum to metal."
 ---

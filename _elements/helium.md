@@ -11,9 +11,9 @@ isotopes:
   - mass_number: 3
     relative_atomic_mass: "3.0160293201(25)"
     abundance: "0.00000134(3)"
-    obtained: "Drawn from the decay of tritium in the U.S. and U.K. weapons stockpiles, released in gram quantities each year; a smaller share comes from natural gas."
+    obtained: "Product of tritium β decay in the weapons stockpile: 3H → 3He + e⁻ + ν̄ with a 12.3-year half-life. What's needed for detectors and cryogenics is siphoned from the stockpile as tritium ages; a smaller amount is skimmed from natural gas by charcoal adsorption at 4 K."
   - mass_number: 4
     relative_atomic_mass: "4.00260325413(6)"
     abundance: "0.99999866(3)"
-    obtained: "Cryogenically separated from helium-rich natural gas at wells such as Cliffside in Amarillo, Ras Laffan in Qatar and Amur in Russia."
+    obtained: "Cryogenically distilled and adsorbed from natural gas; He stays gaseous below 20 K when everything else has already condensed."
 ---

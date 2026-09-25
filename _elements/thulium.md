@@ -10,5 +10,5 @@ isotopes:
   - mass_number: 169
     relative_atomic_mass: "168.9342179(22)"
     abundance: "1"
-    obtained: "The only stable isotope. A rare earth recovered from ion-adsorption clay in southern China and from xenotime; separated by solvent extraction."
+    obtained: "The only stable isotope. Solvent extraction from heavy rare earths; TmF3 is reduced with Ca metal."
 ---

@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 55
     relative_atomic_mass: "54.93804391(48)"
     abundance: "1"
-    obtained: "The only stable isotope. Comes with manganese mined at Kalahari (South Africa), Groote Eylandt (Australia) and Moanda (Gabon)."
+    obtained: "The only stable isotope. Ferromanganese for steel comes from carbothermic reduction of MnO2 ore in a blast or arc furnace; high-purity Mn comes from electrowinning MnSO4 solution on stainless-steel cathodes."
 ---

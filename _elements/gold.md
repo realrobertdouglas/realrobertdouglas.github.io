@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 197
     relative_atomic_mass: "196.96656879(71)"
     abundance: "1"
-    obtained: "The only stable isotope. Mined from hard-rock veins (Nevada Gold Mines, Muruntau, Kirkland Lake), from placer deposits and as a by-product of copper porphyry ore."
+    obtained: "The only stable isotope. Cyanide-leach ore is concentrated by carbon-in-pulp adsorption, then eluted and electrowon. Doré bullion is parted in nitric acid to remove Ag, redissolved in aqua regia, and reduced back to Au with SO2 or oxalic acid."
 ---

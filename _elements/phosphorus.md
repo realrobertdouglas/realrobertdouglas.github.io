@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 31
     relative_atomic_mass: "30.97376199842(70)"
     abundance: "1"
-    obtained: "The only stable isotope. Comes with phosphorus drawn from phosphate rock in Morocco, the U.S. and China; yellow phosphorus is made in a handful of electric-furnace plants."
+    obtained: "The only stable isotope. Phosphate rock is heated with coke and silica in an electric-arc furnace at ~1500 °C: Ca3(PO4)2 + 3 SiO2 + 5 C → 3 CaSiO3 + 5 CO + P2. P4 vapor is condensed under water."
 ---

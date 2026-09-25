@@ -11,5 +11,5 @@ isotopes:
   - mass_number: 45
     relative_atomic_mass: "44.95590828(77)"
     abundance: "1"
-    obtained: "The only stable isotope. A small by-product of red mud from bauxite processing and of uranium tailings; produced in Russia, Kazakhstan, China and Australia."
+    obtained: "The only stable isotope. Recovered from red mud or thortveitite by acid leach and solvent extraction; ScF3 is reduced with Ca metal in tantalum crucibles."
 ---
