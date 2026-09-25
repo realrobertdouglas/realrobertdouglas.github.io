@@ -1,0 +1,25 @@
+# Secure message drop for douglas.lol: stores messages that were encrypted in the sender's browser
+# to Robert's public key, emails him a content-free notice, and serves them (still encrypted) to
+# the inbox page after he proves he holds the private key. Deploy: npx -y wrangler@3 deploy
+name = "douglas-drop"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+routes = [{ pattern = "drop.douglas.lol", custom_domain = true }]
+
+rules = [{ type = "Text", globs = ["**/*.asc"], fallthrough = true }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "douglas-drop"
+database_id = "41928285-93b5-4da7-ab47-b9328612146d"
+
+[[send_email]]
+name = "NOTIFY"
+destination_address = "robert@douglasmining.com"
+
+[vars]
+NOTIFY_FROM = "drop@douglas.lol"
+NOTIFY_TO = "robert@douglasmining.com"
+ALLOWED_ORIGINS = "https://douglas.lol,https://www.douglas.lol,http://127.0.0.1:8793,http://localhost:4000"
+# SESSION_SECRET is a Worker secret (random; signs inbox challenges and sessions). Nobody needs to know it.
