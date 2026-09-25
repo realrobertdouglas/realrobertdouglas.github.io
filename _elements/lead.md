@@ -25,3 +25,5 @@ isotopes:
     abundance: "0.524(1)"
     obtained: ""
 ---
+
+The English word *plumbing* comes from *plumbum*, Latin for lead. Rome ran drinking water from its aqueducts through soldered lead pipes, cast on a flat table and rolled into a shape more oval than round. Vitruvius, in *De Architectura* around 15 BCE, said water from earthenware pipes tasted better and warned that men who worked lead were pale. Excavations across the empire keep turning up the pipes anyway, often stamped with the name of the plumber, the estate or the emperor who paid for the run.
