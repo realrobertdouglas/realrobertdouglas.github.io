@@ -10,6 +10,20 @@ const publicKey = async () => {
   return key;
 };
 
+// The sidebar link opens the message window (a <dialog>); ×, Esc or a click outside closes it.
+// After a message is sent, closing resets the window so it's ready for another.
+for (const opener of document.querySelectorAll('[data-drop-open]')) {
+  const dlg = opener.parentElement.querySelector('dialog');
+  if (!dlg) continue;
+  opener.addEventListener('click', () => { dlg.showModal(); publicKey().catch(() => {}); dlg.querySelector('textarea').focus(); });
+  dlg.querySelector('[data-drop-close]').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', () => {
+    const done = dlg.querySelector('[data-done]'), form = dlg.querySelector('form');
+    if (done && !done.hidden) { done.hidden = true; form.hidden = false; form.reset(); const b = form.querySelector('button[type=submit]'); b.disabled = false; b.textContent = 'Send'; }
+  });
+}
+
 for (const form of document.querySelectorAll('form[data-secure-drop]')) {
   const box = form.closest('[data-secure-drop-box]') || form.parentElement;
   const msg = form.querySelector('[name=message]'), reply = form.querySelector('[name=reply]');
