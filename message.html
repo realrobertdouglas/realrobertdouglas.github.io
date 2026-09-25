@@ -1,0 +1,67 @@
+---
+layout: page
+title: Send me a message
+permalink: /message/
+hide_drop: true
+description: A private way to send Robert a message. It's encrypted in your browser before it leaves your computer.
+---
+<style>
+.drop{--line:#e3e3e3;--soft:#f6f6f4;--mute:#777;--ok:#2f8f4a;--bad:#b3261e;--field:#fff}
+html[data-theme="dark"] .drop{--line:#34383c;--soft:#181a1c;--mute:#8a8a8a;--ok:#5cc474;--bad:#ff8a80;--field:#16181a}
+.drop .lede{font-size:1.05em}
+.drop label{display:block;font-weight:400;margin:18px 0 6px}
+.drop label small{color:var(--mute);font-weight:300}
+.drop textarea,.drop input[type=text]{width:100%;background:var(--field);border:1px solid var(--line);border-radius:4px;padding:10px 12px;font:inherit;color:inherit}
+.drop textarea{min-height:190px;resize:vertical}
+.drop textarea:focus,.drop input:focus{outline:2px solid var(--ok);outline-offset:-1px}
+.drop .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
+.drop button{background:var(--ok);color:#fff;border:0;border-radius:4px;padding:10px 18px;font:inherit;font-weight:400;cursor:pointer}
+html[data-theme="dark"] .drop button{color:#0f1a12}
+.drop button:disabled{opacity:.6;cursor:default}
+.drop .lock{color:var(--mute);font-size:.92em}
+.drop .sd-bad{color:var(--bad)}
+.drop .how{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin-top:28px}
+.drop .how h3{margin:0 0 8px;font-size:1.1em}
+.drop .how ol{padding-left:20px;margin:0}
+.drop .how li{margin:4px 0}
+.drop .fp{font-family:ui-monospace,Menlo,monospace;font-size:.86em;letter-spacing:.02em;word-spacing:.3em}
+.drop pre.cipher{font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.35;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:10px 12px;white-space:pre-wrap;word-break:break-all;max-height:170px;overflow:hidden;margin:0 0 10px}
+.drop .done{border:1px solid var(--ok);border-radius:6px;padding:14px 18px;margin-top:18px}
+.drop .done strong{color:var(--ok)}
+.drop [hidden]{display:none!important}
+</style>
+
+<div class="drop" data-secure-drop-box>
+  <p class="lede">Have something to tell me that shouldn't go through email? Write it here. It's encrypted on your computer, with a key only I hold, before it's sent. Not even this website can read it.</p>
+
+  <form data-secure-drop autocomplete="off">
+    <label for="drop-msg">Your message</label>
+    <textarea id="drop-msg" name="message" maxlength="100000" placeholder="Write as much as you like. Documents can be pasted in as text."></textarea>
+
+    <label for="drop-reply">How can I reply? <small>Optional. Leave blank to stay anonymous.</small></label>
+    <input type="text" id="drop-reply" name="reply" maxlength="300" placeholder="Email, Signal number, or a word only you'd recognise">
+
+    <div class="row">
+      <button type="submit">🔒&nbsp; Encrypt &amp; send</button>
+      <span class="lock" data-status aria-live="polite">Encrypted in your browser with OpenPGP</span>
+    </div>
+  </form>
+
+  <div class="done" data-done hidden>
+    <pre class="cipher" data-cipher></pre>
+    <strong>✓ Sent.</strong> Only I can read it. Above is exactly what left your computer.<br>
+    <span class="lock">Reference: <span class="fp" data-ref></span>. Keep it if you want to mention this message later.</span>
+  </div>
+
+  <div class="how">
+    <h3>How this works</h3>
+    <ol>
+      <li>Your browser locks the message with my <a href="/static/robert-drop.asc">public key</a> before sending it.</li>
+      <li>The server only ever stores the locked version. I get a note saying a message arrived, not what it says.</li>
+      <li>I unlock it on my own computer with my <strong>private key</strong>, which never goes online.</li>
+    </ol>
+    <p style="margin:12px 0 4px"><strong>Staying anonymous:</strong> the message can't be read in transit, but your internet provider and the server can see that you visited. For full anonymity, open this page in <a href="https://www.torproject.org/download/">Tor Browser</a> and leave the reply field blank.</p>
+    <p style="margin:10px 0 0">My key fingerprint, if you want to check it:<br><span class="fp">B49C 0C47 6209 A4DA 36AE  5956 2BBD 83AA FFD8 AEC0</span></p>
+  </div>
+</div>
+<script type="module" src="/static/js/secure-drop.js"></script>
