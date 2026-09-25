@@ -46,9 +46,11 @@ layout: default
 <style>
 .more-in{padding:12px 10px 14px;border-bottom:1px solid #f0f0f0}
 .more-in__label{font-size:14px;color:#888;margin-bottom:4px}
-.more-in ul{list-style:none;padding:0;margin:0}
-.more-in li{margin:3px 0;font-size:15px}
+.more-in ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;align-items:baseline;row-gap:2px}
+.more-in li{font-size:15px}
+.more-in li+li::before{content:"•";color:#aaa;margin:0 10px}
 .PageNavigation{padding-top:4px}
 html[data-theme="dark"] .more-in{border-color:#2e3236}
 html[data-theme="dark"] .more-in__label{color:#7d7d7d}
+html[data-theme="dark"] .more-in li+li::before{color:#5a5f64}
 </style>
