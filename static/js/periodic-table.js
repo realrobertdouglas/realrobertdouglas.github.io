@@ -1,11 +1,14 @@
 /* Periodic table on /research/elements/: a click on an element shows a quick look instead of following
    the cell's link, and highlights the molecule and compound rows that contain it. A second click on the
-   same element follows the link. Without this script every cell is a plain link to its page. */
+   same element follows the link. Without this script every cell is a plain link to its page.
+   When the table is wider than the screen and scrolls sideways (phones), the quick look is a card at the
+   bottom of the screen instead, so it is never half off-screen. */
 (function () {
   var table = document.getElementById('js-pt');
   var look = document.getElementById('js-pt-look');
   if (!table || !look) return;
   var inner = look.firstElementChild;
+  var scroller = table.parentElement;
   var rows = document.querySelectorAll('tr[data-elements]');
   var selected = null;
 
@@ -36,6 +39,11 @@
   function show(cell) {
     var d = cell.dataset;
     inner.textContent = '';
+    var close = el('button', 'pt-look__close', '×');
+    close.type = 'button';
+    close.setAttribute('aria-label', 'Close');
+    close.addEventListener('click', function () { select(null); });
+    inner.appendChild(close);
     inner.appendChild(el('span', 'pt-look__sym', d.symbol));
     var text = el('div', 'pt-look__text');
 
@@ -86,6 +94,7 @@
       var match = !!symbol && row.dataset.elements.split(' ').indexOf(symbol) !== -1;
       row.classList.toggle('is-match', match);
     });
+    look.classList.toggle('is-open', !!cell);
     if (cell) {
       cell.classList.add('is-selected');
       show(cell);
@@ -107,6 +116,12 @@
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && selected) select(null);
   });
+
+  function fit() {
+    scroller.classList.toggle('is-narrow', scroller.scrollWidth > scroller.clientWidth + 1);
+  }
+  window.addEventListener('resize', fit);
+  fit();
 
   look.hidden = false;
   prompt();
