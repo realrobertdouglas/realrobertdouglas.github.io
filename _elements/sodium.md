@@ -7,6 +7,7 @@ period: 3
 group: 1
 column: 1
 row: 3
+configuration: "[Ne] 3s1"
 isotopes:
   - mass_number: 23
     relative_atomic_mass: "22.9897692820(19)"

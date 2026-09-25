@@ -7,6 +7,7 @@ period: 2
 group: 15
 column: 15
 row: 2
+configuration: "[He] 2s2 2p3"
 isotopes:
   - mass_number: 14
     relative_atomic_mass: "14.00307400443(20)"

@@ -6,4 +6,5 @@ category: Actinide
 period: 7
 column: 14
 row: 10
+configuration: "[Rn] 5f12 7s2"
 ---

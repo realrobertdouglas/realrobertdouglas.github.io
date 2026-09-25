@@ -1,0 +1,126 @@
+{%- comment -%}
+  An element's electrons by shell, as an inline SVG, drawn from its configuration ("[Ar] 3d6 4s2").
+    grey           the noble-gas core in brackets
+    green          s and p electrons outside the core: the outer shell
+    lighter green  d electrons outside the core for transition metals, lanthanides and actinides, and
+                   f electrons for lanthanides and actinides (other filled d and f subshells are core)
+  Each shell's dots run clockwise from the top: core, then d and f, then s and p.
+  Dot positions come from _data/electron_rings.yml. Params: configuration, category, symbol, name.
+{%- endcomment -%}
+{%- assign es_cores = "He:2,Ne:2 8,Ar:2 8 8,Kr:2 8 18 8,Xe:2 8 18 18 8,Rn:2 8 18 32 18 8" | split: ',' -%}
+{%- assign es_d = false -%}
+{%- assign es_f = false -%}
+{%- if include.category == 'Lanthanide' or include.category == 'Actinide' -%}
+  {%- assign es_d = true -%}
+  {%- assign es_f = true -%}
+{%- elsif include.category == 'Transition metal' -%}
+  {%- assign es_d = true -%}
+{%- endif -%}
+
+{%- comment -%}Parse into entries "shell:kind:count", kind c (core), i (d and f) or v (s and p){%- endcomment -%}
+{%- assign es_entries = '' | split: '' -%}
+{%- assign es_outer = '' -%}
+{%- assign es_outer_n = 0 -%}
+{%- assign es_inner = '' -%}
+{%- assign es_inner_n = 0 -%}
+{%- assign es_config = '' -%}
+{%- assign es_core = '' -%}
+{%- assign es_tokens = include.configuration | split: ' ' -%}
+{%- for es_tok in es_tokens -%}
+  {%- assign es_first = es_tok | slice: 0 -%}
+  {%- if es_first == '[' -%}
+    {%- assign es_core = es_tok | remove: '[' | remove: ']' -%}
+    {%- for es_pair in es_cores -%}
+      {%- assign es_kv = es_pair | split: ':' -%}
+      {%- if es_kv[0] == es_core -%}
+        {%- assign es_core_counts = es_kv[1] | split: ' ' -%}
+        {%- for es_c in es_core_counts -%}
+          {%- capture es_e -%}{{ forloop.index }}:c:{{ es_c }}{%- endcapture -%}
+          {%- assign es_entries = es_entries | push: es_e -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- capture es_config -%}{{ es_config }}{{ es_tok }}{%- endcapture -%}
+  {%- else -%}
+    {%- assign es_shell = es_tok | slice: 0 -%}
+    {%- assign es_l = es_tok | slice: 1 -%}
+    {%- assign es_k = es_tok | slice: 2, 3 | plus: 0 -%}
+    {%- capture es_pretty -%}{{ es_shell }}{{ es_l }}<sup>{{ es_k }}</sup>{%- endcapture -%}
+    {%- capture es_config -%}{{ es_config }} {{ es_pretty }}{%- endcapture -%}
+    {%- comment -%}Liquid reads and/or right to left, so d and f are checked one at a time{%- endcomment -%}
+    {%- assign es_open = false -%}
+    {%- if es_l == 'd' and es_d -%}{%- assign es_open = true -%}{%- endif -%}
+    {%- if es_l == 'f' and es_f -%}{%- assign es_open = true -%}{%- endif -%}
+    {%- if es_l == 's' or es_l == 'p' -%}
+      {%- assign es_kind = 'v' -%}
+      {%- capture es_outer -%}{{ es_outer }} {{ es_pretty }}{%- endcapture -%}
+      {%- assign es_outer_n = es_outer_n | plus: es_k -%}
+    {%- elsif es_open -%}
+      {%- assign es_kind = 'i' -%}
+      {%- capture es_inner -%}{{ es_inner }} {{ es_pretty }}{%- endcapture -%}
+      {%- assign es_inner_n = es_inner_n | plus: es_k -%}
+    {%- else -%}
+      {%- assign es_kind = 'c' -%}
+    {%- endif -%}
+    {%- capture es_e -%}{{ es_shell }}:{{ es_kind }}:{{ es_k }}{%- endcapture -%}
+    {%- assign es_entries = es_entries | push: es_e -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign es_shells = 0 -%}
+{%- for es_e in es_entries -%}
+  {%- assign es_parts = es_e | split: ':' -%}
+  {%- assign es_n = es_parts[0] | plus: 0 -%}
+  {%- if es_n > es_shells -%}{%- assign es_shells = es_n -%}{%- endif -%}
+{%- endfor -%}
+{%- assign es_step = 82.0 | divided_by: es_shells -%}
+{%- if es_step > 22 -%}{%- assign es_step = 22 -%}{%- endif -%}
+{%- if es_shells > 5 -%}{%- assign es_dot = 3.1 -%}{%- else -%}{%- assign es_dot = 3.6 -%}{%- endif -%}
+{%- assign es_totals = '' | split: '' -%}
+
+<div class="ec-wrap">
+  <svg class="ec" viewBox="0 0 240 240" role="img" aria-label="{{ include.name }} electron shells">
+    {%- for es_n in (1..es_shells) -%}
+      {%- assign es_c = 0 -%}{%- assign es_i = 0 -%}{%- assign es_v = 0 -%}
+      {%- for es_e in es_entries -%}
+        {%- assign es_parts = es_e | split: ':' -%}
+        {%- assign es_en = es_parts[0] | plus: 0 -%}
+        {%- if es_en == es_n -%}
+          {%- assign es_count = es_parts[2] | plus: 0 -%}
+          {%- case es_parts[1] -%}
+            {%- when 'c' -%}{%- assign es_c = es_c | plus: es_count -%}
+            {%- when 'i' -%}{%- assign es_i = es_i | plus: es_count -%}
+            {%- else -%}{%- assign es_v = es_v | plus: es_count -%}
+          {%- endcase -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign es_total = es_c | plus: es_i | plus: es_v -%}
+      {%- assign es_totals = es_totals | push: es_total -%}
+      {%- assign es_r = es_step | times: es_n | plus: 26 -%}
+      {%- assign es_ci = es_c | plus: es_i -%}
+      <circle class="ec-ring{% if es_n == es_shells %} ec-ring--outer{% endif %}" cx="120" cy="120" r="{{ es_r | round: 1 }}"/>
+      {%- assign es_points = site.data.electron_rings[es_total] -%}
+      {%- for es_p in es_points -%}
+        {%- assign es_idx = forloop.index0 -%}
+        {%- if es_idx < es_c -%}{%- assign es_class = 'ec-core' -%}{%- elsif es_idx < es_ci -%}{%- assign es_class = 'ec-inner' -%}{%- else -%}{%- assign es_class = 'ec-outer' -%}{%- endif -%}
+        <circle class="{{ es_class }}" cx="{{ es_p[0] | times: es_r | plus: 120 | round: 1 }}" cy="{{ es_p[1] | times: es_r | plus: 120 | round: 1 }}" r="{{ es_dot }}"/>
+      {%- endfor -%}
+    {%- endfor -%}
+    <circle class="ec-nucleus" cx="120" cy="120" r="18"/>
+    <text class="ec-symbol" x="120" y="125.5" text-anchor="middle">{{ include.symbol }}</text>
+  </svg>
+  <div class="ec-text">
+    <p class="ec-config">{{ es_config | strip }}</p>
+    <p>Shells: {{ es_totals | join: ', ' }}</p>
+    <p>Valence electrons:
+      {%- if es_outer_n > 0 %} {{ es_outer_n }} in the outer shell ({{ es_outer | strip }}){% endif -%}
+      {%- if es_outer_n > 0 and es_inner_n > 0 %}, and{% endif -%}
+      {%- if es_inner_n > 0 %} {{ es_inner_n }} in {{ es_inner | strip }}{% endif -%}
+    </p>
+    <ul class="ec-legend">
+      {%- if es_outer_n > 0 %}<li><span class="ec-key ec-outer"></span>Outer s and p</li>{% endif -%}
+      {%- if es_inner_n > 0 %}<li><span class="ec-key ec-inner"></span>d and f</li>{% endif -%}
+      {%- if es_core != '' %}<li><span class="ec-key ec-core"></span>Core</li>{% endif -%}
+    </ul>
+  </div>
+</div>

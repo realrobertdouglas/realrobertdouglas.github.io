@@ -7,6 +7,7 @@ period: 1
 group: 1
 column: 1
 row: 1
+configuration: "1s1"
 isotopes:
   - mass_number: 1
     relative_atomic_mass: "1.00782503223(9)"

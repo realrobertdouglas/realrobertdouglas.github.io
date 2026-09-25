@@ -7,6 +7,7 @@ period: 6
 group: 15
 column: 15
 row: 6
+configuration: "[Xe] 4f14 5d10 6s2 6p3"
 isotopes:
   - mass_number: 209
     relative_atomic_mass: "208.9803991(16)"
