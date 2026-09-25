@@ -22,7 +22,7 @@ url: "https://douglas.lol"
 baseurl: ""
 
 markdown: kramdown
-gems:
+plugins:
   - jekyll-gist
 
 compress_html:
