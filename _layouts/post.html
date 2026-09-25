@@ -20,32 +20,18 @@ layout: default
   {% include share-page.html %}
 </div>
 
-{% assign hasSimilar = '' %}
-  {% for post in site.posts  %}
-    {% assign postHasSimilar = false %}
-      {% for tag in post.categories %}
-        {% for thisTag in page.categories %}
-          {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-            {% if hasSimilar.size == 0 %}
-            <div class="panel-body">
-              <h4>Related Posts</h4>
-              <ul>
-            {% endif %}
-                <li class="relatedPost">
-                  <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                  {% if post.categories %}
-                    (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
-                  {% endif %}
-                </li>
-          {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-          {% assign postHasSimilar = true %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
+{% comment %}More in this post's first category: up to three titles, newest first.{% endcomment %}
+{% assign more_cat = page.categories | first %}
+{% assign more = '' %}
+{% if more_cat %}
+  {% for post in site.categories[more_cat] %}
+    {% if post.url != page.url and more.size < 3 %}
+      {% if more.size == 0 %}<div class="more-in"><div class="more-in__label">More in {{ more_cat }}</div><ul>{% endif %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% capture more %}{{ more }}*{% endcapture %}
+    {% endif %}
   {% endfor %}
-  {% if hasSimilar.size > 0 %}
-  </ul>
-</div>
+  {% if more.size > 0 %}</ul></div>{% endif %}
 {% endif %}
 
 <div class="PageNavigation">
@@ -57,3 +43,12 @@ layout: default
   {% endif %}
 </div>
 
+<style>
+.more-in{padding:12px 10px 14px;border-bottom:1px solid #f0f0f0}
+.more-in__label{font-size:14px;color:#888;margin-bottom:4px}
+.more-in ul{list-style:none;padding:0;margin:0}
+.more-in li{margin:3px 0;font-size:15px}
+.PageNavigation{padding-top:4px}
+html[data-theme="dark"] .more-in{border-color:#2e3236}
+html[data-theme="dark"] .more-in__label{color:#7d7d7d}
+</style>

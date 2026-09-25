@@ -1,8 +1,17 @@
+{% comment %}Share links as plain links: no Twitter/X script (no tracking, no white widget box in dark mode).{% endcomment %}
+{% capture share_url %}{{ site.url }}{{ page.url }}{% endcapture %}
+<style>
+.share-page{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.share-page .share-label{margin-right:4px}
+.share-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #e3e3e3;background:#f6f6f4;color:inherit;border-radius:999px;padding:3px 12px;font:inherit;font-size:14px;line-height:1.4;cursor:pointer}
+.share-pill:hover,.share-pill:focus{border-color:#2f8f4a;text-decoration:none}
+.share-page a.share-pill,.share-page a.share-pill:link,.share-page a.share-pill:visited,.share-page a.share-pill:hover{color:inherit}
+.share-pill svg{width:13px;height:13px;fill:currentColor}
+html[data-theme="dark"] .share-pill,html[data-theme="dark"] .share-page a.share-pill:link,html[data-theme="dark"] .share-page a.share-pill:visited{border-color:#34383c;background:#26292d;color:#b8b8b8}
+html[data-theme="dark"] .share-page .share-pill:hover{border-color:#5cc474;color:#e0e0e0}
+</style>
 <div class="share-page">
-  <span style="float: left;">Share this on &rarr;&nbsp;&nbsp;</span>
-
-  <!-- Twitter -->
-  <a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ site.share.twitter_username }}">Tweet</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
+  <span class="share-label">Share</span>
+  <a class="share-pill" href="https://x.com/intent/post?text={{ page.title | url_encode }}&amp;url={{ share_url | url_encode }}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Post</a>
+  <button type="button" class="share-pill" onclick="var b=this;navigator.clipboard.writeText('{{ share_url }}').then(function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy link';},1500);});">Copy link</button>
 </div>
