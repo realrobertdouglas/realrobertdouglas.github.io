@@ -8,13 +8,14 @@ group: 9
 column: 9
 row: 6
 configuration: "[Xe] 4f14 5d7 6s2"
+refining: "Precipitated from PGM chloride solution as (NH4)3IrCl6, calcined and reduced with hydrogen to sponge."
 isotopes:
   - mass_number: 191
     relative_atomic_mass: "190.9605893(21)"
     abundance: "0.373(2)"
-    obtained: "Precipitated from PGM chloride solution as (NH4)3IrCl6, calcined and reduced with hydrogen to sponge."
+    obtained: ""
   - mass_number: 193
     relative_atomic_mass: "192.9629216(21)"
     abundance: "0.627(2)"
-    obtained: "Precipitated from PGM chloride solution as (NH4)3IrCl6, calcined and reduced with hydrogen to sponge."
+    obtained: ""
 ---

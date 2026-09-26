@@ -8,6 +8,7 @@ group: 18
 column: 18
 row: 1
 configuration: "1s2"
+refining: "Separated from natural gas by cryogenic distillation and adsorption: it stays gaseous below 20 K when everything else has already condensed, and pressure-swing adsorption on charcoal at 77 K finishes the cleanup."
 isotopes:
   - mass_number: 3
     relative_atomic_mass: "3.0160293201(25)"
@@ -16,5 +17,5 @@ isotopes:
   - mass_number: 4
     relative_atomic_mass: "4.00260325413(6)"
     abundance: "0.99999866(3)"
-    obtained: "Cryogenically distilled and adsorbed from natural gas; He stays gaseous below 20 K when everything else has already condensed."
+    obtained: ""
 ---

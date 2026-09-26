@@ -80,8 +80,18 @@ html[data-theme="dark"] .rs-page {
   align-items: center;
   gap: 16px;
 }
+.rs-head__text {
+  min-width: 0;
+}
 .rs-head .post-subtitle {
   margin: 0;
+}
+/* The second line of the header: category, period, group. Muter than the subtitle so it reads as context. */
+.rs-place {
+  margin: 2px 0 0;
+  font-size: 15px;
+  color: var(--rs-mute);
+  line-height: 1.35;
 }
 .rs-badge {
   flex: none;
@@ -95,6 +105,14 @@ html[data-theme="dark"] .rs-page {
   font-size: 28px;
   font-weight: 700;
   color: var(--rs-accent);
+}
+/* Refining paragraph — the shared per-element process, above the isotope table */
+.rs-refining {
+  font-size: 16px;
+  line-height: 1.55;
+}
+.rs-refining p {
+  margin: 0;
 }
 
 /* Tables */
@@ -663,3 +681,79 @@ circle.ms-atom--H { fill: var(--ms-h); }
   height: 14px;
 }
 
+
+/* Isotope table on narrow screens: each row becomes a card so the "obtained" cell can breathe.
+   Kicks in below 900px, which covers both mobile (sidebar folded above) and tablet at 768px+
+   where col-sm-8 leaves the isotope table only ~500px to work with. */
+@media (max-width: 899.98px) {
+  .rs-isotopes {
+    display: block;
+  }
+  .rs-isotopes thead {
+    /* accessible-hidden: still read by screen readers via the data-label attributes on cells */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .rs-isotopes tbody,
+  .rs-isotopes tr {
+    display: block;
+  }
+  .rs-isotopes tr {
+    padding: 10px 0 12px;
+    border-bottom: 1px solid var(--rs-line);
+  }
+  .rs-isotopes tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .rs-isotopes th,
+  .rs-isotopes td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+  .rs-isotopes tbody th {
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: var(--rs-ink);
+  }
+  .rs-isotopes tbody th sup {
+    font-size: 65%;
+  }
+  .rs-isotopes tbody th[data-label]::before {
+    content: none;
+  }
+  /* Numeric cells side by side on one line: mass then abundance, each with its own label */
+  .rs-isotopes .rs-num {
+    display: inline-block;
+    margin-right: 18px;
+    font-size: 14px;
+  }
+  .rs-isotopes .rs-num[data-label]::before {
+    content: attr(data-label) " ";
+    color: var(--rs-mute);
+    font-size: 12px;
+    letter-spacing: .02em;
+    margin-right: 3px;
+  }
+  /* "How this isotope is separated" cell on its own line under the numbers */
+  .rs-isotopes td:not(.rs-num) {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .rs-isotopes td:not(.rs-num):empty {
+    display: none;
+  }
+  .rs-isotopes td[data-label]:not(.rs-num)::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--rs-mute);
+    font-size: 12px;
+    letter-spacing: .02em;
+    margin-bottom: 2px;
+  }
+}

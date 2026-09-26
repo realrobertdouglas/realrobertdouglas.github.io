@@ -8,6 +8,7 @@ group: 13
 column: 13
 row: 2
 configuration: "[He] 2s2 2p1"
+refining: "Borax is calcined to boric oxide, then reduced with Mg to crude boron; higher-purity B comes from H2 reduction of BCl3 on a hot tungsten wire."
 isotopes:
   - mass_number: 10
     relative_atomic_mass: "10.01293695(41)"
@@ -16,5 +17,5 @@ isotopes:
   - mass_number: 11
     relative_atomic_mass: "11.00930536(45)"
     abundance: "0.801(7)"
-    obtained: "The tails of the BF3 distillation used for 10B; the bulk of every natural sample and of every ordinary boron product."
+    obtained: ""
 ---
