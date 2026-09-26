@@ -17,10 +17,19 @@ layout: default
   <section class="rs-section">
     <h2>Isomers</h2>
     {% if page.isomers.size == 1 %}<p class="rs-empty">{{ page.title }} has no other isomers.</p>{% endif %}
+    {% include research/formula-elements.html formula=page.formula %}
+    <ul class="ms-key">
+      {%- for el in formula_shown %}
+        <li><span class="ms-atom ms-atom--{{ el.symbol }}"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg></span><a href="{{ el.url }}">{{ el.title }}</a></li>
+      {%- endfor %}
+    </ul>
     {% for isomer in page.isomers %}
       <div class="rs-isomer">
         <h3>{{ isomer.name }} {% include research/formula.html formula=isomer.structure %}</h3>
-        <p><span class="rs-label">How it's made:</span> {{ isomer.made }}</p>
+        <div class="ms-wrap">
+          {% if isomer.atoms %}{% include research/molecule-structure.html atoms=isomer.atoms bonds=isomer.bonds name=isomer.name %}{% endif %}
+          <p><span class="rs-label">How it's made:</span> {{ isomer.made }}</p>
+        </div>
       </div>
     {% endfor %}
   </section>
