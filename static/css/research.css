@@ -560,7 +560,7 @@ html[data-theme="dark"] .rs-page {
 /* Molecule structures on molecule pages (_includes/research/molecule-structure.html) */
 .rs-page {
   --ms-bond: #9a9a9a;
-  --ms-c: #555;
+  --ms-c: #2e2e2e;
   --ms-c-ink: #fff;
   --ms-h: #fff;
   --ms-h-line: #b9b9b9;
@@ -573,7 +573,7 @@ html[data-theme="dark"] .rs-page {
   --ms-s-ink: #333;
   --ms-other: #2d7f43;
   --ms-other-ink: #fff;
-  --ms-fe: #7a4a2e;
+  --ms-fe: #3a4fb0;
   --ms-cu: #1b8a8c;
   --ms-pb: #56627a;
   --ms-ca: #7b5cc4;
@@ -593,7 +593,7 @@ html[data-theme="dark"] .rs-page {
   --ms-s-ink: #16181a;
   --ms-other: #5cc474;
   --ms-other-ink: #16181a;
-  --ms-fe: #c9a27e;
+  --ms-fe: #8c9bff;
   --ms-cu: #4cc6c8;
   --ms-pb: #9fb0cf;
   --ms-ca: #b39cf0;

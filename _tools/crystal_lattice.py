@@ -166,7 +166,7 @@ def main():
     drawn = []
     for el, f, inside in atoms:
         x, y, n = screen(cart(f))
-        fade = round(0.45 + 0.55 * (n - min(near)) / ((max(near) - min(near)) or 1), 2)
+        fade = round(0.6 + 0.4 * (n - min(near)) / ((max(near) - min(near)) or 1), 2)
         r = max(3.5, round(RADIUS.get(el, 0.46) * scale, 1))
         drawn.append((n, f'[{el}, {x}, {y}, {fade}, {r}]'))
     drawn.sort(key=lambda t: t[0])
