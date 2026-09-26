@@ -8,6 +8,7 @@ group: 1
 column: 1
 row: 2
 configuration: "[He] 2s1"
+refining: "Brine is evaporated in ponds until Li2CO3 crystallizes; spodumene is roasted to the β form, sulfated with hot H2SO4 and leached. Metallic Li comes from molten LiCl/KCl electrolysis at ~450 °C."
 isotopes:
   - mass_number: 6
     relative_atomic_mass: "6.0151228874(16)"

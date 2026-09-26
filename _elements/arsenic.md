@@ -8,9 +8,10 @@ group: 15
 column: 15
 row: 4
 configuration: "[Ar] 3d10 4s2 4p3"
+refining: "Roasting arsenopyrite (FeAsS) in air drives off As2O3 vapor, which is condensed in flue chambers as a white sublimate."
 isotopes:
   - mass_number: 75
     relative_atomic_mass: "74.92159457(95)"
     abundance: "1"
-    obtained: "The only stable isotope. Roasting arsenopyrite (FeAsS) in air drives off As2O3 vapor, which is condensed in flue chambers as a white sublimate."
+    obtained: ""
 ---

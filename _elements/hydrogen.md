@@ -8,6 +8,7 @@ group: 1
 column: 1
 row: 1
 configuration: "1s1"
+refining: "Made by steam methane reforming (CH4 + H2O → CO + 3 H2 over a Ni catalyst at ~800 °C) or by water electrolysis, then dried and compressed."
 isotopes:
   - mass_number: 1
     relative_atomic_mass: "1.00782503223(9)"

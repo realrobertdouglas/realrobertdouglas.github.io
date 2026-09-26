@@ -8,11 +8,12 @@ group: 16
 column: 16
 row: 2
 configuration: "[He] 2s2 2p4"
+refining: "Air is liquefied and fractionally distilled: O2 collects at the bottom of the column at 90 K."
 isotopes:
   - mass_number: 16
     relative_atomic_mass: "15.99491461957(17)"
     abundance: "0.99757(16)"
-    obtained: "The bulk of oxygen from air distillation; not separated further."
+    obtained: ""
   - mass_number: 17
     relative_atomic_mass: "16.99913175650(69)"
     abundance: "0.00038(1)"

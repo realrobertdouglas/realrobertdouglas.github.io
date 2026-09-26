@@ -8,11 +8,12 @@ group: 15
 column: 15
 row: 2
 configuration: "[He] 2s2 2p3"
+refining: "Air is compressed, cooled and expanded to liquid; a fractional distillation column boils off N2 at 77 K, before O2 at 90 K."
 isotopes:
   - mass_number: 14
     relative_atomic_mass: "14.00307400443(20)"
     abundance: "0.99636(20)"
-    obtained: "The bulk of natural nitrogen from air distillation; not separated further."
+    obtained: ""
   - mass_number: 15
     relative_atomic_mass: "15.00010889888(64)"
     abundance: "0.00364(20)"

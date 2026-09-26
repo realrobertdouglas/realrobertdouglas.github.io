@@ -7,6 +7,7 @@ period: 7
 column: 6
 row: 10
 configuration: "[Rn] 5f3 6d1 7s2"
+refining: "Ore is leached with sulfuric acid or sodium carbonate to yellowcake (U3O8), then purified by solvent extraction, calcined to UO3 and UO2, and either pelleted for reactor fuel or fluorinated to UF6 for enrichment."
 isotopes:
   - mass_number: 234
     relative_atomic_mass: "234.0409523(19)"

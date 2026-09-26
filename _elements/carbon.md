@@ -8,11 +8,12 @@ group: 14
 column: 14
 row: 2
 configuration: "[He] 2s2 2p2"
+refining: "Coked from coal by heating without air; petroleum coke is calcined and, for the silicon-carbide route to elemental C, reacted with SiO2 at ~2500 °C, driving off Si as SiO gas."
 isotopes:
   - mass_number: 12
     relative_atomic_mass: "12.0000000(00)"
     abundance: "0.9893(8)"
-    obtained: "The bulk of every carbon sample; not separated from the natural mix."
+    obtained: ""
   - mass_number: 13
     relative_atomic_mass: "13.00335483507(23)"
     abundance: "0.0107(8)"

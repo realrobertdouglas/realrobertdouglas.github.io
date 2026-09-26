@@ -2,20 +2,47 @@
 layout: default
 ---
 {%- assign notes = content | strip -%}
+{%- comment -%}
+  Decide whether the isotope table needs its "How this isotope is separated" column.
+  It only appears when at least one isotope carries per-isotope detail; otherwise
+  the shared refining paragraph above already covers the process.
+{%- endcomment -%}
+{%- assign per_isotope_obtained = false -%}
+{%- for isotope in page.isotopes -%}
+  {%- if isotope.obtained and isotope.obtained != '' -%}{%- assign per_isotope_obtained = true -%}{%- endif -%}
+{%- endfor -%}
+
+{%- comment -%}Molecules and compounds this element appears in, computed once here.{%- endcomment -%}
+{%- assign in_molecules = '' | split: '' -%}
+{%- for doc in site.molecules -%}
+  {%- include research/formula-elements.html formula=doc.formula -%}
+  {%- if formula_elements contains page.symbol -%}{%- assign in_molecules = in_molecules | push: doc -%}{%- endif -%}
+{%- endfor -%}
+{%- assign in_compounds = '' | split: '' -%}
+{%- for doc in site.compounds -%}
+  {%- include research/formula-elements.html formula=doc.formula -%}
+  {%- if formula_elements contains page.symbol -%}{%- assign in_compounds = in_compounds | push: doc -%}{%- endif -%}
+{%- endfor -%}
+{%- assign in_molecules = in_molecules | sort: 'title' -%}
+{%- assign in_compounds = in_compounds | sort: 'title' -%}
+
 <article class="post rs-page">
   {% include research/crumbs.html elements=true %}
   <header class="post-header rs-head">
     <span class="rs-badge" aria-hidden="true">{{ page.symbol }}</span>
-    <div>
+    <div class="rs-head__text">
       <h1 class="post-title">{{ page.title }}</h1>
-      <p class="post-subtitle">{{ page.symbol }} · atomic number {{ page.number }} · {{ page.category }} · period {{ page.period }}{% if page.group %}, group {{ page.group }}{% endif %}</p>
+      <p class="post-subtitle">{{ page.symbol }} · atomic number {{ page.number }}</p>
+      <p class="rs-place">{{ page.category }} · period {{ page.period }}{% if page.group %}, group {{ page.group }}{% endif %}</p>
     </div>
   </header>
 
-  <section class="rs-section">
-    <h2>Notes</h2>
-    {% if notes != '' %}<div class="post-content">{{ content }}</div>{% else %}<p class="rs-empty">Nothing written yet.</p>{% endif %}
-  </section>
+  {% if notes != '' %}
+    <section class="rs-section">
+      <h2>Notes</h2>
+      <div class="post-content">{{ content }}</div>
+    </section>
+  {% endif %}
 
   <section class="rs-section">
     <h2>Electrons</h2>
@@ -23,21 +50,33 @@ layout: default
     <p class="rs-source">{% if page.configuration_predicted %}Predicted by calculation; not yet measured. {% endif %}Green dots are the outer shell's s and p electrons. Softer green dots are the d electrons of transition metals, and the d and f electrons of lanthanides and actinides: they often take part in bonding, but not always. Grey dots are the core. {% if page.number <= 108 %}Ground-state configuration from the NIST <a href="https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html">Atomic Spectra Database</a> (A. Kramida, Yu. Ralchenko, J. Reader and the NIST ASD Team).{% else %}Configuration from relativistic calculations; NIST lists ground states up to element 108.{% endif %}</p>
   </section>
 
+  {% if page.refining %}
+    <section class="rs-section">
+      <h2>How it's obtained</h2>
+      <div class="post-content rs-refining">{{ page.refining | markdownify }}</div>
+    </section>
+  {% endif %}
+
   <section class="rs-section">
     <h2>Natural isotopes</h2>
     {% if page.isotopes.size > 0 %}
       <div class="rs-scroll">
-        <table class="rs-table">
+        <table class="rs-table rs-isotopes">
           <thead>
-            <tr><th scope="col">Isotope</th><th scope="col">Relative atomic mass</th><th scope="col">Abundance</th><th scope="col">How it's primarily obtained</th></tr>
+            <tr>
+              <th scope="col">Isotope</th>
+              <th scope="col">Relative atomic mass</th>
+              <th scope="col">Abundance</th>
+              {% if per_isotope_obtained %}<th scope="col">How this isotope is separated</th>{% endif %}
+            </tr>
           </thead>
           <tbody>
             {% for isotope in page.isotopes %}
               <tr>
-                <th scope="row"><sup>{{ isotope.mass_number }}</sup>{{ page.symbol }}</th>
-                <td class="rs-num">{{ isotope.relative_atomic_mass }}</td>
-                <td class="rs-num">{{ isotope.abundance }}</td>
-                <td>{{ isotope.obtained | markdownify | remove: '<p>' | remove: '</p>' }}</td>
+                <th scope="row" data-label="Isotope"><sup>{{ isotope.mass_number }}</sup>{{ page.symbol }}</th>
+                <td class="rs-num" data-label="Mass">{{ isotope.relative_atomic_mass }}</td>
+                <td class="rs-num" data-label="Abundance">{{ isotope.abundance }}</td>
+                {% if per_isotope_obtained %}<td data-label="How this isotope is separated">{{ isotope.obtained | markdownify | remove: '<p>' | remove: '</p>' }}</td>{% endif %}
               </tr>
             {% endfor %}
           </tbody>
@@ -49,25 +88,27 @@ layout: default
     {% endif %}
   </section>
 
-  {% assign molecules = site.molecules | sort: 'title' %}
-  {% assign compounds = site.compounds | sort: 'title' %}
-  {% for group in (1..2) %}
-    {% if group == 1 %}{% assign docs = molecules %}{% else %}{% assign docs = compounds %}{% endif %}
+  {% if in_molecules.size > 0 %}
     <section class="rs-section">
-      <h2>{% if group == 1 %}Molecules{% else %}Compounds{% endif %}</h2>
-      {% assign found = 0 %}
+      <h2>Molecules</h2>
       <ul class="rs-in">
-        {% for doc in docs %}
-          {% include research/formula-elements.html formula=doc.formula %}
-          {% if formula_elements contains page.symbol %}
-            {% assign found = found | plus: 1 %}
-            <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
-          {% endif %}
+        {% for doc in in_molecules %}
+          <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
         {% endfor %}
       </ul>
-      {% if found == 0 %}<p class="rs-empty">None listed yet.</p>{% endif %}
     </section>
-  {% endfor %}
+  {% endif %}
+
+  {% if in_compounds.size > 0 %}
+    <section class="rs-section">
+      <h2>Compounds</h2>
+      <ul class="rs-in">
+        {% for doc in in_compounds %}
+          <li><a href="{{ doc.url }}">{{ doc.title }}</a> {% include research/formula.html formula=doc.formula %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
 
   {% assign prev_number = page.number | minus: 1 %}
   {% assign next_number = page.number | plus: 1 %}
