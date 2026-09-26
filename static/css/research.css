@@ -555,6 +555,10 @@ html[data-theme="dark"] .rs-page {
   --ms-s-ink: #333;
   --ms-other: #2d7f43;
   --ms-other-ink: #fff;
+  --ms-fe: #7a4a2e;
+  --ms-cu: #1b8a8c;
+  --ms-pb: #56627a;
+  --ms-ca: #7b5cc4;
 }
 html[data-theme="dark"] .rs-page {
   --ms-bond: #6a6f74;
@@ -571,6 +575,10 @@ html[data-theme="dark"] .rs-page {
   --ms-s-ink: #16181a;
   --ms-other: #5cc474;
   --ms-other-ink: #16181a;
+  --ms-fe: #c9a27e;
+  --ms-cu: #4cc6c8;
+  --ms-pb: #9fb0cf;
+  --ms-ca: #b39cf0;
 }
 .ms-wrap {
   display: flex;
@@ -611,6 +619,30 @@ html[data-theme="dark"] .rs-page {
 .ms-atom--N text { fill: var(--ms-n-ink); }
 .ms-atom--S circle { fill: var(--ms-s); }
 .ms-atom--S text { fill: var(--ms-s-ink); }
+/* Unit cells use the same circles; metals get their own colors so chalcopyrite's Cu and Fe differ */
+circle.ms-atom { fill: var(--ms-other); stroke: var(--rs-bg, #fff); stroke-width: 1; }
+.ms-atom--Fe circle, circle.ms-atom--Fe { fill: var(--ms-fe); }
+.ms-atom--Cu circle, circle.ms-atom--Cu { fill: var(--ms-cu); }
+.ms-atom--Pb circle, circle.ms-atom--Pb { fill: var(--ms-pb); }
+.ms-atom--Ca circle, circle.ms-atom--Ca { fill: var(--ms-ca); }
+circle.ms-atom--C { fill: var(--ms-c); }
+circle.ms-atom--O { fill: var(--ms-o); }
+circle.ms-atom--S { fill: var(--ms-s); }
+circle.ms-atom--H { fill: var(--ms-h); }
+.cl {
+  flex: none;
+  max-width: 100%;
+  height: auto;
+}
+.cl-edge {
+  stroke: var(--ms-bond);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+.cl-bond {
+  stroke: var(--ms-bond);
+  stroke-width: 1.5;
+}
 .ms-key {
   display: flex;
   flex-wrap: wrap;
