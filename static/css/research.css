@@ -538,3 +538,96 @@ html[data-theme="dark"] .rs-page {
 .ec-legend .ec-core { background: var(--ec-core); }
 .ec-legend .ec-inner { background: var(--ec-inner); }
 .ec-legend .ec-outer { background: var(--ec-outer); }
+
+/* Molecule structures on molecule pages (_includes/research/molecule-structure.html) */
+.rs-page {
+  --ms-bond: #9a9a9a;
+  --ms-c: #555;
+  --ms-c-ink: #fff;
+  --ms-h: #fff;
+  --ms-h-line: #b9b9b9;
+  --ms-h-ink: #444;
+  --ms-o: #d64541;
+  --ms-o-ink: #fff;
+  --ms-n: #3b6fd8;
+  --ms-n-ink: #fff;
+  --ms-s: #e0b100;
+  --ms-s-ink: #333;
+  --ms-other: #2d7f43;
+  --ms-other-ink: #fff;
+}
+html[data-theme="dark"] .rs-page {
+  --ms-bond: #6a6f74;
+  --ms-c: #b4b8bc;
+  --ms-c-ink: #16181a;
+  --ms-h: #e8e8e8;
+  --ms-h-line: #e8e8e8;
+  --ms-h-ink: #16181a;
+  --ms-o: #ff7b72;
+  --ms-o-ink: #16181a;
+  --ms-n: #79a6ff;
+  --ms-n-ink: #16181a;
+  --ms-s: #e6c24a;
+  --ms-s-ink: #16181a;
+  --ms-other: #5cc474;
+  --ms-other-ink: #16181a;
+}
+.ms-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+.ms-wrap p {
+  flex: 1 1 220px;
+  min-width: 0;
+  margin: 0;
+}
+.ms {
+  flex: none;
+  max-width: 100%;
+  height: auto;
+}
+.ms-bond {
+  stroke: var(--ms-bond);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.ms-atom circle {
+  fill: var(--ms-other);
+}
+.ms-atom text {
+  fill: var(--ms-other-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+.ms-atom--C circle { fill: var(--ms-c); }
+.ms-atom--C text { fill: var(--ms-c-ink); }
+.ms-atom--H circle { fill: var(--ms-h); stroke: var(--ms-h-line); stroke-width: 1.5; }
+.ms-atom--H text { fill: var(--ms-h-ink); font-size: 11px; }
+.ms-atom--O circle { fill: var(--ms-o); }
+.ms-atom--O text { fill: var(--ms-o-ink); }
+.ms-atom--N circle { fill: var(--ms-n); }
+.ms-atom--N text { fill: var(--ms-n-ink); }
+.ms-atom--S circle { fill: var(--ms-s); }
+.ms-atom--S text { fill: var(--ms-s-ink); }
+.ms-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.ms-key li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ms-key svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+

@@ -1,0 +1,59 @@
+{%- comment -%}
+  A molecule's structure as an inline SVG, drawn at build time from an isomer's front matter:
+    atoms: [[C, 0, 0], [O, 0.866, -0.5], ...]   element, then x and y in bond lengths (y grows downward)
+    bonds: [[1, 2], [2, 3, 2], ...]             atoms by position in the list (from 1), then an optional
+                                                bond order: 2 for double, 3 for triple
+  Bonds are drawn first so atoms sit on top. Params: atoms, bonds, name.
+{%- endcomment -%}
+{%- assign ms_scale = 56 -%}
+{%- assign ms_pad = 22 -%}
+{%- assign ms_min_x = 1000 -%}{%- assign ms_max_x = -1000 -%}
+{%- assign ms_min_y = 1000 -%}{%- assign ms_max_y = -1000 -%}
+{%- for ms_atom in include.atoms -%}
+  {%- assign ms_x = ms_atom[1] | times: 1.0 -%}
+  {%- assign ms_y = ms_atom[2] | times: 1.0 -%}
+  {%- if ms_x < ms_min_x -%}{%- assign ms_min_x = ms_x -%}{%- endif -%}
+  {%- if ms_x > ms_max_x -%}{%- assign ms_max_x = ms_x -%}{%- endif -%}
+  {%- if ms_y < ms_min_y -%}{%- assign ms_min_y = ms_y -%}{%- endif -%}
+  {%- if ms_y > ms_max_y -%}{%- assign ms_max_y = ms_y -%}{%- endif -%}
+{%- endfor -%}
+{%- assign ms_pad2 = ms_pad | times: 2 -%}
+{%- assign ms_w = ms_max_x | minus: ms_min_x | times: ms_scale | plus: ms_pad2 | round -%}
+{%- assign ms_h = ms_max_y | minus: ms_min_y | times: ms_scale | plus: ms_pad2 | round -%}
+<svg class="ms" viewBox="0 0 {{ ms_w }} {{ ms_h }}" width="{{ ms_w }}" height="{{ ms_h }}" role="img" aria-label="Structure of {{ include.name }}">
+  {%- for ms_bond in include.bonds -%}
+    {%- assign ms_i = ms_bond[0] | minus: 1 -%}
+    {%- assign ms_j = ms_bond[1] | minus: 1 -%}
+    {%- assign ms_order = ms_bond[2] | default: 1 -%}
+    {%- assign ms_a = include.atoms[ms_i] -%}
+    {%- assign ms_b = include.atoms[ms_j] -%}
+    {%- assign ms_x1 = ms_a[1] | minus: ms_min_x | times: ms_scale | plus: ms_pad -%}
+    {%- assign ms_y1 = ms_a[2] | minus: ms_min_y | times: ms_scale | plus: ms_pad -%}
+    {%- assign ms_x2 = ms_b[1] | minus: ms_min_x | times: ms_scale | plus: ms_pad -%}
+    {%- assign ms_y2 = ms_b[2] | minus: ms_min_y | times: ms_scale | plus: ms_pad -%}
+    {%- comment -%}Parallel lines for double and triple bonds, offset across the bond (bonds are about one unit long){%- endcomment -%}
+    {%- assign ms_ox = ms_b[2] | minus: ms_a[2] | times: -5 -%}
+    {%- assign ms_oy = ms_b[1] | minus: ms_a[1] | times: 5 -%}
+    {%- if ms_order == 2 -%}
+      {%- assign ms_offsets = "-1,1" | split: ',' -%}
+    {%- elsif ms_order == 3 -%}
+      {%- assign ms_offsets = "-2,0,2" | split: ',' -%}
+    {%- else -%}
+      {%- assign ms_offsets = "0" | split: ',' -%}
+    {%- endif -%}
+    {%- for ms_k in ms_offsets -%}
+      {%- assign ms_dx = ms_ox | times: ms_k -%}
+      {%- assign ms_dy = ms_oy | times: ms_k -%}
+      <line class="ms-bond" x1="{{ ms_x1 | plus: ms_dx | round: 1 }}" y1="{{ ms_y1 | plus: ms_dy | round: 1 }}" x2="{{ ms_x2 | plus: ms_dx | round: 1 }}" y2="{{ ms_y2 | plus: ms_dy | round: 1 }}"/>
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- for ms_atom in include.atoms -%}
+    {%- assign ms_x = ms_atom[1] | minus: ms_min_x | times: ms_scale | plus: ms_pad | round: 1 -%}
+    {%- assign ms_y = ms_atom[2] | minus: ms_min_y | times: ms_scale | plus: ms_pad | round: 1 -%}
+    {%- if ms_atom[0] == 'H' -%}{%- assign ms_r = 10 -%}{%- else -%}{%- assign ms_r = 15 -%}{%- endif -%}
+    <g class="ms-atom ms-atom--{{ ms_atom[0] }}">
+      <circle cx="{{ ms_x }}" cy="{{ ms_y }}" r="{{ ms_r }}"/>
+      <text x="{{ ms_x }}" y="{{ ms_y | plus: 4.5 }}" text-anchor="middle">{{ ms_atom[0] }}</text>
+    </g>
+  {%- endfor -%}
+</svg>
