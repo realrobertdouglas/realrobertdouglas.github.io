@@ -1,0 +1,17 @@
+{%- comment -%}
+  A compound's unit cell as an inline SVG, from _data/lattices/<compound>.yml (made by
+  _tools/crystal_lattice.py): cell edges, bonds, then atoms back to front, farther atoms fainter.
+  Colors come from the molecule palette (.ms-atom--X). Params: lattice, name.
+{%- endcomment -%}
+{%- assign cl = include.lattice -%}
+<svg class="cl" viewBox="0 0 {{ cl.size[0] }} {{ cl.size[1] }}" width="{{ cl.size[0] }}" height="{{ cl.size[1] }}" role="img" aria-label="Unit cell of {{ include.name }}">
+  {%- for cl_e in cl.edges %}
+    <line class="cl-edge" x1="{{ cl_e[0] }}" y1="{{ cl_e[1] }}" x2="{{ cl_e[2] }}" y2="{{ cl_e[3] }}"/>
+  {%- endfor %}
+  {%- for cl_b in cl.bonds %}
+    <line class="cl-bond" x1="{{ cl_b[0] }}" y1="{{ cl_b[1] }}" x2="{{ cl_b[2] }}" y2="{{ cl_b[3] }}"/>
+  {%- endfor %}
+  {%- for cl_a in cl.atoms %}
+    <circle class="ms-atom ms-atom--{{ cl_a[0] }}" cx="{{ cl_a[1] }}" cy="{{ cl_a[2] }}" r="{{ cl_a[4] }}" opacity="{{ cl_a[3] }}"/>
+  {%- endfor %}
+</svg>

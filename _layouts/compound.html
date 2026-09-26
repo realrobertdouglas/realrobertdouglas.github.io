@@ -14,6 +14,24 @@ layout: default
     <p>{% include research/element-links.html formula=page.formula %}</p>
   </section>
 
+  {% assign lattice = site.data.lattices[page.slug] %}
+  {% if lattice %}
+    <section class="rs-section">
+      <h2>Crystal structure</h2>
+      {% include research/formula-elements.html formula=page.formula %}
+      <ul class="ms-key">
+        {%- for el in formula_shown %}
+          <li><span class="ms-atom ms-atom--{{ el.symbol }}"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/></svg></span><a href="{{ el.url }}">{{ el.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      <div class="ms-wrap">
+        {% include research/crystal-lattice.html lattice=lattice name=page.title %}
+        <p>One unit cell, the smallest block that repeats in every direction to build the whole crystal. Atoms on its faces, edges and corners are shared with the neighboring cells{% if page.slug == 'calcite' %}, and oxygens just outside it are drawn so every carbonate triangle is whole{% endif %}. Farther atoms are drawn fainter.<br><span class="rs-label">Cell:</span> {{ lattice.cell }}<br><span class="rs-label">Space group:</span> {{ lattice.space_group }}</p>
+      </div>
+      <p class="rs-source">Atom positions from the <a href="https://www.crystallography.net/cod/{{ lattice.cod }}.html">{{ lattice.source }}</a> ({{ lattice.authors }}, {{ lattice.year }}).</p>
+    </section>
+  {% endif %}
+
   <section class="rs-section">
     <h2>Where it's found</h2>
     <p>{{ page.found }}</p>
