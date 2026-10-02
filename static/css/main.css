@@ -78,6 +78,19 @@ html[data-theme="dark"] .post-subtitle {
 }
 
 /* Content */
+/* Section headings in a post stay smaller than the 25px post title (Bootstrap sets h2 at 30px; some older posts use h1 in the body) */
+div.post h1,
+div.post h2 {
+  margin-top: 26px;
+  font-size: 21px;
+}
+div.post h3 {
+  margin-top: 22px;
+  font-size: 18px;
+}
+div.post h4 {
+  font-size: 16px;
+}
 div.content pre {
   background: #333333;
   padding: 10px;
