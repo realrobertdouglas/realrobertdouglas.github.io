@@ -55,7 +55,8 @@ a:hover {
 }
 .site-logo {
   display: block;
-  padding: 0 6px;
+  max-width: 240px;
+  margin: 0 auto;
 }
 .site-logo img {
   display: block;
@@ -266,6 +267,12 @@ html[data-theme="dark"] .globe {
   .fixed-condition {
     position: fixed;
     max-width: 255px;
+  }
+}
+/* Bootstrap's 970px container leaves the sidebar column 212px wide; the fixed box must not outgrow it */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .fixed-condition {
+    max-width: 212px;
   }
 }
 @media (max-width: 768px) {
