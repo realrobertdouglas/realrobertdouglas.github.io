@@ -48,6 +48,29 @@ a:hover {
 .sidebar-intro {
   text-align: center;
 }
+/* The logo (static/img/logo-light.svg and logo-dark.svg): one image per theme, the other hidden */
+.sidebar-intro .author-name {
+  margin: 18px 0 0;
+  line-height: 0;
+}
+.site-logo {
+  display: block;
+  padding: 0 6px;
+}
+.site-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.site-logo .site-logo__dark {
+  display: none;
+}
+html[data-theme="dark"] .site-logo .site-logo__light {
+  display: none;
+}
+html[data-theme="dark"] .site-logo .site-logo__dark {
+  display: block;
+}
 .sidebar-intro .tagline {
   margin: 4px 0 14px;
   font-size: 13px;

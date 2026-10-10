@@ -40,7 +40,9 @@ layout: compress
     </script>
     <link rel="stylesheet" href="/static/css/publish_rotating_earth.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <link rel="icon" href="/static/img/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
     <meta name="author" content="{{ site.author }}" />
     {% comment %}Description for search results and link previews: an explicit description, else a research summary or the post's subtitle, else its opening paragraph.{% endcomment %}
@@ -143,7 +145,13 @@ layout: compress
           </div>
           <!-- <div class="project-img bordered" style="background-image: url('/static/img/rob.jpeg');"></div> -->
           <div class="sidebar-intro">
-            <h1 class="author-name"><a href="/">{{ site.author }}</a></h1>
+            {% comment %}The logo: the light version by day, the dark one when data-theme is dark (main.css swaps them).{% endcomment %}
+            <h1 class="author-name">
+              <a href="/" class="site-logo">
+                <img class="site-logo__light" src="/static/img/logo-light.svg" alt="{{ site.author }}" width="709" height="171">
+                <img class="site-logo__dark" src="/static/img/logo-dark.svg" alt="" width="709" height="171" aria-hidden="true">
+              </a>
+            </h1>
             {% if site.tagline %}
               <p class="tagline"><a href="/about/">{{ site.tagline }}</a></p>
             {% endif %}
