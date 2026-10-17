@@ -1,14 +1,14 @@
-{% comment %}Forwards an old post address to its new one. The pages in /redirects/ keep the old permalink and set redirect_to.{% endcomment %}<!DOCTYPE html>
+{% comment %}Forwards an old post address to its new one. The pages in /redirects/ keep the old permalink and set redirect_to, either a path on this site or a full URL on another.{% endcomment %}{% assign target = page.redirect_to %}{% unless target contains "://" %}{% assign target = site.url | append: page.redirect_to %}{% endunless %}<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Moved</title>
-<link rel="canonical" href="{{ site.url }}{{ page.redirect_to }}">
+<link rel="canonical" href="{{ target }}">
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
 <script>location.replace({{ page.redirect_to | jsonify }} + location.hash);</script>
 </head>
 <body>
-<p>This post has moved to <a href="{{ page.redirect_to }}">{{ site.url }}{{ page.redirect_to }}</a>.</p>
+<p>This post has moved to <a href="{{ page.redirect_to }}">{{ target }}</a>.</p>
 </body>
 </html>
