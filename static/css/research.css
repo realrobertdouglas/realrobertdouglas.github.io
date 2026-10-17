@@ -757,3 +757,386 @@ circle.ms-atom--H { fill: var(--ms-h); }
     margin-bottom: 2px;
   }
 }
+
+/* Lab bench (_includes/research/lab-bench.html, static/js/lab-bench.js): the beaker and its chips,
+   what comes out, the near misses, and the marks the bench puts on the table. Hidden without the script. */
+.lb {
+  margin-top: 28px;
+}
+.lb .section-title {
+  margin-top: 0;
+}
+.lb-intro {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--rs-mute);
+}
+.lb-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px 24px;
+  align-items: start;
+  margin-top: 12px;
+}
+@media (max-width: 640px) {
+  .lb-body {
+    grid-template-columns: 1fr;
+  }
+  .lb-beaker {
+    margin: 0 auto;
+  }
+}
+
+/* The beaker: the favicon's glass, the chips floating in it, the liquid rising a step per element */
+.lb-beaker {
+  position: relative;
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  transition: background-color .15s;
+}
+.lb-beaker.is-over {
+  background: var(--rs-match);
+}
+.lb-glass {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.lb-rim,
+.lb-wall {
+  fill: none;
+  stroke: var(--rs-ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .5;
+}
+.lb-liquid {
+  fill: var(--rs-accent);
+  opacity: .16;
+  transition: opacity .3s;
+}
+.lb-chips {
+  position: absolute;
+  left: 21%;
+  right: 21%;
+  top: 42%;
+  bottom: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-content: center;
+  justify-content: center;
+}
+.lb-hint {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 58%;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--rs-mute);
+}
+.lb-chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  color: var(--pt-ink);
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+  animation: lb-drop .25s ease-out;
+}
+.lb-chip small {
+  max-width: 40px;
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--pt-mute);
+}
+.lb-chip.is-idle {
+  opacity: .55;
+}
+.lb-chip__n {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--rs-accent);
+  color: var(--rs-bg);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lb-chip__x {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--rs-line);
+  border-radius: 50%;
+  background: var(--rs-bg);
+  color: var(--rs-mute);
+  font: 13px/1 inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lb-chip__x:hover {
+  color: var(--rs-ink);
+  border-color: var(--rs-mute);
+}
+@keyframes lb-drop {
+  from { transform: translateY(-14px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* What comes out */
+.lb-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  min-height: 20px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--rs-mute);
+}
+.lb-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--rs-accent);
+  cursor: pointer;
+}
+.lb-link:hover {
+  text-decoration: underline;
+}
+.lb-results h3 {
+  margin: 10px 0 0;
+  font-size: 17px;
+}
+.lb-results h3 small {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--rs-mute);
+}
+.lb-results .rs-empty {
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+.lb-results .rs-empty:empty {
+  display: none;
+}
+.lb-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+.lb-cards:empty {
+  display: none;
+}
+.lb-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 8px 10px 10px;
+  border: 1px solid var(--rs-line);
+  border-radius: 6px;
+  animation: lb-rise .25s ease-out;
+}
+.lb-card.is-all {
+  border-color: var(--rs-accent);
+  background: var(--rs-match);
+}
+.lb-card.is-lit {
+  box-shadow: 0 0 0 2px var(--rs-accent);
+}
+.lb-card p {
+  margin: 0;
+}
+.lb-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+.lb-pic svg {
+  width: auto;
+  height: 90px;
+  max-width: 100%;
+}
+.lb-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.lb-card__meta {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--rs-mute);
+}
+.lb-card__els {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+.lb-card__open {
+  margin-top: auto;
+  font-size: 14px;
+}
+.lb-tile {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 0;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--pt-ink);
+}
+button.lb-tile {
+  cursor: pointer;
+}
+button.lb-tile:hover {
+  box-shadow: 0 0 0 2px var(--rs-accent);
+}
+@keyframes lb-rise {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* One element away */
+.lb-almost-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lb-almost-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.lb-almost-list li.rs-empty {
+  display: block;
+}
+.lb-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 4px;
+  border: 1px solid var(--rs-line);
+  border-radius: 4px;
+  background: var(--rs-bg);
+  font: inherit;
+  font-size: 14px;
+  color: var(--rs-ink);
+  cursor: pointer;
+}
+.lb-add:hover {
+  border-color: var(--rs-accent);
+}
+.lb-further {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--rs-mute);
+}
+.lb-further:empty {
+  display: none;
+}
+
+/* Marks on the table: in the beaker, would finish something, lit by a result */
+.pt-cell.is-on-bench {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 1px;
+}
+.pt-cell.is-unlock::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rs-accent);
+}
+.pt.is-lighting .pt-cell:not(.is-lit) {
+  opacity: .35;
+}
+.pt-cell.is-lit {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 1px;
+  z-index: 2;
+}
+.pt-look__add {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--rs-accent);
+  cursor: pointer;
+}
+.pt-look__add:hover {
+  text-decoration: underline;
+}
+
+/* The cell being dragged with a mouse */
+.lb-ghost {
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 48px;
+  margin: -24px 0 0 -22px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+  color: var(--pt-ink);
+  line-height: 1;
+  pointer-events: none;
+  transform: scale(1.15);
+}
+body.lb-dragging {
+  cursor: grabbing;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lb-chip,
+  .lb-card {
+    animation: none;
+  }
+}

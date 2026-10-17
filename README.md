@@ -117,6 +117,10 @@ The tool reads a CIF file (the four so far came from the Crystallography Open Da
 - the 57–71 and 89–103 markers open their whole series as tiles and outline its row under the table;
 - on a wide screen the quick look sits in the empty space above the transition metals; when the table is wider than the screen and scrolls sideways (phones), it is a card pinned to the bottom of the screen with a close button, so it is never half off-screen. Escape closes it.
 
+### The lab bench
+
+Under the table, `_includes/research/lab-bench.html` and `static/js/lab-bench.js` put a beaker on the page. The quick look's **Add to bench** button puts the element in it (so does dragging a cell onto the beaker with a mouse), and the bench shows which of the molecules and compounds written up here are made of what is in the beaker, which one more element would finish something (with a button that adds it, and a dot on that element in the table), and lights a result's elements on the table when the reader hovers it or clicks its element tiles. Matching is by presence: an item comes out when every element it needs is in the beaker. Adding the same element again raises its chip's count (×2) but changes nothing yet; the counts are there for a later rule that checks how many of each. The include writes one `<template>` per molecule and compound, with its facts as data attributes and its formula and drawing inside, drawn at build time the same way its own page draws them, so the bench loads nothing else. Without JavaScript the section stays hidden.
+
 Research pages are in the sitemap but not in the sidebar search or the RSS feed, which cover posts only.
 
 ## How the rest of the site is put together
