@@ -128,6 +128,16 @@
       });
       var last = found.pop();
       text.appendChild(el('p', null, last ? 'In ' + (found.length ? found.join(', ') + ' and ' : '') + last : 'Not in any molecule or compound here yet'));
+
+      // The lab bench under the table (lab-bench.js) takes the element from here
+      if (window.labBench) {
+        var bench = el('p');
+        bench.appendChild(button('pt-look__add', window.labBench.has(d.symbol) ? '+ Add another to the bench' : '+ Add to bench', function () {
+          window.labBench.add(d.symbol);
+          show(cell);
+        }));
+        text.appendChild(bench);
+      }
     }
 
     var series = seriesOf(cell);

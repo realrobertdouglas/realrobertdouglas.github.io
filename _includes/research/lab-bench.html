@@ -1,0 +1,52 @@
+{%- comment -%}
+  Lab bench, under the periodic table on /research/elements/. The reader puts elements in the beaker
+  (the quick look's "Add to bench" button, or a drag with a mouse; static/js/lab-bench.js) and the
+  bench shows which of the molecules and compounds written up here are made of them, which one more
+  element would finish something, and lights an item's elements on the table. Each item's facts sit
+  on a <template> as data attributes, with its formula and its drawing inside, drawn at build time
+  the same way its own page draws them, so the bench loads nothing else. Hidden without JavaScript.
+{%- endcomment -%}
+<section class="lb" id="js-lb" hidden aria-label="Lab bench">
+  <h2 class="section-title">Lab bench</h2>
+  <p class="lb-intro">Put elements in the beaker and see what they make. Click an element above and press <b>Add to bench</b>, or drag it in with a mouse.</p>
+  <div class="lb-body">
+    <div class="lb-beaker" id="js-lb-beaker">
+      <svg class="lb-glass" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon class="lb-liquid" id="js-lb-liquid" points="13,87 85,87 85,87 13,87"/>
+        <path class="lb-rim" d="M22 9H76"/>
+        <path class="lb-wall" d="M31 18V34L11 89H87L67 34V18"/>
+      </svg>
+      <div class="lb-chips" id="js-lb-chips"></div>
+      <p class="lb-hint" id="js-lb-hint">Nothing in the beaker</p>
+    </div>
+    <div class="lb-results">
+      <p class="lb-tools"><span id="js-lb-count"></span><button type="button" class="lb-link" id="js-lb-clear" hidden>Empty the beaker</button></p>
+      <div class="lb-out" aria-live="polite">
+        <h3>Comes out <small id="js-lb-out-count"></small></h3>
+        <div class="lb-cards" id="js-lb-cards"></div>
+        <p class="rs-empty" id="js-lb-empty"></p>
+      </div>
+      <div class="lb-almost">
+        <h3>One element away</h3>
+        <ul class="lb-almost-list" id="js-lb-almost"></ul>
+        <p class="lb-further" id="js-lb-further"></p>
+      </div>
+    </div>
+  </div>
+  {%- for doc in site.molecules -%}
+    {%- include research/formula-elements.html formula=doc.formula -%}
+    {%- assign lb_isomer = doc.isomers[0] -%}
+    <template class="lb-item" data-kind="molecule" data-title="{{ doc.title }}" data-url="{{ doc.url }}" data-elements="{{ formula_elements | join: ' ' }}" data-isomers="{{ doc.isomers | size }}">
+      <span class="lb-formula">{% include research/formula.html formula=doc.formula %}</span>
+      {%- if lb_isomer.atoms %}<div class="lb-pic">{% include research/molecule-structure.html atoms=lb_isomer.atoms bonds=lb_isomer.bonds name=doc.title %}</div>{% endif %}
+    </template>
+  {%- endfor -%}
+  {%- for doc in site.compounds -%}
+    {%- include research/formula-elements.html formula=doc.formula -%}
+    {%- assign lb_lattice = site.data.lattices[doc.slug] -%}
+    <template class="lb-item" data-kind="compound" data-title="{{ doc.title }}" data-url="{{ doc.url }}" data-elements="{{ formula_elements | join: ' ' }}">
+      <span class="lb-formula">{% include research/formula.html formula=doc.formula %}</span>
+      {%- if lb_lattice %}<div class="lb-pic">{% include research/crystal-lattice.html lattice=lb_lattice name=doc.title %}</div>{% endif %}
+    </template>
+  {%- endfor -%}
+</section>

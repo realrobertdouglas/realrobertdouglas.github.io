@@ -1,11 +1,13 @@
 ---
 title: Elements
 summary: A clickable periodic table of all 118 elements, with their natural isotopes and the molecules and compounds they make up.
-updated: 2026-09-26
+updated: 2026-10-17
 ---
-<p class="rs-lead">Every element links to its own page. Below the table are the molecules and compounds I have written up so far.</p>
+<p class="rs-lead">Every element links to its own page. Below the table is a lab bench, and then the molecules and compounds I have written up so far.</p>
 
 {% include research/periodic-table.html %}
+
+{% include research/lab-bench.html %}
 
 {% assign molecules = site.molecules | sort: 'title' %}
 {% assign compounds = site.compounds | sort: 'title' %}
@@ -31,4 +33,5 @@ updated: 2026-09-26
   </div>
 {% endfor %}
 
+<script src="/static/js/lab-bench.js"></script>
 <script src="/static/js/periodic-table.js"></script>
