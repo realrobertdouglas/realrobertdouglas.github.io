@@ -32,7 +32,10 @@ def parse_cif(path):
     for line in open(path, encoding='utf-8', errors='replace'):
         if line.startswith(';') or line.startswith('#'):
             continue
-        tokens.extend(shlex.split(line, posix=True) if "'" in line or '"' in line else line.split())
+        try:
+            tokens.extend(shlex.split(line, posix=True) if "'" in line or '"' in line else line.split())
+        except ValueError:   # an apostrophe inside a word ("Smith's"), not a quoted value
+            tokens.extend(line.split())
     i = 0
     while i < len(tokens):
         t = tokens[i]
