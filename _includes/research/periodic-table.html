@@ -1,6 +1,8 @@
 {%- comment -%}
   Every cell links to its element's page. With JavaScript (static/js/periodic-table.js) a click opens
-  a quick look in the empty space above the transition metals instead, and a second click opens the page.
+  a quick look instead, and a second click opens the page. On a wide screen the quick look fills the
+  empty space above the transition metals; when the table is wider than the screen and scrolls sideways
+  it is a card pinned to the bottom of the screen (.is-narrow in research.css).
   The 57–71 and 89–103 markers open the whole lanthanide or actinide series in the quick look; without
   JavaScript they jump to that series' row under the table.
 {%- endcomment -%}
