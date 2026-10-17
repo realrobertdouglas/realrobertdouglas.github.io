@@ -85,6 +85,21 @@ html[data-theme="dark"] .site-logo .site-logo__dark {
 .sidebar-nav + .sdrop {
   margin-top: 6px;
 }
+/* Sister journals (default.html): a hairline under the private-message link, then two quieter links */
+.sidebar-journals {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e4e4;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sidebar-journals a {
+  display: block;
+}
+.sidebar-journals a + a {
+  margin-top: 3px;
+}
 .section-title {
   margin-top: 30px;
   font-size: 20px;
@@ -247,7 +262,8 @@ html[data-theme="dark"] div.col-sm-3 strong {
 }
 html[data-theme="dark"] hr,
 html[data-theme="dark"] footer,
-html[data-theme="dark"] .share-page {
+html[data-theme="dark"] .share-page,
+html[data-theme="dark"] .sidebar-journals {
   border-color: #2e3236;
 }
 html[data-theme="dark"] div.content pre {
