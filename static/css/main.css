@@ -117,18 +117,31 @@ html[data-theme="dark"] .post-subtitle {
 }
 
 /* Content */
+/* Entry text: 18px on 1.6 lines, capped at about 72 characters a line (the same rule as Captain's Notes);
+   the body's 16px/1.5 stays for the sidebar and the rest of the page. In Roboto Condensed 28em is about
+   72 characters, and on a phone the column is already narrower than that. */
+div.post {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 28em;
+}
+div.post p,
+div.post ul,
+div.post ol {
+  margin-bottom: 0.8em;
+}
 /* Section headings in a post stay smaller than the 25px post title (Bootstrap sets h2 at 30px; some older posts use h1 in the body) */
 div.post h1,
 div.post h2 {
   margin-top: 26px;
-  font-size: 21px;
+  font-size: 22px;
 }
 div.post h3 {
   margin-top: 22px;
-  font-size: 18px;
+  font-size: 19px;
 }
 div.post h4 {
-  font-size: 16px;
+  font-size: 18px;
 }
 div.content pre {
   background: #333333;
