@@ -157,6 +157,58 @@ html[data-theme="dark"] .rs-page {
   box-shadow: inset 3px 0 0 var(--rs-accent);
 }
 
+/* The same tables sorted by steps from the beaker (lab-bench.js): group labels with counts, the rows
+   the beaker makes highlighted, rows over two away quiet, a Steps column with a button per missing element */
+.rs-list tr.rs-group td {
+  padding: 14px 10px 4px;
+  border-bottom: 0;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--rs-mute);
+}
+.rs-list tbody tr.is-now {
+  background: var(--rs-match);
+}
+.rs-list tbody tr.is-now th {
+  box-shadow: inset 3px 0 0 var(--rs-accent);
+}
+.rs-list tbody tr.is-far {
+  opacity: .6;
+}
+.rs-list td a.is-in {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.rs-list td a.is-missing {
+  opacity: .5;
+}
+.rs-steps {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.rs-steps__n {
+  margin-right: 6px;
+  color: var(--rs-mute);
+}
+.rs-steps__add {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  border: 0;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--pt-ink);
+  cursor: pointer;
+}
+.rs-steps__add:hover {
+  box-shadow: 0 0 0 2px var(--rs-accent);
+}
+
 /* Molecules and compounds an element appears in */
 .rs-in {
   padding-left: 18px;

@@ -22,6 +22,10 @@
      window.labBench.finishes) says what adding that element would finish.
    - Hovering a result lights its elements on the table; clicking its element tiles keeps them lit
      until the next click or Escape.
+   - The Molecules and Compounds tables under the bench (the written-up pages) sort by how many
+     elements each row lacks while the beaker holds something, under small group labels with counts,
+     with a Steps column that says "Now" or "2 away" and has a button per missing element; the rows
+     the beaker makes are highlighted and rows over two away go quiet. Empty, the tables are as built.
    The section is hidden until this script runs, so without it nothing is shown. */
 (function () {
   var root = document.getElementById('js-lb');
@@ -351,6 +355,7 @@
       cells[s].classList.toggle('is-unlock', !!oneAway[s]);
     });
     light(null);
+    sortTables(symbols);
 
     // The quick look's button, if one is open, says whether its element is already in
     var addButton = document.querySelector('.pt-look__add');
@@ -360,6 +365,69 @@
 
   function addLabel(symbol) {
     return entry(symbol) ? '+ Add another to the bench' : '+ Add to bench';
+  }
+
+  // The tables under the bench: each keeps its rows in the order they were built, so the empty
+  // beaker can put them back
+  var tables = Array.prototype.map.call(document.querySelectorAll('table.rs-list'), function (t) {
+    var tbody = t.querySelector('tbody');
+    return { head: t.querySelector('.rs-steps-h'), tbody: tbody, rows: Array.prototype.slice.call(tbody.querySelectorAll('tr[data-elements]')) };
+  });
+  function stepsWord(n) {
+    return n === 0 ? 'Made now' : n === 1 ? 'One element away' : n === 2 ? 'Two away' : n + ' away';
+  }
+  function sortTables(symbols) {
+    tables.forEach(function (t) {
+      Array.prototype.forEach.call(t.tbody.querySelectorAll('tr.rs-group'), function (g) { g.remove(); });
+      if (t.head) t.head.hidden = !symbols.length;
+      if (!symbols.length) {
+        t.rows.forEach(function (row) {
+          t.tbody.appendChild(row);
+          row.classList.remove('is-now', 'is-far');
+          Array.prototype.forEach.call(row.querySelectorAll('td a'), function (a) { a.classList.remove('is-in', 'is-missing'); });
+          var cell = row.querySelector('.rs-steps');
+          if (cell) { cell.textContent = ''; cell.hidden = true; }
+        });
+        return;
+      }
+      var scored = t.rows.map(function (row, i) {
+        var missing = row.dataset.elements.split(' ').filter(function (s) { return s && symbols.indexOf(s) === -1; });
+        return { row: row, i: i, missing: missing, steps: missing.length };
+      });
+      scored.sort(function (m, n) { return m.steps - n.steps || m.i - n.i; });
+      var counts = {};
+      scored.forEach(function (s) { counts[s.steps] = (counts[s.steps] || 0) + 1; });
+      var last = null;
+      scored.forEach(function (s) {
+        if (s.steps !== last) {
+          last = s.steps;
+          var label = el('tr', 'rs-group'), td = el('td', null, stepsWord(s.steps) + ' · ' + counts[s.steps]);
+          td.colSpan = 4;
+          label.appendChild(td);
+          t.tbody.appendChild(label);
+        }
+        var row = s.row;
+        t.tbody.appendChild(row);
+        row.classList.toggle('is-now', s.steps === 0);
+        row.classList.toggle('is-far', s.steps > 2);
+        Array.prototype.forEach.call(row.querySelectorAll('td a'), function (a) {
+          var sym = a.textContent.trim();
+          if (!cells[sym]) return;
+          a.classList.toggle('is-in', symbols.indexOf(sym) !== -1);
+          a.classList.toggle('is-missing', symbols.indexOf(sym) === -1);
+        });
+        var cell = row.querySelector('.rs-steps');
+        if (!cell) return;
+        cell.hidden = false;
+        cell.textContent = '';
+        cell.appendChild(el('span', 'rs-steps__n', s.steps === 0 ? 'Now' : s.steps + ' away'));
+        s.missing.slice(0, 3).forEach(function (sym) {
+          var b = button('rs-steps__add ' + categoryClass(sym), '+ ' + sym, function () { add(sym); });
+          b.title = 'Add ' + nameOf(sym).toLowerCase() + ' to the beaker';
+          cell.appendChild(b);
+        });
+      });
+    });
   }
 
   // Dragging with a mouse: a cell dragged onto the beaker goes in. A click that didn't move is left
