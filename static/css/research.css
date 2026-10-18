@@ -898,7 +898,8 @@ circle.ms-atom--H { fill: var(--ms-h); }
   }
 }
 
-/* The beaker: the favicon's glass, the chips floating in it, the liquid rising a step per element */
+/* The beaker: straight walls with a lip, graduation ticks on the left wall, the chips floating in it,
+   the liquid rising a tick per element */
 .lb-beaker {
   position: relative;
   width: 220px;
@@ -917,7 +918,6 @@ circle.ms-atom--H { fill: var(--ms-h); }
   height: 100%;
   pointer-events: none;
 }
-.lb-rim,
 .lb-wall {
   fill: none;
   stroke: var(--rs-ink);
@@ -926,6 +926,12 @@ circle.ms-atom--H { fill: var(--ms-h); }
   stroke-linejoin: round;
   opacity: .5;
 }
+.lb-tick line {
+  stroke: var(--rs-ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: .35;
+}
 .lb-liquid {
   fill: var(--rs-accent);
   opacity: .16;
@@ -933,10 +939,10 @@ circle.ms-atom--H { fill: var(--ms-h); }
 }
 .lb-chips {
   position: absolute;
-  left: 21%;
-  right: 21%;
-  top: 42%;
-  bottom: 15%;
+  left: 30%;
+  right: 25%;
+  top: 24%;
+  bottom: 14%;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -945,9 +951,9 @@ circle.ms-atom--H { fill: var(--ms-h); }
 }
 .lb-hint {
   position: absolute;
-  left: 15%;
-  right: 15%;
-  top: 58%;
+  left: 25%;
+  right: 20%;
+  top: 50%;
   margin: 0;
   text-align: center;
   font-size: 14px;

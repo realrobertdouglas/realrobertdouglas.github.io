@@ -201,14 +201,12 @@
     return c;
   }
 
-  // The liquid rises a step per element, up to six; the glass walls run from (31,34) and (67,34)
-  // down to (11,89) and (87,89) in the drawing's 100 by 100 box
+  // The liquid rises one graduation tick per element, up to six: from the beaker's floor at 88 to
+  // 28 in the drawing's 100 by 100 box
   function fillLiquid(n) {
-    var level = Math.min(n, 6) / 6;
-    var y = 87 - level * 48;
-    var spread = (y - 34) * (20 / 55);
-    var x1 = (31 - spread + 2).toFixed(1), x2 = (67 + spread - 2).toFixed(1);
-    liquid.setAttribute('points', '13,87 85,87 ' + x2 + ',' + y.toFixed(1) + ' ' + x1 + ',' + y.toFixed(1));
+    var top = 88 - Math.min(n, 6) * 10;
+    liquid.setAttribute('y', top);
+    liquid.setAttribute('height', 88 - top);
     liquid.style.opacity = n ? '' : '0';
   }
 

@@ -11,10 +11,15 @@
   <p class="lb-intro">Put elements in the beaker and see what they make: the molecules and compounds written up here, the minerals in the <a href="https://www.crystallography.net/cod/">Crystallography Open Database</a> and the molecules in <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a> that Wikipedia writes about, drawn from their published structures. Click an element above and press <b>Add to bench</b>, or drag it in with a mouse.</p>
   <div class="lb-body">
     <div class="lb-beaker" id="js-lb-beaker">
+      {%- comment -%}A beaker: straight walls with a lip, six graduation ticks on the left wall, one per element the liquid rises past (lab-bench.js sets the liquid's height){%- endcomment -%}
       <svg class="lb-glass" viewBox="0 0 100 100" aria-hidden="true">
-        <polygon class="lb-liquid" id="js-lb-liquid" points="13,87 85,87 85,87 13,87"/>
-        <path class="lb-rim" d="M22 9H76"/>
-        <path class="lb-wall" d="M31 18V34L11 89H87L67 34V18"/>
+        <rect class="lb-liquid" id="js-lb-liquid" x="24.5" y="88" width="51" height="0" rx="1"/>
+        <path class="lb-wall" d="M19 11L23 15V85Q23 89 27 89H73Q77 89 77 85V15L81 11"/>
+        <g class="lb-tick">
+          <line x1="25" y1="78" x2="32" y2="78"/><line x1="25" y1="68" x2="29" y2="68"/>
+          <line x1="25" y1="58" x2="32" y2="58"/><line x1="25" y1="48" x2="29" y2="48"/>
+          <line x1="25" y1="38" x2="32" y2="38"/><line x1="25" y1="28" x2="29" y2="28"/>
+        </g>
       </svg>
       <div class="lb-chips" id="js-lb-chips"></div>
       <p class="lb-hint" id="js-lb-hint">Nothing in the beaker</p>
