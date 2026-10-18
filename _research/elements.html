@@ -17,7 +17,8 @@ updated: 2026-10-17
   <div class="rs-scroll">
     <table class="rs-table rs-list">
       <thead>
-        <tr><th scope="col">{% if group == 1 %}Molecule{% else %}Compound{% endif %}</th><th scope="col">Formula</th><th scope="col">Elements</th></tr>
+        {% comment %}While the beaker holds something, lab-bench.js sorts these rows by how many elements each lacks and fills the Steps column; empty, it is hidden and the rows are alphabetical{% endcomment %}
+        <tr><th scope="col">{% if group == 1 %}Molecule{% else %}Compound{% endif %}</th><th scope="col">Formula</th><th scope="col">Elements</th><th scope="col" class="rs-steps-h" hidden>Steps away</th></tr>
       </thead>
       <tbody>
         {% for doc in docs %}
@@ -26,6 +27,7 @@ updated: 2026-10-17
             <th scope="row"><a href="{{ doc.url }}">{{ doc.title }}</a></th>
             <td>{% include research/formula.html formula=doc.formula %}</td>
             <td>{% include research/element-links.html formula=doc.formula short=true %}</td>
+            <td class="rs-steps" hidden></td>
           </tr>
         {% endfor %}
       </tbody>
