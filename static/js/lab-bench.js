@@ -1,10 +1,11 @@
 /* Lab bench on /research/elements/ (_includes/research/lab-bench.html): elements go into the beaker,
    and the bench shows what is made of them.
    - Two tiers. The molecules and compounds written up here come from the page's <template>s and
-     carry their drawing and a link to their page. The catalog of minerals (static/data/minerals.json,
-     from _tools/catalog.py) is fetched the first time something goes in the beaker; a mineral's unit
-     cell (static/data/cells/<cod>.json) is fetched when its card is shown and drawn by
-     crystal-cell.js. A written-up item hides its catalog namesake.
+     carry their drawing and a link to their page. The catalogs are fetched the first time something
+     goes in the beaker: minerals (static/data/minerals.json, from _tools/catalog.py), whose unit cell
+     (static/data/cells/<cod>.json) is drawn by crystal-cell.js, and molecules (static/data/molecules.json,
+     from _tools/molecules.py), whose structure (static/data/molecules/<cid>.json) is drawn by
+     molecule-structure.js, each fetched when its card is shown. A written-up item hides its namesake.
    - An element gets in through the quick look's "Add to bench" button (periodic-table.js calls
      window.labBench.add) or, with a mouse, by dragging its cell onto the beaker. A plain click on a
      cell still opens the quick look, so a drag that moved swallows the click that follows it.
@@ -23,10 +24,15 @@
   var root = document.getElementById('js-lb');
   var table = document.getElementById('js-pt');
   if (!root || !table) return;
-  var CATALOG = '/static/data/minerals.json';
+  var MINERALS = '/static/data/minerals.json';
   var CELLS = '/static/data/cells/';
+  var MOLECULES = '/static/data/molecules.json';
+  var STRUCTURES = '/static/data/molecules/';
   var COD = 'https://www.crystallography.net/cod/';
-  var SHOW = 12;        // cards shown before "Show all"
+  var PUBCHEM = 'https://pubchem.ncbi.nlm.nih.gov/compound/';
+  var WIKIPEDIA = 'https://en.wikipedia.org/wiki/';
+  var SHOW = 12;        // cards shown at first
+  var STEP = 48;        // cards each "Show more" adds (each card fetches its drawing)
   var GHOSTS = 6;       // "one element away" cards
 
   var beaker = document.getElementById('js-lb-beaker');
@@ -56,8 +62,9 @@
       rank: Infinity
     };
   });
-  var catalog = null;        // null until asked for, then 'loading', then the minerals
-  var cellCache = {};        // cod id -> cell data, a promise while it loads
+  var catalog = null;        // null until asked for, then 'loading', then the minerals and molecules
+  var tiers = { minerals: 0, molecules: 0 };
+  var drawingCache = {};     // url -> a promise of the cell or structure data
   var items = written.slice();
   var usedAnywhere = {};
   function index() {
@@ -68,7 +75,7 @@
 
   var bench = [];     // [{ symbol, count }] in the order added
   var lit = null;     // the item whose elements stay lit on the table, or null
-  var showAll = false;
+  var limit = SHOW;   // how many result cards are shown
   var oneAway = {};   // symbol -> the items that element would finish, ranked (from the last render)
 
   function el(tag, className, text) {
@@ -108,33 +115,49 @@
     return (n.rank - m.rank) || m.title.localeCompare(n.title);
   }
 
-  // The catalog: fetched once, the first time the beaker gets something
+  // The catalogs: fetched once, the first time the beaker gets something
   function loadCatalog() {
     if (catalog !== null) return;
     catalog = 'loading';
     var taken = {};
     written.forEach(function (it) { taken[it.title.toLowerCase()] = true; });
-    fetch(CATALOG).then(function (r) { return r.ok ? r.json() : []; }).then(function (rows) {
-      catalog = rows.filter(function (row) { return !taken[row[0].toLowerCase()]; }).map(function (row) {
+    function rows(url) {
+      return fetch(url).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
+    }
+    Promise.all([rows(MINERALS), rows(MOLECULES)]).then(function (both) {
+      var minerals = both[0].filter(function (row) { return !taken[row[0].toLowerCase()]; }).map(function (row) {
         return {
           kind: 'mineral',
           title: row[0].charAt(0).toUpperCase() + row[0].slice(1),
           formula: row[1],
           elements: row[2].split(' '),
           system: row[3],
-          cod: row[4],
           rank: row[5],
           named: row[6],
           locality: row[7],
+          drawing: CELLS + row[4] + '.json',
           url: COD + row[4] + '.html',
           page: false
         };
       });
+      minerals.forEach(function (it) { taken[it.title.toLowerCase()] = true; });
+      var molecules = both[1].filter(function (row) { return !taken[row[0].toLowerCase()]; }).map(function (row) {
+        return {
+          kind: 'molecule',
+          title: row[0].charAt(0).toUpperCase() + row[0].slice(1),
+          formula: row[1],
+          elements: row[2].split(' '),
+          rank: row[3],
+          drawing: row[6] <= 60 ? STRUCTURES + row[4] + '.json' : null,
+          url: row[5] ? WIKIPEDIA + row[5].replace(/ /g, '_') : PUBCHEM + row[4],
+          read: !!row[5],
+          page: false
+        };
+      });
+      tiers = { minerals: minerals.length, molecules: molecules.length };
+      catalog = minerals.concat(molecules);
       items = written.concat(catalog);
       index();
-      render();
-    }).catch(function () {
-      catalog = [];
       render();
     });
   }
@@ -143,18 +166,18 @@
     if (!cells[symbol]) return;
     var e = entry(symbol);
     if (e) e.count += 1; else bench.push({ symbol: symbol, count: 1 });
-    showAll = false;
+    limit = SHOW;
     loadCatalog();
     render();
   }
   function remove(symbol) {
     bench = bench.filter(function (b) { return b.symbol !== symbol; });
-    showAll = false;
+    limit = SHOW;
     render();
   }
   function clear() {
     bench = [];
-    showAll = false;
+    limit = SHOW;
     render();
   }
 
@@ -191,18 +214,24 @@
     });
   }
 
-  // A mineral's cell, drawn when its card appears
-  function cellPicture(it, pic) {
-    if (!window.crystalCell) return;
-    var p = cellCache[it.cod];
+  // A catalog item's drawing, fetched and drawn when its card appears: a mineral's unit cell, a
+  // molecule's structure
+  function catalogPicture(it, pic) {
+    var drawer = it.kind === 'mineral' ? window.crystalCell : window.moleculeStructure;
+    if (!it.drawing || !drawer) {
+      pic.textContent = '';
+      pic.appendChild(el('span', 'lb-pic__none', 'Too large to draw'));
+      return;
+    }
+    var p = drawingCache[it.drawing];
     if (!p) {
-      p = cellCache[it.cod] = fetch(CELLS + it.cod + '.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+      p = drawingCache[it.drawing] = fetch(it.drawing).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
     }
     p.then(function (data) {
       pic.textContent = '';
-      var svg = data && window.crystalCell.draw(data, it.title);
+      var svg = data && drawer.draw(data, it.title);
       if (svg) pic.appendChild(svg);
-      else pic.appendChild(el('span', 'lb-pic__none', data ? 'Cell too large to draw' : 'No drawing'));
+      else pic.appendChild(el('span', 'lb-pic__none', data ? 'Too large to draw' : 'No drawing'));
     });
   }
 
@@ -216,7 +245,7 @@
       if (drawn) pic = drawn.cloneNode(true);
     } else {
       pic.appendChild(el('span', 'lb-pic__none', '…'));
-      cellPicture(it, pic);
+      catalogPicture(it, pic);
     }
     c.appendChild(pic);
     c.appendChild(el('p', 'lb-card__name', it.title));
@@ -226,7 +255,7 @@
       meta.appendChild(it.template.content.querySelector('.lb-formula').cloneNode(true));
       if (it.isomers > 1) meta.appendChild(document.createTextNode(' · ' + it.isomers + ' isomers'));
     } else {
-      meta.appendChild(document.createTextNode('Mineral · '));
+      meta.appendChild(document.createTextNode((it.kind === 'mineral' ? 'Mineral' : 'Molecule') + ' · '));
       meta.appendChild(formulaNode(it.formula));
       if (it.system) meta.appendChild(document.createTextNode(' · ' + it.system));
     }
@@ -253,7 +282,7 @@
       addBtn.appendChild(document.createTextNode('Add ' + nameOf(needs).toLowerCase()));
       c.appendChild(addBtn);
     } else {
-      var open = el('a', 'lb-card__open', it.page ? 'Open page →' : 'Structure at COD →');
+      var open = el('a', 'lb-card__open', it.page ? 'Open page →' : it.kind === 'mineral' ? 'Structure at COD →' : it.read ? 'Read on Wikipedia →' : 'At PubChem →');
       open.href = it.url;
       if (!it.page) open.rel = 'noopener';
       c.appendChild(open);
@@ -271,10 +300,10 @@
     hint.hidden = bench.length > 0;
     fillLiquid(bench.length);
     clearBtn.hidden = !bench.length;
-    var minerals = catalog && catalog !== 'loading' ? catalog.length : 0;
     countEl.textContent = bench.length
       ? bench.length + (bench.length === 1 ? ' element' : ' elements') + ' in the beaker'
-        + (minerals ? ' · ' + written.length + ' written up here and ' + minerals.toLocaleString() + ' minerals from the Crystallography Open Database' : '')
+        + (tiers.minerals || tiers.molecules ? ' · ' + written.length + ' written up here, ' + tiers.minerals.toLocaleString()
+          + ' minerals from the Crystallography Open Database and ' + tiers.molecules.toLocaleString() + ' molecules from PubChem' : '')
       : '';
 
     // What comes out, and what one more element would finish
@@ -294,11 +323,12 @@
 
     lit = null;
     cardsBox.textContent = '';
-    var shown = showAll ? made : made.slice(0, SHOW);
+    var shown = made.slice(0, limit);
     shown.forEach(function (it) { cardsBox.appendChild(card(it, it.elements.length === symbols.length)); });
     outCount.textContent = made.length ? made.length.toLocaleString() + (shown.length < made.length ? ', showing ' + shown.length : '') : '';
-    moreBtn.hidden = shown.length >= made.length;
-    moreBtn.textContent = 'Show all ' + made.length.toLocaleString();
+    var left = made.length - shown.length;
+    moreBtn.hidden = left <= 0;
+    moreBtn.textContent = left > STEP ? 'Show ' + STEP + ' more of ' + left.toLocaleString() : 'Show the other ' + left;
     emptyP.textContent = made.length ? '' : (!bench.length ? 'Nothing yet.'
       : catalog === 'loading' ? 'Looking through the catalog…'
       : 'Nothing here is made of just ' + listWords(symbols.map(nameOf).map(function (n) { return n.toLowerCase(); })) + '.');
@@ -378,7 +408,7 @@
   }, true);
 
   clearBtn.addEventListener('click', clear);
-  moreBtn.addEventListener('click', function () { showAll = true; render(); });
+  moreBtn.addEventListener('click', function () { limit += STEP; render(); });
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && lit) { lit = null; light(null); }
   });
