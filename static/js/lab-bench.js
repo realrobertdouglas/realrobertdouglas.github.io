@@ -12,9 +12,10 @@
      same element added again raises its chip's count (shown as ×2) but changes nothing yet; counts
      are there for a later rule that checks how many of each.
    - Results are ranked: written-up items first, then minerals by commonness (the catalog's rank),
-     a dozen shown and the rest behind "Show all". "One element away" lists what one more element
-     would finish, a button adding it; the dot on the table marks an element that would finish
-     something written up, since with the catalog nearly every element finishes some mineral.
+     a dozen shown and the rest behind "Show all". "One element away" is a few faded cards for the
+     commonest things one more element would finish, each with a button that adds it; every
+     element that would finish something gets a dot on the table, and the quick look (through
+     window.labBench.finishes) says what adding that element would finish.
    - Hovering a result lights its elements on the table; clicking its element tiles keeps them lit
      until the next click or Escape.
    The section is hidden until this script runs, so without it nothing is shown. */
@@ -26,8 +27,7 @@
   var CELLS = '/static/data/cells/';
   var COD = 'https://www.crystallography.net/cod/';
   var SHOW = 12;        // cards shown before "Show all"
-  var NAMES = 3;        // names per "one element away" row before "and n more"
-  var ROWS = 12;        // "one element away" rows before "Show all"
+  var GHOSTS = 6;       // "one element away" cards
 
   var beaker = document.getElementById('js-lb-beaker');
   var chipsBox = document.getElementById('js-lb-chips');
@@ -39,9 +39,8 @@
   var outCount = document.getElementById('js-lb-out-count');
   var emptyP = document.getElementById('js-lb-empty');
   var moreBtn = document.getElementById('js-lb-more');
-  var almostList = document.getElementById('js-lb-almost');
-  var almostMore = document.getElementById('js-lb-almost-more');
-  var further = document.getElementById('js-lb-further');
+  var ghostsBox = document.getElementById('js-lb-ghosts');
+  var ghostsEmpty = document.getElementById('js-lb-ghosts-empty');
 
   var cells = {};
   Array.prototype.forEach.call(table.querySelectorAll('.pt-cell'), function (c) { cells[c.dataset.symbol] = c; });
@@ -69,7 +68,8 @@
 
   var bench = [];     // [{ symbol, count }] in the order added
   var lit = null;     // the item whose elements stay lit on the table, or null
-  var showAll = false, showAllRows = false;
+  var showAll = false;
+  var oneAway = {};   // symbol -> the items that element would finish, ranked (from the last render)
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -143,18 +143,18 @@
     if (!cells[symbol]) return;
     var e = entry(symbol);
     if (e) e.count += 1; else bench.push({ symbol: symbol, count: 1 });
-    showAll = showAllRows = false;
+    showAll = false;
     loadCatalog();
     render();
   }
   function remove(symbol) {
     bench = bench.filter(function (b) { return b.symbol !== symbol; });
-    showAll = showAllRows = false;
+    showAll = false;
     render();
   }
   function clear() {
     bench = [];
-    showAll = showAllRows = false;
+    showAll = false;
     render();
   }
 
@@ -206,8 +206,9 @@
     });
   }
 
-  function card(it, usesAll) {
-    var c = el('div', 'lb-card' + (usesAll ? ' is-all' : '') + (it.page ? '' : ' is-db'));
+  // A result card, or with `needs` (an element symbol) a faded card for something one element away
+  function card(it, usesAll, needs) {
+    var c = el('div', 'lb-card' + (usesAll ? ' is-all' : '') + (it.page ? '' : ' is-db') + (needs ? ' is-ghost' : ''));
     c.dataset.title = it.title;
     var pic = el('div', 'lb-pic');
     if (it.page) {
@@ -230,8 +231,8 @@
       if (it.system) meta.appendChild(document.createTextNode(' · ' + it.system));
     }
     meta.appendChild(el('br'));
-    meta.appendChild(document.createTextNode(usesAll ? 'Uses everything in the beaker' : 'Uses ' + listWords(it.elements) + ' only'));
-    if (!it.page && (it.named || it.locality)) {
+    meta.appendChild(document.createTextNode(needs ? 'Needs ' + nameOf(needs).toLowerCase() : usesAll ? 'Uses everything in the beaker' : 'Uses ' + listWords(it.elements) + ' only'));
+    if (!needs && !it.page && (it.named || it.locality)) {
       meta.appendChild(el('br'));
       meta.appendChild(document.createTextNode(it.named ? 'Named for ' + it.named : 'First found at ' + it.locality));
     }
@@ -246,10 +247,17 @@
       els.appendChild(tile);
     });
     c.appendChild(els);
-    var open = el('a', 'lb-card__open', it.page ? 'Open page →' : 'Structure at COD →');
-    open.href = it.url;
-    if (!it.page) open.rel = 'noopener';
-    c.appendChild(open);
+    if (needs) {
+      var addBtn = button('lb-add lb-card__add', null, function () { add(needs); });
+      addBtn.appendChild(el('span', 'lb-tile ' + categoryClass(needs), needs));
+      addBtn.appendChild(document.createTextNode('Add ' + nameOf(needs).toLowerCase()));
+      c.appendChild(addBtn);
+    } else {
+      var open = el('a', 'lb-card__open', it.page ? 'Open page →' : 'Structure at COD →');
+      open.href = it.url;
+      if (!it.page) open.rel = 'noopener';
+      c.appendChild(open);
+    }
     c.addEventListener('mouseenter', function () { light(it); });
     c.addEventListener('mouseleave', function () { light(lit); });
     return c;
@@ -269,22 +277,20 @@
         + (minerals ? ' · ' + written.length + ' written up here and ' + minerals.toLocaleString() + ' minerals from the Crystallography Open Database' : '')
       : '';
 
-    // What comes out, what one more element would finish, and what needs more than that
-    var made = [], oneAway = {}, moreAway = [];
+    // What comes out, and what one more element would finish
+    var made = [], near = [];
+    oneAway = {};
     items.forEach(function (it) {
       var missing = it.elements.filter(function (s) { return symbols.indexOf(s) === -1; });
       if (!missing.length) {
         made.push(it);
-      } else if (!bench.length) {
-        return;
-      } else if (missing.length === 1) {
-        (oneAway[missing[0]] = oneAway[missing[0]] || []).push(it);
-      } else if (missing.length < it.elements.length) {
-        moreAway.push({ item: it, missing: missing });
+      } else if (bench.length && missing.length === 1) {
+        near.push({ item: it, needs: missing[0] });
       }
     });
     made.sort(byRank);
-    moreAway.sort(function (m, n) { return byRank(m.item, n.item); });
+    near.sort(function (m, n) { return byRank(m.item, n.item); });
+    near.forEach(function (m) { (oneAway[m.needs] = oneAway[m.needs] || []).push(m.item); });
 
     lit = null;
     cardsBox.textContent = '';
@@ -297,32 +303,17 @@
       : catalog === 'loading' ? 'Looking through the catalog…'
       : 'Nothing here is made of just ' + listWords(symbols.map(nameOf).map(function (n) { return n.toLowerCase(); })) + '.');
 
-    almostList.textContent = '';
-    var keys = Object.keys(oneAway).sort(function (m, n) { return oneAway[n].length - oneAway[m].length || m.localeCompare(n); });
-    var rows = showAllRows ? keys : keys.slice(0, ROWS);
-    rows.forEach(function (s) {
-      var list = oneAway[s].sort(byRank);
-      var li = el('li');
-      var btn = button('lb-add', null, function () { add(s); });
-      btn.appendChild(el('span', 'lb-tile ' + categoryClass(s), s));
-      btn.appendChild(document.createTextNode('Add ' + nameOf(s).toLowerCase()));
-      li.appendChild(btn);
-      var names = list.slice(0, NAMES).map(function (it) { return it.title.toLowerCase(); });
-      var rest = list.length - names.length;
-      li.appendChild(document.createTextNode('→ ' + (rest ? names.join(', ') + ' and ' + rest.toLocaleString() + ' more' : listWords(names))));
-      almostList.appendChild(li);
-    });
-    if (!keys.length) almostList.appendChild(el('li', 'rs-empty', bench.length ? (catalog === 'loading' ? '…' : 'No single element would finish anything else.') : 'Put something in the beaker first.'));
-    almostMore.hidden = rows.length >= keys.length;
-    almostMore.textContent = 'Show all ' + keys.length + ' elements';
-    var furtherNames = moreAway.slice(0, 6).map(function (m) { return m.item.title.toLowerCase() + ' (needs ' + m.missing.join(' and ') + ')'; });
-    further.textContent = moreAway.length
-      ? 'Further off: ' + furtherNames.join('; ') + (moreAway.length > 6 ? '; and ' + (moreAway.length - 6).toLocaleString() + ' more' : '') + '.'
-      : '';
+    ghostsBox.textContent = '';
+    near.slice(0, GHOSTS).forEach(function (m) { ghostsBox.appendChild(card(m.item, false, m.needs)); });
+    var dotted = Object.keys(oneAway).length;
+    ghostsEmpty.textContent = near.length
+      ? (dotted > 1 ? 'The dots on the table mark all ' + dotted + ' elements that would finish something.' : '')
+      : !bench.length ? 'Put something in the beaker first.'
+      : catalog === 'loading' ? '…' : 'No single element would finish anything else.';
 
     Object.keys(cells).forEach(function (s) {
       cells[s].classList.toggle('is-on-bench', symbols.indexOf(s) !== -1);
-      cells[s].classList.toggle('is-unlock', !!oneAway[s] && oneAway[s].some(function (it) { return it.page; }));
+      cells[s].classList.toggle('is-unlock', !!oneAway[s]);
     });
     light(null);
 
@@ -388,14 +379,15 @@
 
   clearBtn.addEventListener('click', clear);
   moreBtn.addEventListener('click', function () { showAll = true; render(); });
-  almostMore.addEventListener('click', function () { showAllRows = true; render(); });
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && lit) { lit = null; light(null); }
   });
 
   window.labBench = {
     add: add,
-    has: function (symbol) { return !!entry(symbol); }
+    has: function (symbol) { return !!entry(symbol); },
+    // The names this element would finish on the bench right now, commonest first
+    finishes: function (symbol) { return (oneAway[symbol] || []).map(function (it) { return it.title; }); }
   };
   root.hidden = false;
   render();
