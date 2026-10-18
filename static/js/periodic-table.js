@@ -131,6 +131,12 @@
 
       // The lab bench under the table (lab-bench.js) takes the element from here
       if (window.labBench) {
+        var finishes = window.labBench.finishes(d.symbol);
+        if (finishes.length) {
+          var first = finishes.slice(0, 3).map(function (n) { return n.toLowerCase(); });
+          var rest = finishes.length - first.length;
+          text.appendChild(el('p', null, 'On the bench it would finish ' + (rest ? first.join(', ') + ' and ' + rest + ' more' : first.length > 1 ? first.slice(0, -1).join(', ') + ' and ' + first[first.length - 1] : first[0])));
+        }
         var bench = el('p');
         bench.appendChild(button('pt-look__add', window.labBench.has(d.symbol) ? '+ Add another to the bench' : '+ Add to bench', function () {
           window.labBench.add(d.symbol);

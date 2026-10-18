@@ -1052,25 +1052,16 @@ button.lb-tile:hover {
   to { transform: none; opacity: 1; }
 }
 
-/* One element away */
-.lb-almost-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
+/* One element away: faded cards, each with a button that adds the missing element */
+.lb-card.is-ghost {
+  border-style: dashed;
+  opacity: .78;
 }
-.lb-almost-list li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  line-height: 1.35;
+.lb-card.is-ghost .lb-pic {
+  opacity: .55;
 }
-.lb-almost-list li.rs-empty {
-  display: block;
+.lb-card.is-ghost:hover {
+  opacity: 1;
 }
 .lb-add {
   display: inline-flex;
@@ -1088,17 +1079,12 @@ button.lb-tile:hover {
 .lb-add:hover {
   border-color: var(--rs-accent);
 }
-.lb-further {
-  margin: 8px 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--rs-mute);
-}
-.lb-further:empty {
-  display: none;
+.lb-card__add {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
-/* Marks on the table: in the beaker, would finish something, lit by a result */
+/* Marks on the table: in the beaker, would finish something (any item), lit by a result */
 .pt-cell.is-on-bench {
   outline: 2px solid var(--rs-accent);
   outline-offset: 1px;
