@@ -1140,3 +1140,23 @@ body.lb-dragging {
     animation: none;
   }
 }
+
+/* The catalog tier of the bench: minerals from the Crystallography Open Database */
+.lb-card.is-db {
+  border-style: dashed;
+}
+.lb-card.is-db.is-all {
+  border-style: solid;
+}
+.lb-pic__none {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--rs-mute);
+}
+.lb-more {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+.lb-more:has(> [hidden]) {
+  display: none;
+}

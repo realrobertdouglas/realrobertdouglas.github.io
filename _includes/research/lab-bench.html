@@ -8,7 +8,7 @@
 {%- endcomment -%}
 <section class="lb" id="js-lb" hidden aria-label="Lab bench">
   <h2 class="section-title">Lab bench</h2>
-  <p class="lb-intro">Put elements in the beaker and see what they make. Click an element above and press <b>Add to bench</b>, or drag it in with a mouse.</p>
+  <p class="lb-intro">Put elements in the beaker and see what they make: the molecules and compounds written up here, and the minerals in the <a href="https://www.crystallography.net/cod/">Crystallography Open Database</a>, drawn from their published structures. Click an element above and press <b>Add to bench</b>, or drag it in with a mouse.</p>
   <div class="lb-body">
     <div class="lb-beaker" id="js-lb-beaker">
       <svg class="lb-glass" viewBox="0 0 100 100" aria-hidden="true">
@@ -25,10 +25,12 @@
         <h3>Comes out <small id="js-lb-out-count"></small></h3>
         <div class="lb-cards" id="js-lb-cards"></div>
         <p class="rs-empty" id="js-lb-empty"></p>
+        <p class="lb-more"><button type="button" class="lb-link" id="js-lb-more" hidden>Show all</button></p>
       </div>
       <div class="lb-almost">
         <h3>One element away</h3>
         <ul class="lb-almost-list" id="js-lb-almost"></ul>
+        <p class="lb-more"><button type="button" class="lb-link" id="js-lb-almost-more" hidden>Show all</button></p>
         <p class="lb-further" id="js-lb-further"></p>
       </div>
     </div>

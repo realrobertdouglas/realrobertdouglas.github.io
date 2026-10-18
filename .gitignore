@@ -4,3 +4,4 @@ _site*
 *backup/
 .obsidian/config
 .obsidian/workspace
+_tools/cache/
