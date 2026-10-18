@@ -577,6 +577,13 @@ html[data-theme="dark"] .rs-page {
   --ms-cu: #1b8a8c;
   --ms-pb: #56627a;
   --ms-ca: #7b5cc4;
+  --ms-na: #a0522d;
+  --ms-cl: #3f9d4a;
+  --ms-si: #a08a62;
+  --ms-al: #8d99a6;
+  --ms-ti: #5b7f94;
+  --ms-zn: #8c5a8c;
+  --ms-f: #9bc53d;
 }
 html[data-theme="dark"] .rs-page {
   --ms-bond: #6a6f74;
@@ -597,6 +604,13 @@ html[data-theme="dark"] .rs-page {
   --ms-cu: #4cc6c8;
   --ms-pb: #9fb0cf;
   --ms-ca: #b39cf0;
+  --ms-na: #d08a63;
+  --ms-cl: #6fd37a;
+  --ms-si: #cdb98f;
+  --ms-al: #bcc6cf;
+  --ms-ti: #8fb3c7;
+  --ms-zn: #c08ac0;
+  --ms-f: #c5e86c;
 }
 .ms-wrap {
   display: flex;
@@ -637,12 +651,20 @@ html[data-theme="dark"] .rs-page {
 .ms-atom--N text { fill: var(--ms-n-ink); }
 .ms-atom--S circle { fill: var(--ms-s); }
 .ms-atom--S text { fill: var(--ms-s-ink); }
-/* Unit cells use the same circles; metals get their own colors so chalcopyrite's Cu and Fe differ */
+/* Unit cells use the same circles; metals get their own colors so chalcopyrite's Cu and Fe differ, and
+   halite's Na and Cl */
 circle.ms-atom { fill: var(--ms-other); stroke: var(--rs-bg, #fff); stroke-width: 1; }
 .ms-atom--Fe circle, circle.ms-atom--Fe { fill: var(--ms-fe); }
 .ms-atom--Cu circle, circle.ms-atom--Cu { fill: var(--ms-cu); }
 .ms-atom--Pb circle, circle.ms-atom--Pb { fill: var(--ms-pb); }
 .ms-atom--Ca circle, circle.ms-atom--Ca { fill: var(--ms-ca); }
+.ms-atom--Na circle, circle.ms-atom--Na { fill: var(--ms-na); }
+.ms-atom--Cl circle, circle.ms-atom--Cl { fill: var(--ms-cl); }
+.ms-atom--Si circle, circle.ms-atom--Si { fill: var(--ms-si); }
+.ms-atom--Al circle, circle.ms-atom--Al { fill: var(--ms-al); }
+.ms-atom--Ti circle, circle.ms-atom--Ti { fill: var(--ms-ti); }
+.ms-atom--Zn circle, circle.ms-atom--Zn { fill: var(--ms-zn); }
+.ms-atom--F circle, circle.ms-atom--F { fill: var(--ms-f); }
 circle.ms-atom--C { fill: var(--ms-c); }
 circle.ms-atom--O { fill: var(--ms-o); }
 circle.ms-atom--S { fill: var(--ms-s); }
