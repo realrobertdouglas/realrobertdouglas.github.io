@@ -14,7 +14,7 @@ And that’s when things go sideways.
 
 Experience doesn’t make you reckless. It makes you reverent. In warfare, the most seasoned operators are the quietest, the most cautious. They don’t rush because they’ve seen what rushing costs. They double-check safeties, measure their steps, and move like every inch matters, because experience says it does.
 
-I’ve had negligent discharges. But each time, the gun was pointed at a safe backstop. That didn’t erase the mistake, but it erased the tragedy. When my regulator failed at 90 feet, I reached calmly for the spare. It wasn’t skill. It was backup. Two layers of protection drop the risk from fatal to survivable.
+I’ve had negligent discharges. But each time, the gun was pointed at a safe backstop. That didn’t erase the mistake, but it erased the tragedy. When my regulator failed at 90 feet, I reached calmly for the spare. It wasn’t skill. It was backup. Two layers of protection drop the risk from fatal to survivable. Two is one, one is none.
 
 I carry that same mindset into conversations, especially the risky ones. When I know the other person might walk away, I anchor something safe into the exchange. A common goal. A shared memory. A statement like: “No matter what we decide, I still respect you.”
 

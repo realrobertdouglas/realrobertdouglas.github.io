@@ -6,7 +6,9 @@ categories: [sailing, future]
 comments: false
 ---
 
-There are limits to what a human body can endure, G-forces that cause vision to tunnel, muscles to fail, and consciousness to flicker out. There are nutritional ceilings, too: the body can only preload so much fuel, vitamins, minerals, protein, carbohydrates, before depletion catches up. And yet, we are building around those limits. Carbon fiber composites can hold their shape long past the point a pilot would black out. Breathing apparatuses can keep a person alive far beyond their mental breaking point. In our determination to reach farther, go faster, stay longer, we’ve constructed bodies of our own, ones that don’t complain.
+There are limits to what a human body can endure, G-forces that cause vision to tunnel, muscles to fail, and consciousness to flicker out. There are nutritional ceilings, too: the body can only preload so much fuel, vitamins, minerals, protein, carbohydrates, before depletion catches up.
+
+And yet, we are building around those limits. Carbon fiber composites can hold their shape long past the point a pilot would black out. Breathing apparatuses can keep a person alive far beyond their mental breaking point. In our determination to reach farther, go faster, stay longer, we’ve constructed bodies of our own, ones that don’t complain.
 
 I once had a boat built that was slightly more capable than the human operating it. It displaced 15 tons and had 1,500 square feet of bottom surface. When it was fully operational, she could shoulder through force 9 winds with elegance. But that kind of power has a trade-off: when something breaks, even a minor failure becomes high-stakes. The human inside suddenly matters again, not as the hero, but as the vulnerable link.
 
@@ -16,4 +18,4 @@ There will be a moment, soon, where the human body becomes a bottleneck, and the
 
 We are approaching the inversion point.
 
-Is an optional machine who can take you places you can't optional once you're there?
+Is a machine that takes you somewhere you couldn't go still optional once you're there?

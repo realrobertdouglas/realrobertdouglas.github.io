@@ -17,9 +17,9 @@ Their eyes don’t just glaze over. They vanish. The spark is gone, the rhythm b
 
 And they have nothing.
 
-It’s not their fault, really. They were trained to think in theory. The world told them education was mastery, and their instructor told them doing it there that way was “doing it right”. That discussion was understanding. That empathy was the same as experience.
+It’s not their fault, really. They were trained to think in theory. The world told them education was mastery, and their instructor told them that doing it their way was “doing it right”. That discussion was understanding. That empathy was the same as experience.
 
-But experience leaves marks. It leaves you with a scar on your lip from a rock that hit you in the face when you were trying a new method of leverage for a cave squeeze. A scar on your leg from a preditor bite that you didn’t know you had invaded the territory of until it let you know. A scar on your arm from a small wound on a long passage that became a big problem that far from shore. It forces you to live with the consequences of your own decisions.
+But experience leaves marks. It leaves you with a scar on your lip from a rock that hit you in the face when you were trying a new method of leverage for a cave squeeze. A scar on your leg from a predator whose territory you didn’t know you had invaded until it let you know. A scar on your arm from a small wound on a long passage that became a big problem, that far from shore. It forces you to live with the consequences of your own decisions.
 
 And when I talk to someone who doesn’t have those stories, who has knowledge but no scars, I feel the limit of the conversation close like a cliff’s edge.
 

@@ -6,7 +6,7 @@ categories: [tools]
 comments: false
 ---
 
-In the beginning I created layers of rules to manage my self, now I use them primarily to manage others. If you've been around me long enough, you'll see me use hand signals to others close to me. 
+In the beginning I created layers of rules to manage myself, now I use them primarily to manage others. If you've been around me long enough, you'll see me use hand signals to others close to me. 
 
 All posted rules follow the same format:
 ```
@@ -15,25 +15,25 @@ All posted rules follow the same format:
 "what I'm probably saying to you when I signal the rule number with my hands"
 ```
 
-# 1 . “Loyalty”
+# 1. “Loyalty”
 
 ...is a two way street. Remember it supersedes all else, and if you're giving it, you better be getting it.
 
 “You’re giving the wrong person the wrong amount of power”
 
 
-# 2. Good feelings first-around” 
+# 2. “Good feelings first-around” 
 
-...when anyone you're talking to is negative they're telegraphing they're their hostility to you, and **anything** you give an enemy is ammunition against you. Not everyone can self regulate their own emotions and letting a conversation go negative or become negative removes any good you were trying to impart. It takes more than five (5) good experiences to remove one (1) negative experience. People often don't remember what you said, but do remember how you made them feel. As a species people follow people more than they follow ideas.
+...when anyone you're talking to is negative they're telegraphing their hostility to you, and **anything** you give an enemy is ammunition against you. Not everyone can self regulate their own emotions and letting a conversation go negative or become negative removes any good you were trying to impart. It takes more than five (5) good experiences to remove one (1) negative experience. People often don't remember what you said, but do remember how you made them feel. As a species people follow people more than they follow ideas.
 
-“Don’t fuck up a good time to make your self feel better”, “these people are children, focus on little win-wins”
+“Don’t fuck up a good time to make yourself feel better”, “these people are children, focus on little win-wins”
 
 
 # 3. “Keep people in the loop.”
 
 Any failure you knowingly could have prevented is a failure you are responsible for. A team can only support a mission if they know WHAT to do.
 
-“these people are confused or demotovated, please breif them”
+“these people are confused or demotivated, please brief them”
 
 
 # 4. “Remember your mission.”
@@ -45,56 +45,56 @@ Anyone can get sidetracked by your environment, but doing what you came here to 
 
 # 5. “Excellence matters”
 
-When you do something, if you have to do it again or, if it's failure lets someone else unacquainted to hurt themselves, did your actions cause more harm then good?
+When you do something, if you have to do it again, or if its failure lets someone else, unacquainted with it, hurt themselves, did your actions cause more harm than good?
 
-“Stop nigger-rigging that”, “This may cause you issues in the future”, “Don’t let this hurt you”, “Put on better clothes, stand up straight”, “Stop shortcutting that fundamental failure point", "remember: ‘what is max theoretical efficiency?’”
+“Stop jury-rigging that”, “This may cause you issues in the future”, “Don’t let this hurt you”, “Put on better clothes, stand up straight”, “Stop shortcutting that fundamental failure point", "remember: ‘what is max theoretical efficiency?’”
 
 
-# 6. “IQ means noting.”
+# 6. “IQ means nothing.”
 
-Some of the highest scores I've seen gifted come from some of the least gifted as many have terrible processes of reasoning and poor decision matrixes. What is good about being a smart kid if you are still only a child? Your effective efficancy in an enviroment comes from process compleation, workflow maximization, and is measured by team success. 
+Some of the highest scores I've seen gifted come from some of the least gifted as many have terrible processes of reasoning and poor decision matrices. What is good about being a smart kid if you are still only a child? Your effective efficacy in an environment comes from process completion, workflow maximization, and is measured by team success. 
 
 "Write that down, and hold onto it until it's processed", "Stop being an idiot."
 
 
-# 7.	“Never pass up a good thing”
+# 7. “Never pass up a good thing”
 
 You're only going to get so many opportunities in life, if you don't take them, you may not get them again. If you want something negative wait two weeks and if you still want it you can buy it.
 
 "I wouldn't say no", "you don’t know where this will lead you”, “I know you’re tired, but this opportunity may not come up again”, “It’s important to try everything once.”
 
 
-# 8.	“Breaking the social order only hurts the team”
+# 8. “Breaking the social order only hurts the team”
 
-You can do whatever you want to anyone, AND anyone will do whatever you  say so long as they see it as a win and you don't break the social order. Say something insane in a slow, confident, methodical way like Dick Chaney and you can start a never ending war. Posit a superior method to DC current in a socially unbecoming way and you'll be laughed out of the room like Nikola Tesla.
+You can do whatever you want to anyone, AND anyone will do whatever you  say so long as they see it as a win and you don't break the social order. Say something insane in a slow, confident, methodical way like Dick Cheney and you can start a never ending war. Posit a superior method to DC current in a socially unbecoming way and you'll be laughed out of the room like Nikola Tesla.
 
-Breaking the rules is not a bad thing you just need to know which ones to break. Break them in the right order and no one will bat an eye, bounce into the wrong one at the wrong time and you're the enmey of the people. Breaking the rules is not a bad thing you just need to know which ones to break.
+Breaking the rules is not a bad thing you just need to know which ones to break. Break them in the right order and no one will bat an eye, bounce into the wrong one at the wrong time and you're the enemy of the people. Breaking the rules is not a bad thing you just need to know which ones to break.
 
 "We’re doing something right now, and you are right, but it’s important no one knows that right now”, “people are weak, play the game”
 
 
-# 9. "Some things aren’t worth it."
+# 9. “Some things aren’t worth it.”
 
 Sometimes opportunities come up, and sometimes the risks are not worth the reward.
 
 "don't fucking do that you stupid cunt"
 
 
-# 10.	“Always have a backup plan.”
+# 10. “Always have a backup plan.”
 
 2nd order effects need to be considered. Every decision you make enables or limits further decisions.
 
 "Did you think about this, yes OR no?”
 
 
-# 11.	"Muscle memory MATTERS"
+# 11. “Muscle memory MATTERS”
 
-Humans under stress have a flight or flight response that manafests as an interest in following paths they've already taken, even if they know they're wrong because the outcome is predictable. In a freshwater cave at a 100ft that may just get you killed.
+Humans under stress have a fight or flight response that manifests as an interest in following paths they've already taken, even if they know they're wrong because the outcome is predictable. In a freshwater cave at a 100ft that may just get you killed.
 
-later you're going to need to be able to react appropriately… please do the ‘useless’ thing you just disregarded”, “you can only reliably do what you have practiced”, “when tired, you’re going to make a mistake, don’t make a mistake here”
+“Later you're going to need to be able to react appropriately… please do the ‘useless’ thing you just disregarded”, “you can only reliably do what you have practiced”, “when tired, you’re going to make a mistake, don’t make a mistake here”
 
 
-# 12. "Early to Bed, Early to Rise"
+# 12. “Early to Bed, Early to Rise”
 
 IF you wake up early you'll often do way more before noon than you normally do in an entire day.
 
@@ -102,7 +102,7 @@ IF you wake up early you'll often do way more before noon than you normally do i
 
 # 13. “When placed in command, take charge.”
 
-Failure to do so is worse that not taking command at all, and leaves an irreversable stain on your record and the teams.
+Failure to do so is worse than not taking command at all, and leaves an irreversible stain on your record and the team’s.
 
 “You have an opportunity, in 30 seconds they’re not going to trust you and you’re going to lose this opportunity”
 
@@ -114,11 +114,11 @@ When in doubt, be impeccable, do as god would want you to do.
 “Take the high road”, “If it's worth doing, it's worth doing right”
 
 
-# 15. ”You do not own your children” 
+# 15. “You do not own your children” 
 
 While the things you make require your rule and energy to produce, a well built device will rule your thoughts, and a poorly built device will rule your actions.
 
-USE: “You were his creator, now he is your master”, “You don’t own anything, you only have obligations.”
+“You were his creator, now he is your master”, “You don’t own anything, you only have obligations.”
 
 # 16.	“Slow cooking makes things tender”
 
@@ -141,7 +141,7 @@ Language is mind control. Explaining a situation correctly does not mean everyon
 “Choose your words here, if you’re not understand it’s not that they won’t hear you, it’s that they’ll devalue you”
 
 
-# 19. Emergency access to food and water
+# 19. “Emergency access to food and water”
 
 Prepping is costly, but it is key to continued success and going farther than anyone else.
 
@@ -161,21 +161,21 @@ If you don’t prepare, you’re preparing to fail. Prepare when it’s time to 
 "Get setup now, we won't have time later."
 
 
-# 22 "There are possibilities you are not going to have later due to the choices I make now"
+# 22. “There are possibilities you are not going to have later due to the choices I make now”
 
-Constantly acquire optionality. Count your man-minutes. If you make your bead you’re going to have to sleep in it.
+Constantly acquire optionality. Count your man-minutes. If you make your bed you’re going to have to sleep in it.
 
 "You'll be removing your ability to do things later if you do that"
 
 
-# 23.	"People notice social markers, wealth, status, how you speak"
+# 23. “People notice social markers, wealth, status, how you speak”
 
 Your ego will tell you what to do, don’t let it run away from you. It's the books you read the friends you keep and the way you dress that determines who you are.
 
 "Button your fly", "You can't bring those people where we’re going."
 
 
-# 24. "You are what you eat"
+# 24. “You are what you eat”
 
 Diet is the only thing about your genetics you have reasonable control over.
 
@@ -189,13 +189,13 @@ If something is going to depreciate, you may want to buy it somewhere in its dep
 "That could be a dumb purchase."
 
 
-# 26. "Don’t take things personally"
+# 26. “Don’t take things personally”
 
-Most people don't think as much as they should, their disregard and hostility towards you is mearly an expression of the trauma inside their head. Don't hate them for their poor decision, pray for them.
+Most people don't think as much as they should, their disregard and hostility towards you is merely an expression of the trauma inside their head. Don't hate them for their poor decision, pray for them.
 
 "He didn't mean that, and don't worry... what goes around comes around."
 
 
 
 
-There use to be more, but one time I mixed up rule 23 and 32 in field and got my team in trouble.
+There used to be more, but one time I mixed up rule 23 and 32 in field and got my team in trouble.

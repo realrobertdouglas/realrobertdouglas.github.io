@@ -11,6 +11,11 @@ Lately, I’ve been finding arrowheads scattered across my land, some whole, oth
 
 Long before written records, Indigenous peoples lived, camped, hunted, gathered, and worked this very soil. These weren’t just stray tools. They were part of a larger pattern of life. A story left in stone.
 
-Prehistoric sites like this one offer more than artifacts. They give us windows into: Migration and seasonal patterns. Where people moved, when, and why. They offer us Tool technology and trade networks, How far materials traveled and how techniques evolved. We can infer Diet and ecological adaptation. What they ate, hunted, and how they lived off the land. From these we can assume Cultural and ceremonial practices. What they believed and how they marked meaning in everyday life.
+Prehistoric sites like this one offer more than artifacts. They give us windows into:
+
+- **Migration and seasonal patterns.** Where people moved, when, and why.
+- **Tool technology and trade networks.** How far materials traveled and how techniques evolved.
+- **Diet and ecological adaptation.** What they ate, hunted, and how they lived off the land.
+- **Cultural and ceremonial practices.** What they believed and how they marked meaning in everyday life.
 
 Each point, flake, or fire-cracked stone hints at decisions made long ago; where to hunt, where to settle, what tools to carry, what stories to pass on.

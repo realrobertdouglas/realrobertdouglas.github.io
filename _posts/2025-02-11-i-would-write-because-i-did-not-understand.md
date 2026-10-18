@@ -23,7 +23,7 @@ How large do octopuses get?
 
 Why do people destroy things they say they care about?
 
-I had pages of these notes short. A quiet collection of questions that bothered me more than they should have. Questions that made me feel like maybe I was the one who didn’t get it.
+I had pages of these short notes. A quiet collection of questions that bothered me more than they should have. Questions that made me feel like maybe I was the one who didn’t get it.
 
 And then I got older.
 

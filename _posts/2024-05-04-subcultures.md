@@ -15,9 +15,10 @@ What we call “culture” today is mostly content: optimized, monetized, and re
 Subcultures haven’t disappeared. They’ve just retreated into corners unpalatable to corporate interests.
 
 They’re still alive:
-	•	In forums about banned substances where information is traded like contraband.
-	•	In ideological fringe groups, organizing in their own bubbles, driven not by popular approval but by conviction and alienation.
-	•	In enclaves of sexual expression too niche, too raw, or too complex for the swipe-and-sell model of mainstream apps.
+
+- In forums about banned substances where information is traded like contraband.
+- In ideological fringe groups, organizing in their own bubbles, driven not by popular approval but by conviction and alienation.
+- In enclaves of sexual expression too niche, too raw, or too complex for the swipe-and-sell model of mainstream apps.
 
 These are not the next hot trends. You will not see them paraded on morning television. These are subcultures in the true sense of the word, beneath the surface, sometimes by necessity. They are resilient precisely because they are not for sale.
 

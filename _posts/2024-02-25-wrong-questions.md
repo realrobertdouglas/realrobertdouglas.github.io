@@ -13,9 +13,9 @@ Sometimes, it’s a test. Sometimes, it’s a mirror. Sometimes, it’s a trap, 
 
 I’ve asked the “wrong” thing on purpose before. Not to be clever. Not to show off. But to see who corrects me. Because how someone responds when they think you’re mistaken says a lot more about them than about you.
 
-In business, this is a useful tool. Ask a question with a small, intentional flaw, something factual but slightly off. Watch who speaks up, who hesitates, who defers. You’ll find out quickly who’s paying attention, who’s knowledgeable, and who’s just nodding along. The correction might be kind and collaborative. It might be smug. It might be silent. That reaction is data. Although it is always unfortunate when your boss corrects you in a negotiation with another business.
+In business, this is a useful tool. Ask a question with a small, intentional flaw, something factual but slightly off. Watch who speaks up, who hesitates, who defers. You’ll find out quickly who’s paying attention, who’s knowledgeable, and who’s just nodding along. The correction might be kind and collaborative. It might be smug. It might be silent. That reaction is data.
 
-This tactic used to work when using search engines or AI tools. Ask your question the way you’d expect a beginner to ask it. Don’t optimize. Don’t overthink. Just throw the “dumb” version into Google. Why? Because if the system can’t understand the obvious, it’s not very useful.
+The same tactic works on search engines and AI tools. Ask your question the way you’d expect a beginner to ask it. Don’t optimize. Don’t overthink. Just throw the “dumb” version into Google. Why? Because if the system can’t understand the obvious, it’s not very useful.
 
 It’s not about playing dumb. It’s about running diagnostics.
 

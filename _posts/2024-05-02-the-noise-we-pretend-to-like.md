@@ -24,9 +24,10 @@ We make it part of the culture.
 We normalize harm because facing it would mean spending more, doing more, and admitting we’re not the only ones affected.
 
 And this mindset doesn’t stop at the range.
-	•	Airports keep expanding flight hours while residents lose sleep, because rerouting costs money.
-	•	Cars keep getting bigger and louder, while the air quality gets worse, because electric conversions are expensive.
-	•	Corporations pollute quietly across borders, because cleaning up isn’t in the budget this quarter.
+
+- Airports keep expanding flight hours while residents lose sleep, because rerouting costs money.
+- Cars keep getting bigger and louder, while the air quality gets worse, because electric conversions are expensive.
+- Corporations pollute quietly across borders, because cleaning up isn’t in the budget this quarter.
 
 In every case, the externality is ignored because fixing it is inconvenient, costly, and undermines the illusion that we’re already doing enough.
 

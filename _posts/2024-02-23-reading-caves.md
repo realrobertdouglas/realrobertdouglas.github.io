@@ -7,11 +7,13 @@ comments: false
 ---
 
 There’s a kind of reading that doesn’t use words. It’s the kind you do with your fingertips and your fin tips, gliding just above a limestone floor that might suddenly disappear into shadow.
+
 Cave diving teaches you to read land like a detective reads a crime scene. And the deeper you go, into sinkholes, through flooded crevices, over collapsed columns, the more fluent you become in a strange and silent language carved by pressure, water, and time.
 
 It starts with shapes.
 
 A scalloped wall means water once moved fast here. A smooth, bulging dome could be the ceiling of a chamber still filled with trapped air behind a choke. Tall, slender pillars tell stories of stillness, of slow drips and centuries undisturbed. Sand piled against a slope means something shifted; maybe a landslide upstream, or a ceiling collapse farther down the system. Every ripple, every grain pattern, holds a clue.
+
 When you’re sleuthing around sinkholes, you're not just looking for caves, you’re reading the signs that one might be near. The way the light bends through tannic layers. The sudden drop-off where vegetation stops and bare rock begins. The thermocline that hits like a shiver, whispering there's more below.
 
 Some of the best leads aren’t the obvious ones. A ledge with a strange notch. A boulder split clean in two. A current that shouldn’t be there, tugging faintly but persistently toward a wall that looks solid until you’re close enough to see the dark sliver running along its base.
@@ -24,14 +26,16 @@ An air pocket that shouldn't be there. A breeze of cold water where there should
 
 Because caves don’t hand out maps. You earn them, one clue at a time.
 
-When I ask someone for tips they usually tell me something that is non actionable like “Scalloped surfaces indicate high flow” and I’m thinking, no shit shirlock I’m either trying to hang onto them to move over that flow or am being pused out by it. Here are some real tips that I’ve leaned:
+## Eight real tips
 
-1. Clean rock doesn’t always mean recent collapse, it does mean recent activity if there is not algae, silt, or biofilm.
-2. Silt trails can point like arrows 
-3. Watch what the fish are doing if they’re not hiding it’s because they can’t go any further.
-4. Follow the cold! A sudden thermocline or pocket of colder water  signals deeper systems
-5. Feel for tug not the push… when sleuthing, the tiniest pull can indicate a vent passage, or an air pocket slowly equalizing from your opn circut system
-6. Discoloration in rock layers are environmental change points. New environments play by different rules.
+When I ask someone for tips they usually tell me something non-actionable like “Scalloped surfaces indicate high flow.” No shit, Sherlock: I’m either hanging onto them to move over that flow or being pushed out by it. Here are the tips I’ve actually learned:
+
+1. Clean rock doesn’t always mean recent collapse, but it does mean recent activity if there is no algae, silt, or biofilm.
+2. Silt trails can point like arrows.
+3. Watch what the fish are doing: if they’re not hiding, it’s because they can’t go any further.
+4. Follow the cold. A sudden thermocline or a pocket of colder water signals deeper systems.
+5. Feel for the tug, not the push. When sleuthing, the tiniest pull can indicate a vent passage, or an air pocket slowly equalizing from your open-circuit system.
+6. Discoloration in rock layers marks an environmental change point. New environments play by different rules.
 7. Look backward often even if it makes you feel small. The terrain often makes more sense in reverse: shadows become clearings, small slopes become cliffs, and flow lines make more sense once you’ve passed them.
 8. Look up.
 

@@ -6,7 +6,7 @@ categories: [tools]
 comments: false
 ---
 
-If Robert Douglas sent you here, start at **'(1) [Tools](link-to-part-of-page.link)'** , if not, recommended reading begins immediately:
+If Robert Douglas sent you here, start at **[Tools](#tools)**. If not, read on. The four sections before the tools count down to them: they are the context the tools need.
 
 # (iv) No one cares what you think, the only thing that matters is what you do.
 
@@ -18,7 +18,7 @@ Your actions can be pointed to as a series of facts. They leave a measurable cha
 
 I won't lie; people often remember how you made them feel in general more than they remember the exact words you said, and sadly people when introduced to something too far outside their world view are more likely to misunderstand the situation than ignore it.
 
-So *think* frequently, [it's free](link-to-other-article)! Be careful in your words and start taking action now for the future you, because your environment was determined by the actions you took yesterday. Want a better life for you, and the people around you? It has to start now!
+So *think* frequently, it's free! Be careful in your words and start taking action now for the future you, because your environment was determined by the actions you took yesterday. Want a better life for you, and the people around you? It has to start now!
 
 # (iii) How 'Current You' makes decisions, and how you can set 'Future You' up for success:
 
@@ -36,7 +36,7 @@ This means if you want *future you* to accomplish the goals *present you* curren
 
 If you lack a *prompt*, you won't do the task at the right time, and it'll be as though you have to make the new *prompt* all over again with no guarantee it'll be done.
 
-If you lack the *understanding*, your task will feel overwhelming and impossible because it is currently impossible in your minds eye, only more information through research or trial and error will change this.
+If you lack the *understanding*, your task will feel overwhelming and impossible because it is currently impossible in your mind's eye, only more information through research or trial and error will change this.
 
 If you lack the *energy* your body is likely trying to tell you something, it may see the task as more energy than reward you'll get back. Maybe you've already had a long day. Maybe the idea of taking on another thing feels uncomfortable. Humans tend to work best in short bursts, where there is clear recovery and motivation available.
 
@@ -88,9 +88,9 @@ The sorts of emotional programming you'll likely benefit the most from vocalizin
 - "remember my goals"
 - "you can do anything for a minute
 
-# (1) Tools
+# (1) Tools {#tools}
 
-This is an overview of the tools I use, and in some-cases I require others use them too so they can receive a paycheck. There is just no possible way for anyone to go nearly as far with me as they could if their actions don't match their words.
+This is an overview of the tools I use, and in some cases I require others use them too so they can receive a paycheck. There is just no possible way for anyone to go nearly as far with me as they could if their actions don't match their words.
 
 ### Discipline Tools
 1) [The Ivy Lee Method](https://jamesclear.com/ivy-lee)
@@ -152,9 +152,9 @@ It's important you increase your likelihood of doing all the things you said you
 - link objects with clear titles, so you know WHY later that resource can be useful
 
 ### Energy
-- Sleep well, use tools when necessary [natural drugs](https://www.amazon.com/gp/product/B081ZFZJ5Z/) [masks to keep you asleep](https://www.amazon.com/Sleeping-Blindfold-Building-Adjustable-Layers/dp/B07JH2C4D5/) [ear plugs to block out noise](https://www.amazon.com/Upgraded-Earplugs-Comfortable-Sleeping-Studying/dp/B08K76W3K8/r) [mouth tape if you sleep with your mouth open](https://www.amazon.com/gp/product/B086BY1SWR/)
+- Sleep well, and use tools when you need them: [natural drugs](https://www.amazon.com/gp/product/B081ZFZJ5Z/), [a mask to keep you asleep](https://www.amazon.com/Sleeping-Blindfold-Building-Adjustable-Layers/dp/B07JH2C4D5/), [ear plugs](https://www.amazon.com/Upgraded-Earplugs-Comfortable-Sleeping-Studying/dp/B08K76W3K8/r), [mouth tape if you sleep with your mouth open](https://www.amazon.com/gp/product/B086BY1SWR/).
 
-- Wake up early (Master your day, don't be mastered by it) [use an alarm](https://www.amazon.com/Electronic-Settings-Humidity-Temperature-Electric/dp/B07RKTVQDR/) [sleep next to someone?](https://www.amazon.com/Fitbit-Fitness-Activity-Tracking-Included/dp/B084CQ41M2/) [hate yourself?] (https://www.amazon.com/Shock-Clock-Silent-Motion-Tracking/dp/B07P83FTR5/)
+- Wake up early. Master your day, don't be mastered by it: [use an alarm](https://www.amazon.com/Electronic-Settings-Humidity-Temperature-Electric/dp/B07RKTVQDR/), [a quiet one if you sleep next to someone](https://www.amazon.com/Fitbit-Fitness-Activity-Tracking-Included/dp/B084CQ41M2/), or [a cruel one if you hate yourself](https://www.amazon.com/Shock-Clock-Silent-Motion-Tracking/dp/B07P83FTR5/).
 
 - Drink coffee before 12pm
 
@@ -168,7 +168,7 @@ Review that list now, and you might find some of your actions were impulsive or 
 
 Review that list tomorrow, you'll feel better about accomplishing things and you'll get an emotional boost. 
 
-Review that list later this year and you'll be able be able to determine what actions made the difference. Slowly, but surely, you will automatically begin to prioritize those kinds of decisions, the decisions that will ACTUALLY change your life.
+Review that list later this year and you'll be able to determine what actions made the difference. Slowly, but surely, you will automatically begin to prioritize those kinds of decisions, the decisions that will ACTUALLY change your life.
 
 ## You'll get more done
 
@@ -184,7 +184,7 @@ Did more than three things every day? You're now in the top 1% of performing peo
 
 ## You'll enjoy working more.
 
-As you work, you'll slowly begin to enter into flow as you take more control of your life and acquire focus and speed. You can get there much easily if you have a healthy baseline. The process of creation comes much more easily since the actions that you're taking are progressive and simple. This is due to proper preparation and setting up your frames in the first place. 
+As you work, you'll slowly begin to enter into flow as you take more control of your life and acquire focus and speed. You can get there much more easily if you have a healthy baseline. The process of creation comes much more easily since the actions that you're taking are progressive and simple. This is due to proper preparation and setting up your frames in the first place. 
 
 When the mind is freed from distraction and worry, it can move easily in any direction and is as free to make any decision. These are the components that YOU can affect and thus will DRIVE the very decisions that will determine almost every outcome in life. 
 

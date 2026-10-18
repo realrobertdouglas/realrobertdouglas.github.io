@@ -12,7 +12,7 @@ I won’t share names or specifics to protect those involved (and myself), but h
 
 One of the documents they presented wasn’t just ambitious. It was outrageous. A private individual allegedly holding a balance sheet that mirrored the natural resources of an entire state in Africa. Not a bank. Not a government. A person. But what disturbed me wasn’t the number. It was *why* it existed.
 
-That kind of record doesn’t just appear. Someone *wanted* it to exist. And someone only wants a document like that to exist if they’re trying to prove something. But a state proxying wealth through a private party? That’s not just irregular. It’s irrational under the channel this process was occurring. Governments are notoriously unstable. Leadership changes overnight. Even when states do back financial instruments, they’re backed by people’s welfare, not fiduciary discipline. That’s when I knew something was wrong.
+That kind of record doesn’t just appear. Someone *wanted* it to exist. And someone only wants a document like that to exist if they’re trying to prove something. But a state proxying wealth through a private party? That’s not just irregular. Through the channel this was coming in, it’s irrational. Governments are notoriously unstable. Leadership changes overnight. Even when states do back financial instruments, they’re backed by people’s welfare, not fiduciary discipline. That’s when I knew something was wrong.
 
 I flagged it to my boss. His reply? “Go figure it out, don't piss anyone off.”
 
