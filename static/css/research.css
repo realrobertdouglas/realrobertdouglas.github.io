@@ -571,6 +571,18 @@ html[data-theme="dark"] .rs-page {
   --ms-n-ink: #fff;
   --ms-s: #e0b100;
   --ms-s-ink: #333;
+  --ms-p: #e8792b;
+  --ms-p-ink: #fff;
+  --ms-cl: #2f9e5f;
+  --ms-cl-ink: #fff;
+  --ms-f: #8fd3a6;
+  --ms-f-ink: #1e3d2a;
+  --ms-br: #9a4a2a;
+  --ms-br-ink: #fff;
+  --ms-i: #7a3fa5;
+  --ms-i-ink: #fff;
+  --ms-alkali: #9b87e6;
+  --ms-alkali-ink: #fff;
   --ms-other: #2d7f43;
   --ms-other-ink: #fff;
   --ms-fe: #3a4fb0;
@@ -598,6 +610,18 @@ html[data-theme="dark"] .rs-page {
   --ms-n-ink: #16181a;
   --ms-s: #e6c24a;
   --ms-s-ink: #16181a;
+  --ms-p: #ffa559;
+  --ms-p-ink: #16181a;
+  --ms-cl: #5fd68a;
+  --ms-cl-ink: #16181a;
+  --ms-f: #b8ecc8;
+  --ms-f-ink: #16181a;
+  --ms-br: #d08a6a;
+  --ms-br-ink: #16181a;
+  --ms-i: #b98ae0;
+  --ms-i-ink: #16181a;
+  --ms-alkali: #b8a8ff;
+  --ms-alkali-ink: #16181a;
   --ms-other: #5cc474;
   --ms-other-ink: #16181a;
   --ms-fe: #8c9bff;
@@ -651,6 +675,19 @@ html[data-theme="dark"] .rs-page {
 .ms-atom--N text { fill: var(--ms-n-ink); }
 .ms-atom--S circle { fill: var(--ms-s); }
 .ms-atom--S text { fill: var(--ms-s-ink); }
+/* The catalog's molecules bring more elements; the rest stay on the green default */
+.ms-atom--P circle { fill: var(--ms-p); }
+.ms-atom--P text { fill: var(--ms-p-ink); }
+.ms-atom--Cl circle { fill: var(--ms-cl); }
+.ms-atom--Cl text { fill: var(--ms-cl-ink); }
+.ms-atom--F circle { fill: var(--ms-f); }
+.ms-atom--F text { fill: var(--ms-f-ink); }
+.ms-atom--Br circle { fill: var(--ms-br); }
+.ms-atom--Br text { fill: var(--ms-br-ink); }
+.ms-atom--I circle { fill: var(--ms-i); }
+.ms-atom--I text { fill: var(--ms-i-ink); }
+.ms-atom--Na circle, .ms-atom--K circle, .ms-atom--Li circle { fill: var(--ms-alkali); }
+.ms-atom--Na text, .ms-atom--K text, .ms-atom--Li text { fill: var(--ms-alkali-ink); }
 /* Unit cells use the same circles; metals get their own colors so chalcopyrite's Cu and Fe differ, and
    halite's Na and Cl */
 circle.ms-atom { fill: var(--ms-other); stroke: var(--rs-bg, #fff); stroke-width: 1; }

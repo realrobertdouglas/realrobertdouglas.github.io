@@ -128,6 +128,11 @@ The bench has a second tier, the **catalog**: every IMA-recognized mineral with 
 - Rank is a commonness proxy, a place on the script's list of rock-forming minerals and well-known ores, else the number of COD entries carrying the mineral's name. The bench shows written-up items first, then minerals by rank, a dozen at a time behind "Show all", and the near-miss cards are ranked the same way, so quartz comes before litharge. A mineral whose name matches a written-up compound is hidden, so writing a page promotes it.
 - Facts only: the catalog carries no prose. Where a mineral deserves a "where it's found" and "how it's mined", write its compound page as above.
 
+And a third tier, the **molecules**: the chemical compounds people have heard of, from Wikidata and PubChem.
+
+- `_tools/molecules.py` takes from Wikidata every chemical compound with a PubChem id and a formula that at least 15 Wikipedias write about, leaving out elements and minerals, ranked by that article count (water first), and asks PubChem for each one's 2D structure, fifty a request. It writes `static/data/molecules.json` (name, formula, elements, rank, PubChem id, English Wikipedia title, heavy-atom count) and `static/data/molecules/<cid>.json`, the atoms and bonds in the same shape as a molecule page's front matter, which `static/js/molecule-structure.js` draws the way `molecule-structure.html` does at build time. Molecules over 60 heavy atoms are listed but not drawn. Cached in `_tools/cache/`, resumable, worth a rerun now and then.
+- On the bench a molecule card links to its Wikipedia article when there is one, else to PubChem. The atom colours in `research.css` cover C, H, O, N, S, P, the halogens and the alkali metals; everything else is the green default.
+
 Research pages are in the sitemap but not in the sidebar search or the RSS feed, which cover posts only.
 
 ## How the rest of the site is put together
