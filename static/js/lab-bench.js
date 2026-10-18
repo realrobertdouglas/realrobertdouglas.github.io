@@ -9,11 +9,14 @@
    - An element gets in through the quick look's "Add to bench" button (periodic-table.js calls
      window.labBench.add) or, with a mouse, by dragging its cell onto the beaker. A plain click on a
      cell still opens the quick look, so a drag that moved swallows the click that follows it.
-   - Matching is by presence: an item comes out when every element it needs is in the beaker. The
-     same element added again raises its chip's count (shown as ×2) but changes nothing yet; counts
-     are there for a later rule that checks how many of each.
-   - Results are ranked: written-up items first, then minerals by commonness (the catalog's rank),
-     a dozen shown and the rest behind "Show all". "One element away" is a few faded cards for the
+   - Matching is by presence: an item comes out when every element it needs is in the beaker, except
+     that a single-element item (graphite, ozone) only comes out when the beaker holds exactly that
+     element, or it would ride along with every mix. The same element added again raises its chip's
+     count (shown as ×2) but changes nothing yet; counts are there for a later rule that checks how
+     many of each.
+   - Results are ranked: written-up items first, then by how much of the beaker they use (caffeine
+     before aspirin before water with C, H, N and O in), then by commonness (the catalog's rank), a
+     dozen shown and more on request. "One element away" is a few faded cards for the
      commonest things one more element would finish, each with a button that adds it; every
      element that would finish something gets a dot on the table, and the quick look (through
      window.labBench.finishes) says what adding that element would finish.
@@ -110,9 +113,10 @@
   function entry(symbol) {
     return bench.filter(function (b) { return b.symbol === symbol; })[0] || null;
   }
+  // Written-up pages first, then whatever uses more of the beaker, then the commoner
   function byRank(m, n) {
     if (m.page !== n.page) return m.page ? -1 : 1;
-    return (n.rank - m.rank) || m.title.localeCompare(n.title);
+    return (n.elements.length - m.elements.length) || (n.rank - m.rank) || m.title.localeCompare(n.title);
   }
 
   // The catalogs: fetched once, the first time the beaker gets something
@@ -312,8 +316,9 @@
     items.forEach(function (it) {
       var missing = it.elements.filter(function (s) { return symbols.indexOf(s) === -1; });
       if (!missing.length) {
-        made.push(it);
-      } else if (bench.length && missing.length === 1) {
+        // A single-element item only when the beaker holds just that element
+        if (it.elements.length > 1 || bench.length === 1) made.push(it);
+      } else if (bench.length && missing.length === 1 && it.elements.length > 1) {
         near.push({ item: it, needs: missing[0] });
       }
     });
